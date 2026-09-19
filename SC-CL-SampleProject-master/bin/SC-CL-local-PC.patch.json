@@ -1,0 +1,8 @@
+{
+  "reason": "Skip unconditional disabled-PC diagnostic throw in compiler constructor; preserve original executable",
+  "original_sha256": "7d2e8656d5145ed8bcf6656f97857adec98f77c9c6fce6cf39907c083a70f63d",
+  "offset": 19363,
+  "before": "e878b40400",
+  "after": "9090909090",
+  "patched_sha256": "23479096efac6de79525b13d9771d90377607774ab2807b9573da59ed9a43016"
+}

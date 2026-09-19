@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "description": "Static declarations for the current trainer vehicle choices.",
+    "menyoo_import": {
+      "status": "planned",
+      "note": "Reserved metadata for a future importer; this catalog does not claim Menyoo XML compatibility."
+    }
+  },
+  "vehicles": [
+    {"id": "vehicle.adder", "name": "adder", "label": "Adder", "category": "super", "runtime": {"availability": "tested"}},
+    {"id": "vehicle.sultan", "name": "sultan", "label": "Sultan", "category": "sports", "runtime": {"availability": "tested"}},
+    {"id": "vehicle.blista", "name": "blista", "label": "Blista", "category": "compact", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.zentorno", "name": "zentorno", "label": "Zentorno", "category": "super", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.buffalo", "name": "buffalo", "label": "Buffalo", "category": "muscle", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.baller", "name": "baller", "label": "Baller", "category": "suv", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.bati", "name": "bati", "label": "Bati", "category": "motorcycle", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.sanchez", "name": "sanchez", "label": "Sanchez", "category": "motorcycle", "runtime": {"availability": "unconfirmed"}},
+    {"id": "vehicle.bifta", "name": "bifta", "label": "Bifta", "category": "off-road", "runtime": {"availability": "unconfirmed"}}
+  ]
+}

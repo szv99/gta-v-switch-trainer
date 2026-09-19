@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-09-13T15:38:49.070094",
+  "pid": 142,
+  "base": "0xe7d605000",
+  "guard": 0,
+  "raw_signin_flags": 2,
+  "access_gate": 0,
+  "signed_in": true,
+  "signed_online": false,
+  "network_game_in_progress": false,
+  "network_session_active": false,
+  "inferred_access_reason": 7,
+  "note": "Read fields and verified handler code. Access reason inferred; native was not invoked."
+}

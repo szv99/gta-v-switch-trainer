@@ -1,0 +1,9664 @@
+//> Default Static Information
+SetStaticsCount 94
+SetStaticName 0 pendingModel
+SetStaticName 1 lastObject
+SetStaticName 2 lastBodyguard
+SetStaticName 3 invincible
+SetStaticName 4 previousPed
+SetStaticName 5 neverWanted
+SetStaticName 6 superJump
+SetStaticName 7 fastSprint
+SetStaticName 8 fastSwim
+SetStaticName 9 neverTired
+SetStaticName 10 ignoredByCops
+SetStaticName 11 thermalVision
+SetStaticName 12 nightVision
+SetStaticName 13 invisible
+SetStaticName 14 noRagdoll
+SetStaticName 15 vehGodmode
+SetStaticName 16 engineAlwaysOn
+SetStaticName 17 infiniteAmmo
+SetStaticName 18 neverReload
+SetStaticName 19 explosiveAmmo
+SetStaticName 20 fireAmmo
+SetStaticName 21 explosiveMelee
+SetStaticName 22 superDamage
+SetStaticName 23 clockPaused
+SetStaticName 24 blackout
+SetStaticName 25 lowGravity
+SetStaticName 26 seatbelt
+SetStaticName 27 driftMode
+SetStaticName 28 extraFlags
+SetStaticName 29 teleportState
+SetStaticName 30 menuOpen
+SetDefaultStatic 30 4294967295
+SetStaticName 31 lastResult
+SetStaticName 32 runtimeStatus
+SetStaticName 33 requestTime
+SetStaticName 34 teleportTargetX
+SetStaticName 35 teleportTargetY
+SetStaticName 36 teleZ
+SetStaticName 37 teleH
+SetStaticName 38 networkSignedIn
+SetStaticName 39 networkSignedOnline
+SetStaticName 40 networkAccessReason
+SetDefaultStatic 40 4294967295
+SetStaticName 41 networkCanAccess
+SetStaticName 42 networkGameInProgress
+SetStaticName 43 networkSessionActive
+SetStaticName 44 lastVehicle
+SetStaticName 45 teleportTime
+SetStaticName 46 spawnInVehicle
+SetDefaultStatic 46 4294967295
+SetStaticName 47 doorsOpen
+SetStaticName 48 spawnOffset
+SetDefaultStatic 48 4674736413210574848
+SetDefaultStatic 49 1056964608
+SetStaticName 51 tempPos
+SetStaticName 54 neonsOn
+SetStaticName 55 neonColorIndex
+SetStaticName 56 currentExtra
+SetDefaultStatic 56 1
+SetStaticName 57 tintIndex
+SetStaticName 58 wheelTypeIndex
+SetStaticName 59 customPaintIndex
+SetStaticName 60 pedComponentDrawable
+SetStaticName 61 objFrozen
+SetStaticName 62 spawnTuned
+SetDefaultStatic 62 4294967295
+SetStaticName 63 spawnGodmode
+SetStaticName 64 spawnCount
+SetStaticName 65 groundZ
+SetStaticName 66 markedColor
+SetDefaultStatic 66 255
+SetDefaultStatic 67 220
+SetDefaultStatic 68 60
+SetDefaultStatic 69 255
+SetStaticName 70 normalColor
+SetDefaultStatic 70 230
+SetDefaultStatic 71 230
+SetDefaultStatic 72 230
+SetDefaultStatic 73 255
+SetStaticName 74 selected
+SetStaticName 75 menuRow
+SetStaticName 76 currentMenu
+SetStaticName 77 colorIndex
+SetStaticName 78 plateIndex
+SetStaticName 79 categoryIndex
+SetStaticName 80 categoryModelIndex
+SetStaticName 81 timePresetIndex
+SetDefaultStatic 81 1
+SetStaticName 82 weatherPresetIndex
+SetStaticName 83 gameSpeedIndex
+SetStaticName 84 protocolMagic
+SetDefaultStatic 84 1314411569
+SetStaticName 85 protocolVersion
+SetDefaultStatic 85 1
+SetStaticName 86 heartbeat
+SetStaticName 87 remoteCommand
+SetStaticName 88 remoteArg
+SetStaticName 89 remoteSequence
+SetStaticName 90 acknowledgedSequence
+SetStaticName 91 rainbowStep
+SetStaticName 92 repeatControl
+SetStaticName 93 repeatTimer
+//<
+
+:__builtin__entryPoint//>
+Function 0 2
+Call @main
+Return 0 0
+//<
+
+:toggleFlag//>
+Function 2 4
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_0
+
+:__if_then_0
+GetStatic1 28
+GetFrame1 0
+Xor
+SetStatic1 28
+Jump @__if_end_0
+
+:__if_else_0
+GetFrame1 1
+Push_0
+CmpNe
+JumpFalse @__if_else_1
+
+:__if_then_1
+GetStatic1 28
+GetFrame1 0
+Or
+SetStatic1 28
+Jump @__if_end_1
+
+:__if_else_1
+GetStatic1 28
+GetFrame1 0
+Push_-1
+Xor
+And
+SetStatic1 28
+
+:__if_end_1
+
+:__if_end_0
+Return 2 0
+//<
+
+:toggleVal//>
+Function 2 4
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_end_2
+
+:__if_then_2
+GetFrame1 0
+Not
+Push_0
+CmpNe
+Return 2 1
+
+:__if_end_2
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:applyRainbowColor//>
+Function 2 8
+GetFrame1 1
+Push_6
+Mod
+SetFrame1 4
+Push_0
+SetFrame1 5
+Push_0
+SetFrame1 6
+Push_0
+SetFrame1 7
+GetFrame1 4
+Push_0
+CmpEq
+JumpFalse @__if_else_3
+
+:__if_then_3
+PushB 255
+SetFrame1 5
+Jump @__if_end_3
+
+:__if_else_3
+GetFrame1 4
+Push_1
+CmpEq
+JumpFalse @__if_else_4
+
+:__if_then_4
+PushB 255
+SetFrame1 5
+PushB 165
+SetFrame1 6
+Jump @__if_end_4
+
+:__if_else_4
+GetFrame1 4
+Push_2
+CmpEq
+JumpFalse @__if_else_5
+
+:__if_then_5
+PushB 255
+SetFrame1 5
+PushB 255
+SetFrame1 6
+Jump @__if_end_5
+
+:__if_else_5
+GetFrame1 4
+Push_3
+CmpEq
+JumpFalse @__if_else_6
+
+:__if_then_6
+PushB 255
+SetFrame1 6
+Jump @__if_end_6
+
+:__if_else_6
+GetFrame1 4
+Push_4
+CmpEq
+JumpFalse @__if_else_7
+
+:__if_then_7
+PushB 128
+SetFrame1 6
+PushB 255
+SetFrame1 7
+Jump @__if_end_7
+
+:__if_else_7
+PushB 160
+SetFrame1 5
+PushB 32
+SetFrame1 6
+PushB 240
+SetFrame1 7
+
+:__if_end_7
+
+:__if_end_6
+
+:__if_end_5
+
+:__if_end_4
+
+:__if_end_3
+GetFrame1 0
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+CallNative NX_SET_VEHICLE_CUSTOM_PRIMARY_COLOUR 4 0 //0x7141766F91D15BEA
+GetFrame1 0
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+CallNative NX_SET_VEHICLE_CUSTOM_SECONDARY_COLOUR 4 0 //0x36CED73BFED89754
+Return 2 0
+//<
+
+:getArsenalWeapon//>
+Function 1 3
+GetFrame1 0
+Switch [0 @__sw_0_0]:[1 @__sw_0_1]:[2 @__sw_0_2]:[3 @__sw_0_3]:[4 @__sw_0_4]:[5 @__sw_0_5]:[6 @__sw_0_6]:[7 @__sw_0_7]:[8 @__sw_0_8]:[9 @__sw_0_9]:[10 @__sw_0_10]:[11 @__sw_0_11]:[12 @__sw_0_12]:[13 @__sw_0_13]:[14 @__sw_0_14]:[15 @__sw_0_15]:[16 @__sw_0_16]:[17 @__sw_0_17]:[18 @__sw_0_18]:[19 @__sw_0_19]:[20 @__sw_0_20]
+Jump @__sw_0_def
+
+:__sw_0_0
+Push 453432689
+Return 1 1
+
+:__sw_0_1
+Push 1593441988
+Return 1 1
+
+:__sw_0_2
+Push 584646201
+Return 1 1
+
+:__sw_0_3
+Push 736523883
+Return 1 1
+
+:__sw_0_4
+Push 324215364
+Return 1 1
+
+:__sw_0_5
+Push -1074790547
+Return 1 1
+
+:__sw_0_6
+Push -2084633992
+Return 1 1
+
+:__sw_0_7
+Push -1357824103
+Return 1 1
+
+:__sw_0_8
+Push 487013001
+Return 1 1
+
+:__sw_0_9
+Push 2017895192
+Return 1 1
+
+:__sw_0_10
+Push 100416529
+Return 1 1
+
+:__sw_0_11
+Push 205991906
+Return 1 1
+
+:__sw_0_12
+Push -1312131151
+Return 1 1
+
+:__sw_0_13
+Push -1568386805
+Return 1 1
+
+:__sw_0_14
+Push 1119849030
+Return 1 1
+
+:__sw_0_15
+Push 741814745
+Return 1 1
+
+:__sw_0_16
+Push -1813897027
+Return 1 1
+
+:__sw_0_17
+Push 615608432
+Return 1 1
+
+:__sw_0_18
+Push -1716189206
+Return 1 1
+
+:__sw_0_19
+Push -1786099057
+Return 1 1
+
+:__sw_0_20
+Push -72657034
+Return 1 1
+
+:__sw_0_def
+Push 741814745
+Return 1 1
+
+:__sw_0_end
+//<
+
+:getCategoryModelCount//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+Not
+JumpFalse @__if_then_8
+
+:__pcf_8
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_8
+
+:__if_then_8
+Push_2
+Return 1 1
+
+:__if_end_8
+Push_1
+Return 1 1
+//<
+
+:getCategoryName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_9
+
+:__if_then_9
+PushString "Super"
+Return 1 1
+
+:__if_end_9
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_10
+
+:__if_then_10
+PushString "Sports"
+Return 1 1
+
+:__if_end_10
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_11
+
+:__if_then_11
+PushString "Muscle"
+Return 1 1
+
+:__if_end_11
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_12
+
+:__if_then_12
+PushString "Compact"
+Return 1 1
+
+:__if_end_12
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_13
+
+:__if_then_13
+PushString "SUV"
+Return 1 1
+
+:__if_end_13
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_14
+
+:__if_then_14
+PushString "Motorcycle"
+Return 1 1
+
+:__if_end_14
+PushString "Off-Road"
+Return 1 1
+//<
+
+:getModelName//>
+Function 2 4
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_15
+
+:__if_then_15
+GetFrame1 1
+Push_0
+CmpEq
+JumpFalse @__if_end_16
+
+:__if_then_16
+PushString "adder"
+Return 2 1
+
+:__if_end_16
+PushString "zentorno"
+Return 2 1
+
+:__if_end_15
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_17
+
+:__if_then_17
+PushString "sultan"
+Return 2 1
+
+:__if_end_17
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_18
+
+:__if_then_18
+PushString "buffalo"
+Return 2 1
+
+:__if_end_18
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_19
+
+:__if_then_19
+PushString "blista"
+Return 2 1
+
+:__if_end_19
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_20
+
+:__if_then_20
+PushString "baller"
+Return 2 1
+
+:__if_end_20
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_21
+
+:__if_then_21
+GetFrame1 1
+Push_0
+CmpEq
+JumpFalse @__if_end_22
+
+:__if_then_22
+PushString "bati"
+Return 2 1
+
+:__if_end_22
+PushString "sanchez"
+Return 2 1
+
+:__if_end_21
+PushString "bifta"
+Return 2 1
+//<
+
+:getTimePresetName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_23
+
+:__if_then_23
+PushString "Morning"
+Return 1 1
+
+:__if_end_23
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_24
+
+:__if_then_24
+PushString "Noon"
+Return 1 1
+
+:__if_end_24
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_25
+
+:__if_then_25
+PushString "Evening"
+Return 1 1
+
+:__if_end_25
+PushString "Midnight"
+Return 1 1
+//<
+
+:getTimePresetHour//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_26
+
+:__if_then_26
+PushB 8
+Return 1 1
+
+:__if_end_26
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_27
+
+:__if_then_27
+PushB 12
+Return 1 1
+
+:__if_end_27
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_28
+
+:__if_then_28
+PushB 18
+Return 1 1
+
+:__if_end_28
+Push_0
+Return 1 1
+//<
+
+:getWeatherPresetDisplayName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_29
+
+:__if_then_29
+PushString "Sunny"
+Return 1 1
+
+:__if_end_29
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_30
+
+:__if_then_30
+PushString "Clear"
+Return 1 1
+
+:__if_end_30
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_31
+
+:__if_then_31
+PushString "Clouds"
+Return 1 1
+
+:__if_end_31
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_32
+
+:__if_then_32
+PushString "Rain"
+Return 1 1
+
+:__if_end_32
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_33
+
+:__if_then_33
+PushString "Thunder"
+Return 1 1
+
+:__if_end_33
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_34
+
+:__if_then_34
+PushString "Foggy"
+Return 1 1
+
+:__if_end_34
+PushString "Snow"
+Return 1 1
+//<
+
+:getWeatherPresetEngineName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_35
+
+:__if_then_35
+PushString "EXTRASUNNY"
+Return 1 1
+
+:__if_end_35
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_36
+
+:__if_then_36
+PushString "CLEAR"
+Return 1 1
+
+:__if_end_36
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_37
+
+:__if_then_37
+PushString "CLOUDS"
+Return 1 1
+
+:__if_end_37
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_38
+
+:__if_then_38
+PushString "RAIN"
+Return 1 1
+
+:__if_end_38
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_39
+
+:__if_then_39
+PushString "THUNDER"
+Return 1 1
+
+:__if_end_39
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_40
+
+:__if_then_40
+PushString "FOGGY"
+Return 1 1
+
+:__if_end_40
+PushString "XMAS"
+Return 1 1
+//<
+
+:getColorName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_41
+
+:__if_then_41
+PushString "Black"
+Return 1 1
+
+:__if_end_41
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_42
+
+:__if_then_42
+PushString "White"
+Return 1 1
+
+:__if_end_42
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_43
+
+:__if_then_43
+PushString "Red"
+Return 1 1
+
+:__if_end_43
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_44
+
+:__if_then_44
+PushString "Blue"
+Return 1 1
+
+:__if_end_44
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_45
+
+:__if_then_45
+PushString "Green"
+Return 1 1
+
+:__if_end_45
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_46
+
+:__if_then_46
+PushString "Yellow"
+Return 1 1
+
+:__if_end_46
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_end_47
+
+:__if_then_47
+PushString "Orange"
+Return 1 1
+
+:__if_end_47
+PushString "Chrome"
+Return 1 1
+//<
+
+:getColorCode//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_48
+
+:__if_then_48
+Push_0
+Return 1 1
+
+:__if_end_48
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_49
+
+:__if_then_49
+PushB 111
+Return 1 1
+
+:__if_end_49
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_50
+
+:__if_then_50
+PushB 27
+Return 1 1
+
+:__if_end_50
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_51
+
+:__if_then_51
+PushB 64
+Return 1 1
+
+:__if_end_51
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_52
+
+:__if_then_52
+PushB 55
+Return 1 1
+
+:__if_end_52
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_53
+
+:__if_then_53
+PushB 88
+Return 1 1
+
+:__if_end_53
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_end_54
+
+:__if_then_54
+PushB 38
+Return 1 1
+
+:__if_end_54
+PushB 120
+Return 1 1
+//<
+
+:getPlateName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_55
+
+:__if_then_55
+PushString "Blue/White"
+Return 1 1
+
+:__if_end_55
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_56
+
+:__if_then_56
+PushString "Yellow/Black"
+Return 1 1
+
+:__if_end_56
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_57
+
+:__if_then_57
+PushString "Yellow/Blue"
+Return 1 1
+
+:__if_end_57
+PushString "SA Exempt"
+Return 1 1
+//<
+
+:getSpeedName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_58
+
+:__if_then_58
+PushString "Normal"
+Return 1 1
+
+:__if_end_58
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_59
+
+:__if_then_59
+PushString "0.5x"
+Return 1 1
+
+:__if_end_59
+PushString "0.2x"
+Return 1 1
+//<
+
+:getNeonColorName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_60
+
+:__if_then_60
+PushString "White"
+Return 1 1
+
+:__if_end_60
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_61
+
+:__if_then_61
+PushString "Blue"
+Return 1 1
+
+:__if_end_61
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_62
+
+:__if_then_62
+PushString "Mint"
+Return 1 1
+
+:__if_end_62
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_63
+
+:__if_then_63
+PushString "Lime"
+Return 1 1
+
+:__if_end_63
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_64
+
+:__if_then_64
+PushString "Yellow"
+Return 1 1
+
+:__if_end_64
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_65
+
+:__if_then_65
+PushString "Pink"
+Return 1 1
+
+:__if_end_65
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_end_66
+
+:__if_then_66
+PushString "Red"
+Return 1 1
+
+:__if_end_66
+PushString "Purple"
+Return 1 1
+//<
+
+:getWindowTintName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_67
+
+:__if_then_67
+PushString "None"
+Return 1 1
+
+:__if_end_67
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_68
+
+:__if_then_68
+PushString "Pure Black"
+Return 1 1
+
+:__if_end_68
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_69
+
+:__if_then_69
+PushString "Dark Smoke"
+Return 1 1
+
+:__if_end_69
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_70
+
+:__if_then_70
+PushString "Light Smoke"
+Return 1 1
+
+:__if_end_70
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_71
+
+:__if_then_71
+PushString "Stock"
+Return 1 1
+
+:__if_end_71
+PushString "Limo"
+Return 1 1
+//<
+
+:getWheelTypeName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_72
+
+:__if_then_72
+PushString "Sport"
+Return 1 1
+
+:__if_end_72
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_73
+
+:__if_then_73
+PushString "Muscle"
+Return 1 1
+
+:__if_end_73
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_74
+
+:__if_then_74
+PushString "Lowrider"
+Return 1 1
+
+:__if_end_74
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_75
+
+:__if_then_75
+PushString "SUV"
+Return 1 1
+
+:__if_end_75
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_76
+
+:__if_then_76
+PushString "Offroad"
+Return 1 1
+
+:__if_end_76
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_77
+
+:__if_then_77
+PushString "Tuner"
+Return 1 1
+
+:__if_end_77
+PushString "High End"
+Return 1 1
+//<
+
+:getCustomPaintName//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_78
+
+:__if_then_78
+PushString "Matte Black"
+Return 1 1
+
+:__if_end_78
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_79
+
+:__if_then_79
+PushString "Gold"
+Return 1 1
+
+:__if_end_79
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_80
+
+:__if_then_80
+PushString "Hot Red"
+Return 1 1
+
+:__if_end_80
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_81
+
+:__if_then_81
+PushString "Electric Blue"
+Return 1 1
+
+:__if_end_81
+PushString "Lime Green"
+Return 1 1
+//<
+
+:getMaxRows//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_end_82
+
+:__if_then_82
+PushB 12
+Return 1 1
+
+:__if_end_82
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_83
+
+:__if_then_83
+PushB 25
+Return 1 1
+
+:__if_end_83
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_84
+
+:__if_then_84
+PushB 28
+Return 1 1
+
+:__if_end_84
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_85
+
+:__if_then_85
+PushB 8
+Return 1 1
+
+:__if_end_85
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_86
+
+:__if_then_86
+PushB 17
+Return 1 1
+
+:__if_end_86
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_87
+
+:__if_then_87
+PushB 15
+Return 1 1
+
+:__if_end_87
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_end_88
+
+:__if_then_88
+PushB 15
+Return 1 1
+
+:__if_end_88
+GetFrame1 0
+Push_7
+CmpEq
+JumpFalse @__if_end_89
+
+:__if_then_89
+PushB 9
+Return 1 1
+
+:__if_end_89
+GetFrame1 0
+PushB 8
+CmpEq
+JumpFalse @__if_end_90
+
+:__if_then_90
+PushB 9
+Return 1 1
+
+:__if_end_90
+GetFrame1 0
+PushB 9
+CmpEq
+JumpFalse @__if_end_91
+
+:__if_then_91
+PushB 10
+Return 1 1
+
+:__if_end_91
+GetFrame1 0
+PushB 10
+CmpEq
+JumpFalse @__if_end_92
+
+:__if_then_92
+PushB 8
+Return 1 1
+
+:__if_end_92
+Push_5
+Return 1 1
+//<
+
+:releasePending//>
+Function 0 2
+GetStatic1 0
+JumpFalse @__if_end_93
+
+:__if_then_93
+GetStatic1 0
+CallNative SET_MODEL_AS_NO_LONGER_NEEDED 1 0 //0xE532F5D78798DAAB
+
+:__if_end_93
+Push_0
+SetStatic1 0
+Return 0 0
+//<
+
+:deleteLastObject//>
+Function 0 2
+GetStatic1 1
+JumpFalse @__if_end_94
+
+:__pcf_95
+GetStatic1 1
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_94
+
+:__if_then_94
+GetStaticP1 1
+CallNative NX_DELETE_OBJECT 1 0 //0x539E0AE3E6634B9F
+Push_0
+SetStatic1 1
+
+:__if_end_94
+Return 0 0
+//<
+
+:deleteLastBodyguard//>
+Function 0 2
+GetStatic1 2
+JumpFalse @__if_end_95
+
+:__pcf_98
+GetStatic1 2
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_95
+
+:__if_then_95
+GetStaticP1 2
+CallNative NX_DELETE_PED 1 0 //0x9614299DCB53E54B
+Push_0
+SetStatic1 2
+
+:__if_end_95
+Return 0 0
+//<
+
+:cleanup//>
+Function 0 2
+GetStatic1 3
+JumpFalse @__if_end_96
+
+:__pcf_102
+GetStatic1 4
+JumpFalse @__if_end_96
+
+:__pcf_101
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_96
+
+:__if_then_96
+GetStatic1 4
+Push_0
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+
+:__if_end_96
+Push_0
+SetStatic1 3
+Push_0
+SetStatic1 5
+Push_0
+SetStatic1 6
+Push_0
+SetStatic1 7
+Push_0
+SetStatic1 8
+Push_0
+SetStatic1 9
+Push_0
+SetStatic1 10
+Push_0
+SetStatic1 11
+Push_0
+SetStatic1 12
+Push_0
+SetStatic1 13
+Push_0
+SetStatic1 14
+Push_0
+SetStatic1 15
+Push_0
+SetStatic1 16
+Push_0
+SetStatic1 17
+Push_0
+SetStatic1 18
+Push_0
+SetStatic1 19
+Push_0
+SetStatic1 20
+Push_0
+SetStatic1 21
+Push_0
+SetStatic1 22
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushF_1
+CallNative NX_SET_RUN_SPRINT_MULTIPLIER 2 0 //0x6DB47AA77FD94E09
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushF_1
+CallNative NX_SET_SWIM_MULTIPLIER_FOR_PLAYER 2 0 //0xA91C6F0FF7D16A13
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+Push_0
+CallNative NX_SET_POLICE_IGNORE_PLAYER 2 0 //0x32C62AA929C2DA6A
+Push_0
+CallNative NX_SET_SEETHROUGH 1 0 //0x7E08924259E08CE0
+Push_0
+CallNative NX_SET_NIGHTVISION 1 0 //0x18F621F7A5B1F85D
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushF_1
+CallNative NX_SET_PLAYER_WEAPON_DAMAGE_MODIFIER 2 0 //0xCE07B9F7817AADA3
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushF_1
+Push_0
+CallNative NX_SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER 3 0 //0x4A3DC7ECCC321032
+GetStatic1 4
+JumpFalse @__if_end_97
+
+:__pcf_106
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_97
+
+:__if_then_97
+GetStatic1 4
+Push_1
+CallNative NX_SET_PED_CAN_RAGDOLL 2 0 //0xB128377056A54E2A
+GetStatic1 4
+PushB2 1 0
+CallNative NX_SET_ENTITY_VISIBLE 3 0 //0xEA1C610A04DB6BBB
+
+:__if_end_97
+GetStatic1 23
+JumpFalse @__if_end_98
+
+:__if_then_98
+Push_0
+SetStatic1 23
+Push_0
+CallNative NX_PAUSE_CLOCK 1 0 //0x4055E40BD2DBEC1D
+
+:__if_end_98
+GetStatic1 24
+JumpFalse @__if_end_99
+
+:__if_then_99
+Push_0
+SetStatic1 24
+Push_0
+CallNative NX_SET_ARTIFICIAL_LIGHTS_STATE 1 0 //0x1268615ACE24D504
+
+:__if_end_99
+GetStatic1 25
+JumpFalse @__if_end_100
+
+:__if_then_100
+Push_0
+SetStatic1 25
+Push_0
+CallNative NX_SET_GRAVITY_LEVEL 1 0 //0x740E14FAD5842351
+
+:__if_end_100
+PushF_1
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+CallNative NX_CLEAR_WEATHER_TYPE_PERSIST 0 0 //0xCCC39339BEF76CF5
+Call @deleteLastObject
+Call @deleteLastBodyguard
+GetStatic1 26
+JumpFalse @__if_end_101
+
+:__pcf_113
+GetStatic1 4
+JumpFalse @__if_end_101
+
+:__pcf_112
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_101
+
+:__if_then_101
+GetStatic1 4
+PushB2 32 1
+CallNative NX_SET_PED_CONFIG_FLAG 3 0 //0x1913FE4CBF41C463
+
+:__if_end_101
+Push_0
+SetStatic1 26
+Push_0
+SetStatic1 27
+GetStatic1 28
+PushB 32
+And
+JumpFalse @__if_end_102
+
+:__if_then_102
+Push_0
+CallNative NX_SET_RIOT_MODE_ENABLED 1 0 //0x2587A48BC88DFADF
+
+:__if_end_102
+GetStatic1 28
+PushS 1024
+And
+JumpFalse @__if_end_103
+
+:__if_then_103
+PushF_1
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+
+:__if_end_103
+GetStatic1 28
+PushS 2048
+And
+JumpFalse @__if_end_104
+
+:__pcf_120
+GetStatic1 4
+JumpFalse @__if_end_104
+
+:__pcf_119
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_104
+
+:__if_then_104
+GetStatic1 4
+Push_0
+CallNative NX_SET_PED_IS_DRUNK 2 0 //0x95D2D383D5396B8A
+
+:__if_end_104
+GetStatic1 28
+PushS 4096
+And
+JumpFalse @__if_end_105
+
+:__pcf_125
+GetStatic1 4
+JumpFalse @__if_end_105
+
+:__pcf_124
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_105
+
+:__if_then_105
+GetStatic1 4
+CallNative NX_CLEAR_PED_TASKS 1 0 //0xE1EF3C1216AFF2CD
+
+:__if_end_105
+Push_0
+SetStatic1 28
+Call @releasePending
+Push_0
+SetStatic1 29
+Push_0
+SetStatic1 30
+Push_7
+SetStatic1 31
+Push_2
+SetStatic1 32
+Return 0 0
+//<
+
+:loadModelSync//>
+Function 1 4
+GetFrame1 0
+CallNative IS_MODEL_IN_CDIMAGE 1 1 //0x35B9E0803292B641
+Not
+JumpFalse @__if_end_106
+
+:__if_then_106
+Push_0
+Return 1 1
+
+:__if_end_106
+GetFrame1 0
+CallNative REQUEST_MODEL 1 0 //0x963D27A58DF860AC
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushS 2000
+Add
+SetFrame1 3
+GetFrame1 0
+CallNative HAS_MODEL_LOADED 1 1 //0x98A4EB5D89A0C952
+Not
+JumpFalse @__while_end_0
+
+:__pcf_130
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetFrame1 3
+CmpLt
+JumpFalse @__while_end_0
+
+:__while_body_0
+Push_0
+CallNative WAIT 1 0 //0x4EDE34FBADD967A6
+
+:__while_cond_0
+GetFrame1 0
+CallNative HAS_MODEL_LOADED 1 1 //0x98A4EB5D89A0C952
+Not
+JumpFalse @__while_end_0
+
+:__pct_1
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetFrame1 3
+CmpLt
+Not
+JumpFalse @__while_body_0
+
+:__while_end_0
+GetFrame1 0
+CallNative HAS_MODEL_LOADED 1 1 //0x98A4EB5D89A0C952
+Return 1 1
+//<
+
+:requestVehicle//>
+Function 1 3
+GetStatic1 0
+JumpFalse @__if_end_107
+
+:__if_then_107
+PushS -6
+SetStatic1 31
+Return 1 0
+
+:__if_end_107
+GetFrame1 0
+CallNative IS_MODEL_IN_CDIMAGE 1 1 //0x35B9E0803292B641
+Not
+Not
+JumpFalse @__if_then_108
+
+:__pcf_135
+GetFrame1 0
+CallNative IS_MODEL_A_VEHICLE 1 1 //0x19AAC8F07BFEC53E
+Not
+JumpFalse @__if_end_108
+
+:__if_then_108
+PushS -2
+SetStatic1 31
+Return 1 0
+
+:__if_end_108
+GetFrame1 0
+SetStatic1 0
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+SetStatic1 33
+Push_1
+SetStatic1 31
+GetFrame1 0
+CallNative REQUEST_MODEL 1 0 //0x963D27A58DF860AC
+Return 1 0
+//<
+
+:maxTuneVehicle//>
+Function 1 5
+GetFrame1 0
+Push_0
+CallNative NX_SET_VEHICLE_MOD_KIT 2 0 //0x1F2AA07F00B3217A
+PushB 11
+SetFrame1 3
+GetFrame1 3
+PushB 16
+CmpLe
+JumpFalse @__for_end_0
+
+:__for_body_0
+GetFrame1 0
+GetFrame1 3
+CallNative NX_GET_NUM_VEHICLE_MODS 2 1 //0xE38E9162A2500646
+SetFrame1 4
+GetFrame1 4
+Push_0
+CmpGt
+JumpFalse @__if_end_109
+
+:__if_then_109
+GetFrame1 0
+GetFrame1 3
+GetFrame1 4
+Push_1
+Sub
+Push_0
+CallNative NX_SET_VEHICLE_MOD 4 0 //0x6AF0636DDEDCB6DD
+
+:__if_end_109
+
+:__for_continue_0
+GetFrame1 3
+Add1 1
+SetFrame1 3
+GetFrame1 3
+PushB 16
+CmpLe
+Not
+JumpFalse @__for_body_0
+
+:__for_end_0
+GetFrame1 0
+PushB2 18 1
+CallNative NX_TOGGLE_VEHICLE_MOD 3 0 //0x2A1F4F37F95BAD08
+Return 1 0
+//<
+
+:updateVehicle//>
+Function 1 4
+GetStatic1 0
+Not
+JumpFalse @__if_end_110
+
+:__if_then_110
+Return 1 0
+
+:__if_end_110
+GetStatic1 0
+CallNative HAS_MODEL_LOADED 1 1 //0x98A4EB5D89A0C952
+JumpFalse @__if_else_111
+
+:__if_then_111
+GetFrame1 0
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+GetStatic1 0
+Push_3
+GetStaticP1 51
+ToStack
+GetFrame1 0
+CallNative GET_ENTITY_HEADING 1 1 //0xE83D4F9BA2A38914
+PushB3 0 0 0
+CallNative NX_CREATE 8 1 //0xAF35D0D2583051B0
+SetFrame1 3
+GetFrame1 3
+JumpFalse @__if_else_112
+
+:__pcf_141
+GetFrame1 3
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_112
+
+:__if_then_112
+GetFrame1 3
+PushF_5
+CallNative SET_VEHICLE_ON_GROUND_PROPERLY 2 1 //0x49733E92263139D1
+Drop
+GetStatic1 62
+JumpFalse @__if_end_113
+
+:__if_then_113
+GetFrame1 3
+Call @maxTuneVehicle
+
+:__if_end_113
+GetStatic1 63
+JumpFalse @__if_end_114
+
+:__if_then_114
+GetFrame1 3
+Push_1
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+GetFrame1 3
+Push_0
+CallNative NX_SET_VEHICLE_CAN_BE_VISIBLY_DAMAGED 2 0 //0x4C7028F78FFD3681
+GetFrame1 3
+Push_0
+CallNative NX_SET_VEHICLE_TYRES_CAN_BURST 2 0 //0xEB9DC3C7D8596C46
+
+:__if_end_114
+GetStatic1 46
+JumpFalse @__if_end_115
+
+:__if_then_115
+GetFrame1 0
+GetFrame1 3
+Push_-1
+CallNative NX_SET_PED_INTO_VEHICLE 3 0 //0xF75B0D629E1C063D
+
+:__if_end_115
+GetFrame1 3
+SetStatic1 44
+GetStatic1 64
+Add1 1
+SetStatic1 64
+Push_2
+SetStatic1 31
+GetFrameP1 3
+CallNative SET_VEHICLE_AS_NO_LONGER_NEEDED 1 0 //0x629BFA74418D6239
+Jump @__if_end_112
+
+:__if_else_112
+PushS -4
+SetStatic1 31
+
+:__if_end_112
+Call @releasePending
+Jump @__if_end_111
+
+:__if_else_111
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 33
+Sub
+PushS 5000
+CmpGt
+JumpFalse @__if_end_116
+
+:__if_then_116
+Call @releasePending
+PushS -3
+SetStatic1 31
+
+:__if_end_116
+
+:__if_end_111
+Return 1 0
+//<
+
+:updateTeleport//>
+Function 1 6
+GetStatic1 29
+Push_0
+CmpEq
+JumpFalse @__if_end_117
+
+:__if_then_117
+Return 1 0
+
+:__if_end_117
+GetFrame1 0
+SetFrame1 3
+GetFrame1 0
+Push_0
+CallNative IS_PED_IN_ANY_VEHICLE 2 1 //0x997ABD671D25CA0B
+JumpFalse @__if_end_118
+
+:__if_then_118
+GetFrame1 0
+Push_0
+CallNative GET_VEHICLE_PED_IS_IN 2 1 //0x9A9112A0FE9A4713
+SetFrame1 3
+
+:__if_end_118
+GetFrame1 3
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+Not
+JumpFalse @__if_end_119
+
+:__if_then_119
+Push_0
+SetStatic1 29
+Return 1 0
+
+:__if_end_119
+Push_0
+SetFrame1 4
+PushF 50.000000
+SetFrame1 5
+GetFrame1 5
+PushF 800.000000
+FCmpLe
+JumpFalse @__for_end_1
+
+:__for_body_1
+GetStatic1 34
+GetStatic1 35
+GetFrame1 5
+GetStaticP1 65
+PushB2 0 0
+CallNative NX_GET_GROUND_Z 6 1 //0xC906A7DAB05C8D2B
+JumpFalse @__if_end_120
+
+:__if_then_120
+Push_1
+SetFrame1 4
+Jump @__for_end_1
+
+:__if_end_120
+
+:__for_continue_1
+GetFrame1 5
+PushF 150.000000
+FAdd
+SetFrame1 5
+GetFrame1 5
+PushF 800.000000
+FCmpLe
+Not
+JumpFalse @__for_body_1
+
+:__for_end_1
+GetFrame1 4
+JumpFalse @__if_else_121
+
+:__if_then_121
+Push_0
+SetStatic1 29
+GetFrame1 3
+GetStatic1 34
+GetStatic1 35
+GetStatic1 65
+PushF_1
+FAdd
+PushB3 0 0 0
+Push_1
+CallNative NX_SET_ENTITY_COORDS 8 0 //0x6843DA7060A026B
+GetFrame1 3
+GetFrame1 0
+CmpNe
+JumpFalse @__if_end_122
+
+:__if_then_122
+GetFrame1 3
+PushF_5
+CallNative SET_VEHICLE_ON_GROUND_PROPERLY 2 1 //0x49733E92263139D1
+Drop
+GetFrame1 3
+PushF_0
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+
+:__if_end_122
+PushB 13
+SetStatic1 31
+Jump @__if_end_121
+
+:__if_else_121
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 45
+Sub
+PushS 3500
+CmpGt
+JumpFalse @__if_end_123
+
+:__if_then_123
+Push_0
+SetStatic1 29
+PushS -13
+SetStatic1 31
+
+:__if_end_123
+
+:__if_end_121
+Return 1 0
+//<
+
+:setTele//>
+Function 4 6
+GetFrame1 0
+SetStatic1 34
+GetFrame1 1
+SetStatic1 35
+GetFrame1 2
+SetStatic1 36
+GetFrame1 3
+SetStatic1 37
+Return 4 0
+//<
+
+:setTeleportLocation//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpEq
+JumpFalse @__if_else_124
+
+:__if_then_124
+PushF -813.880005
+PushF 178.679993
+PushF 72.150002
+PushF 110.000000
+Call @setTele
+Jump @__if_end_124
+
+:__if_else_124
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_else_125
+
+:__if_then_125
+PushF 7.900000
+PushF 529.799988
+PushF 170.600006
+PushF 290.000000
+Call @setTele
+Jump @__if_end_125
+
+:__if_else_125
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_else_126
+
+:__if_then_126
+PushF 1975.199951
+PushF 3817.300049
+PushF 33.400002
+PushF 30.000000
+Call @setTele
+Jump @__if_end_126
+
+:__if_else_126
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_else_127
+
+:__if_then_127
+PushF -365.399994
+PushF -131.800003
+PushF 38.700001
+PushF 70.000000
+Call @setTele
+Jump @__if_end_127
+
+:__if_else_127
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_else_128
+
+:__if_then_128
+PushF -1034.599976
+PushF -2733.600098
+PushF 13.800000
+PushF 330.000000
+Call @setTele
+Jump @__if_end_128
+
+:__if_else_128
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_else_129
+
+:__if_then_129
+PushF -75.000000
+PushF -818.500000
+PushF 326.000000
+PushF 330.000000
+Call @setTele
+Jump @__if_end_129
+
+:__if_else_129
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_else_130
+
+:__if_then_130
+PushF 501.500000
+PushF 5604.500000
+PushF 797.900024
+PushF 355.000000
+Call @setTele
+Jump @__if_end_130
+
+:__if_else_130
+GetFrame1 0
+Push_7
+CmpEq
+JumpFalse @__if_else_131
+
+:__if_then_131
+PushF -2047.400024
+PushF 3132.100098
+PushF 32.799999
+PushF 150.000000
+Call @setTele
+Jump @__if_end_131
+
+:__if_else_131
+GetFrame1 0
+PushB 8
+CmpEq
+JumpFalse @__if_else_132
+
+:__if_then_132
+PushF 1846.400024
+PushF 2585.899902
+PushF 45.700001
+PushF 90.000000
+Call @setTele
+Jump @__if_end_132
+
+:__if_else_132
+GetFrame1 0
+PushB 9
+CmpEq
+JumpFalse @__if_else_133
+
+:__if_then_133
+PushF -438.399994
+PushF 1072.800049
+PushF 327.700012
+PushF 340.000000
+Call @setTele
+Jump @__if_end_133
+
+:__if_else_133
+GetFrame1 0
+PushB 10
+CmpEq
+JumpFalse @__if_else_134
+
+:__if_then_134
+PushF 1747.000000
+PushF 3273.000000
+PushF 41.099998
+PushF 190.000000
+Call @setTele
+Jump @__if_end_134
+
+:__if_else_134
+GetFrame1 0
+PushB 11
+CmpEq
+JumpFalse @__if_else_135
+
+:__if_then_135
+PushF -106.000000
+PushF 6467.000000
+PushF 31.600000
+PushF 45.000000
+Call @setTele
+Jump @__if_end_135
+
+:__if_else_135
+GetFrame1 0
+PushB 12
+CmpEq
+JumpFalse @__if_else_136
+
+:__if_then_136
+PushF -1686.000000
+PushF -1072.000000
+PushF 13.100000
+PushF 50.000000
+Call @setTele
+Jump @__if_end_136
+
+:__if_else_136
+PushF 3616.000000
+PushF 3737.000000
+PushF 28.700001
+PushF 270.000000
+Call @setTele
+
+:__if_end_136
+
+:__if_end_135
+
+:__if_end_134
+
+:__if_end_133
+
+:__if_end_132
+
+:__if_end_131
+
+:__if_end_130
+
+:__if_end_129
+
+:__if_end_128
+
+:__if_end_127
+
+:__if_end_126
+
+:__if_end_125
+
+:__if_end_124
+Return 1 0
+//<
+
+:teleportEntity//>
+Function 1 3
+GetStatic1 34
+GetStatic1 35
+GetStatic1 36
+CallNative NX_LOAD_SCENE 3 1 //0x4448EB75B4904BDB
+Drop
+GetStatic1 34
+GetStatic1 35
+GetStatic1 36
+CallNative NX_REQUEST_COLLISION_AT_COORD 3 0 //0x7503F7948F491A7
+GetFrame1 0
+GetStatic1 34
+GetStatic1 35
+GetStatic1 36
+PushB3 0 0 0
+Push_1
+CallNative NX_SET_ENTITY_COORDS 8 0 //0x6843DA7060A026B
+GetFrame1 0
+GetStatic1 37
+CallNative NX_SET_ENTITY_HEADING 2 0 //0x8E2530AA8ADA980E
+GetFrame1 0
+CallNative PLAYER_PED_ID 0 1 //0xD80958FC74E988A6
+CmpNe
+JumpFalse @__if_end_137
+
+:__if_then_137
+GetFrame1 0
+PushF_5
+CallNative SET_VEHICLE_ON_GROUND_PROPERLY 2 1 //0x49733E92263139D1
+Drop
+GetFrame1 0
+PushF_0
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+
+:__if_end_137
+Return 1 0
+//<
+
+:action//>
+Function 2 10
+GetFrame1 0
+Push_1
+CmpEq
+JumpFalse @__if_end_138
+
+:__if_then_138
+Call @cleanup
+Return 2 0
+
+:__if_end_138
+GetFrame1 0
+PushB 8
+CmpEq
+JumpFalse @__if_end_139
+
+:__if_then_139
+CallNative NETWORK_IS_SIGNED_IN 0 1 //0x54354A99211EB96
+SetStatic1 38
+CallNative NETWORK_IS_SIGNED_ONLINE 0 1 //0x1077788E268557C2
+SetStatic1 39
+Push_-1
+SetStatic1 40
+GetStaticP1 40
+CallNative NETWORK_CAN_ACCESS_MULTIPLAYER 1 1 //0xAF50DA1A3F8B1BA4
+SetStatic1 41
+CallNative NETWORK_IS_GAME_IN_PROGRESS 0 1 //0x10FAB35428CCC9D7
+SetStatic1 42
+CallNative NETWORK_IS_SESSION_ACTIVE 0 1 //0xD83C2B94E7508980
+SetStatic1 43
+PushB 8
+SetStatic1 31
+Return 2 0
+
+:__if_end_139
+CallNative PLAYER_PED_ID 0 1 //0xD80958FC74E988A6
+SetFrame1 4
+GetFrame1 0
+PushB 9
+CmpEq
+JumpFalse @__if_end_140
+
+:__if_then_140
+GetFrame1 1
+Push_0
+CmpEq
+JumpFalse @__if_else_141
+
+:__if_then_141
+CallNative NETWORK_IS_SIGNED_IN 0 1 //0x54354A99211EB96
+SetStatic1 38
+CallNative NETWORK_IS_SIGNED_ONLINE 0 1 //0x1077788E268557C2
+SetStatic1 39
+Push_-1
+SetStatic1 40
+GetStaticP1 40
+CallNative NETWORK_CAN_ACCESS_MULTIPLAYER 1 1 //0xAF50DA1A3F8B1BA4
+SetStatic1 41
+GetStatic1 38
+Not
+Not
+JumpFalse @__if_then_142
+
+:__pct_6
+GetStatic1 39
+Not
+Not
+JumpFalse @__if_then_142
+
+:__pcf_174
+GetStatic1 41
+Not
+JumpFalse @__if_end_142
+
+:__if_then_142
+PushS -49
+SetStatic1 31
+Return 2 0
+
+:__if_end_142
+Push_0
+PushB3 0 1 32
+Push_0
+CallNative NX_TRANSITION_FREEMODE 5 1 //0x3AAD8B2FCA1E289F
+SetFrame1 5
+GetFrame1 5
+JumpFalse @__cond_false_0
+
+:__cond_true_0
+PushB 9
+Jump @__cond_end_0
+
+:__cond_false_0
+PushS -39
+
+:__cond_end_0
+SetStatic1 31
+Jump @__if_end_141
+
+:__if_else_141
+GetFrame1 1
+Push_1
+CmpEq
+JumpFalse @__if_else_143
+
+:__if_then_143
+PushB3 1 32 0
+CallNative NX_SESSION_HOST 3 1 //0x6F3D4ED9BEE4E61D
+SetFrame1 5
+GetFrame1 5
+JumpFalse @__cond_false_1
+
+:__cond_true_1
+PushB 10
+Jump @__cond_end_1
+
+:__cond_false_1
+PushS -10
+
+:__cond_end_1
+SetStatic1 31
+Jump @__if_end_143
+
+:__if_else_143
+GetFrame1 1
+Push_5
+CmpEq
+JumpFalse @__if_end_144
+
+:__if_then_144
+PushB3 5 32 0
+CallNative NX_SESSION_HOST 3 1 //0x6F3D4ED9BEE4E61D
+SetFrame1 5
+GetFrame1 5
+JumpFalse @__cond_false_2
+
+:__cond_true_2
+PushB 11
+Jump @__cond_end_2
+
+:__cond_false_2
+PushS -11
+
+:__cond_end_2
+SetStatic1 31
+
+:__if_end_144
+
+:__if_end_143
+
+:__if_end_141
+Return 2 0
+
+:__if_end_140
+GetFrame1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+Not
+Not
+JumpFalse @__if_then_145
+
+:__pcf_181
+GetFrame1 4
+CallNative IS_ENTITY_DEAD 1 1 //0x5F9532F3B5CC2551
+JumpFalse @__if_end_145
+
+:__if_then_145
+Push_-1
+SetStatic1 31
+Return 2 0
+
+:__if_end_145
+GetFrame1 4
+Push_0
+CallNative IS_PED_IN_ANY_VEHICLE 2 1 //0x997ABD671D25CA0B
+JumpFalse @__cond_false_3
+
+:__cond_true_3
+GetFrame1 4
+Push_0
+CallNative GET_VEHICLE_PED_IS_IN 2 1 //0x9A9112A0FE9A4713
+Jump @__cond_end_3
+
+:__cond_false_3
+Push_0
+
+:__cond_end_3
+SetFrame1 5
+GetFrame1 5
+Not
+JumpFalse @__if_end_146
+
+:__if_then_146
+GetFrame1 0
+Push_5
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pct_18
+GetFrame1 0
+PushB 10
+CmpGe
+JumpFalse @__pct_17
+
+:__pct_20
+GetFrame1 0
+PushB 12
+CmpLe
+Not
+JumpFalse @__if_then_147
+
+:__pct_17
+GetFrame1 0
+PushB 29
+CmpGe
+JumpFalse @__pct_16
+
+:__pct_22
+GetFrame1 0
+PushB 32
+CmpLe
+Not
+JumpFalse @__if_then_147
+
+:__pct_16
+GetFrame1 0
+PushB 46
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pct_15
+GetFrame1 0
+PushB 48
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pct_14
+GetFrame1 0
+PushB 49
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pct_13
+GetFrame1 0
+PushB 60
+CmpGe
+JumpFalse @__pct_12
+
+:__pct_27
+GetFrame1 0
+PushB 65
+CmpLe
+Not
+JumpFalse @__if_then_147
+
+:__pct_12
+GetFrame1 0
+PushB 75
+CmpGe
+JumpFalse @__pct_11
+
+:__pct_29
+GetFrame1 0
+PushB 77
+CmpLe
+Not
+JumpFalse @__if_then_147
+
+:__pct_11
+GetFrame1 0
+PushB 95
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pct_10
+GetFrame1 0
+PushB 101
+CmpEq
+Not
+JumpFalse @__if_then_147
+
+:__pcf_185
+GetFrame1 0
+PushB 102
+CmpEq
+JumpFalse @__if_end_147
+
+:__if_then_147
+PushS -5
+SetStatic1 31
+Return 2 0
+
+:__if_end_147
+
+:__if_end_146
+GetFrame1 0
+Push_2
+CmpEq
+JumpFalse @__if_end_148
+
+:__if_then_148
+GetFrame1 1
+Call @requestVehicle
+
+:__if_end_148
+GetFrame1 0
+Push_3
+CmpEq
+JumpFalse @__if_end_149
+
+:__if_then_149
+GetFrame1 4
+GetFrame1 4
+CallNative GET_ENTITY_MAX_HEALTH 1 1 //0x15D757606D170C3C
+PushB2 0 0
+CallNative NX_HEAL 4 0 //0x6B76DC1F3AE6E6A3
+GetFrame1 4
+PushB 100
+CallNative SET_PED_ARMOUR 2 0 //0xCEA04D83135264CC
+Push_3
+SetStatic1 31
+
+:__if_end_149
+GetFrame1 0
+Push_4
+CmpEq
+JumpFalse @__if_end_150
+
+:__if_then_150
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushB2 0 0
+CallNative SET_PLAYER_WANTED_LEVEL 3 0 //0x39FF19C64EF7DA5B
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+Push_0
+CallNative SET_PLAYER_WANTED_LEVEL_NOW 2 0 //0xE0A7D1E497FFCD6F
+Push_4
+SetStatic1 31
+
+:__if_end_150
+GetFrame1 0
+Push_5
+CmpEq
+JumpFalse @__if_end_151
+
+:__if_then_151
+GetFrame1 5
+CallNative SET_VEHICLE_FIXED 1 0 //0x115722B1B9C14C1C
+GetFrame1 5
+CallNative NX_SET_VEHICLE_DEFORMATION_FIXED 1 0 //0x953DA1E1B12C0491
+GetFrame1 5
+PushF_0
+CallNative NX_SET_VEHICLE_DIRT_LEVEL 2 0 //0x79D3B596FE44EE8B
+Push_5
+SetStatic1 31
+
+:__if_end_151
+GetFrame1 0
+Push_6
+CmpEq
+JumpFalse @__if_end_152
+
+:__if_then_152
+GetStatic1 3
+GetFrame1 1
+Call @toggleVal
+SetStatic1 3
+GetFrame1 4
+GetStatic1 3
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+Push_6
+SetStatic1 31
+
+:__if_end_152
+GetFrame1 0
+PushB 10
+CmpEq
+JumpFalse @__if_end_153
+
+:__if_then_153
+GetFrame1 5
+PushF_0
+CallNative NX_SET_VEHICLE_DIRT_LEVEL 2 0 //0x79D3B596FE44EE8B
+PushB 14
+SetStatic1 31
+
+:__if_end_153
+GetFrame1 0
+PushB 11
+CmpEq
+JumpFalse @__if_end_154
+
+:__if_then_154
+GetFrame1 5
+CallNative GET_ENTITY_HEADING 1 1 //0xE83D4F9BA2A38914
+SetFrame1 6
+GetFrame1 5
+PushF_0
+PushF_0
+GetFrame1 6
+PushB2 2 1
+CallNative NX_SET_ENTITY_ROTATION 6 0 //0x8524A8B0171D5E07
+GetFrame1 5
+PushF_5
+CallNative SET_VEHICLE_ON_GROUND_PROPERLY 2 1 //0x49733E92263139D1
+Drop
+PushB 15
+SetStatic1 31
+
+:__if_end_154
+GetFrame1 0
+PushB 12
+CmpEq
+JumpFalse @__if_end_155
+
+:__if_then_155
+GetFrame1 5
+Call @maxTuneVehicle
+PushB 16
+SetStatic1 31
+
+:__if_end_155
+GetFrame1 0
+PushB 13
+CmpEq
+JumpFalse @__if_end_156
+
+:__if_then_156
+GetStatic1 44
+JumpFalse @__if_else_157
+
+:__pcf_200
+GetStatic1 44
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_157
+
+:__if_then_157
+GetStaticP1 44
+CallNative NX_DELETE_VEHICLE 1 0 //0xEA386986E786A54F
+Push_0
+SetStatic1 44
+PushB 17
+SetStatic1 31
+Jump @__if_end_157
+
+:__if_else_157
+PushS -5
+SetStatic1 31
+
+:__if_end_157
+
+:__if_end_156
+GetFrame1 0
+PushB 14
+CmpEq
+JumpFalse @__if_end_158
+
+:__if_then_158
+GetFrame1 1
+Call @setTeleportLocation
+GetFrame1 5
+JumpFalse @__cond_false_4
+
+:__cond_true_4
+GetFrame1 5
+Jump @__cond_end_4
+
+:__cond_false_4
+GetFrame1 4
+
+:__cond_end_4
+SetFrame1 6
+GetFrame1 6
+Call @teleportEntity
+PushB 13
+SetStatic1 31
+
+:__if_end_158
+GetFrame1 0
+PushB 15
+CmpEq
+JumpFalse @__if_end_159
+
+:__if_then_159
+CallNative NX_IS_WAYPOINT_ACTIVE 0 1 //0x1DD1F58F493F1DA5
+Not
+JumpFalse @__if_end_160
+
+:__if_then_160
+PushS -12
+SetStatic1 31
+Return 2 0
+
+:__if_end_160
+PushB 8
+CallNative NX_GET_FIRST_BLIP_INFO_ID 1 1 //0x1BEDE233E6CD2A1F
+SetFrame1 6
+GetFrame1 6
+CallNative NX_DOES_BLIP_EXIST 1 1 //0xA6DB27D19ECBB7DA
+Not
+JumpFalse @__if_end_161
+
+:__if_then_161
+PushS -12
+SetStatic1 31
+Return 2 0
+
+:__if_end_161
+GetFrame1 6
+CallNative NX_GET_BLIP_INFO_ID_COORD 1 3 //0xFA7C7F0AADF25D09
+Push_3
+GetFrameP1 7
+FromStack
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 0
+pGet
+SetStatic1 34
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 1
+pGet
+SetStatic1 35
+Push_1
+SetStatic1 29
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+SetStatic1 45
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 0
+pGet
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 1
+pGet
+PushF 100.000000
+CallNative NX_REQUEST_COLLISION_AT_COORD 3 0 //0x7503F7948F491A7
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 0
+pGet
+GetFrameP1 7
+GetImmP1 0
+GetImmP1 1
+pGet
+PushF 100.000000
+CallNative NX_LOAD_SCENE 3 1 //0x4448EB75B4904BDB
+Drop
+PushB 12
+SetStatic1 31
+
+:__if_end_159
+GetFrame1 0
+PushB 16
+CmpEq
+JumpFalse @__if_end_162
+
+:__if_then_162
+GetFrame1 1
+PushB2 0 0
+CallNative NX_SET_CLOCK_TIME 3 0 //0x47C3B5848C3E45D8
+PushB 18
+SetStatic1 31
+
+:__if_end_162
+GetFrame1 0
+PushB 17
+CmpEq
+JumpFalse @__if_end_163
+
+:__if_then_163
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 23
+GetStatic1 23
+CallNative NX_PAUSE_CLOCK 1 0 //0x4055E40BD2DBEC1D
+PushB 18
+SetStatic1 31
+
+:__if_end_163
+GetFrame1 0
+PushB 18
+CmpEq
+JumpFalse @__if_end_164
+
+:__if_then_164
+GetFrame1 1
+Call @getWeatherPresetEngineName
+CallNative NX_SET_WEATHER_TYPE_NOW_PERSIST 1 0 //0xED712CA327900C8A
+PushB 19
+SetStatic1 31
+
+:__if_end_164
+GetFrame1 0
+PushB 19
+CmpEq
+JumpFalse @__if_end_165
+
+:__if_then_165
+CallNative NX_CLEAR_WEATHER_TYPE_PERSIST 0 0 //0xCCC39339BEF76CF5
+PushB 20
+SetStatic1 31
+
+:__if_end_165
+GetFrame1 0
+PushB 20
+CmpEq
+JumpFalse @__if_end_166
+
+:__if_then_166
+GetStatic1 5
+GetFrame1 1
+Call @toggleVal
+SetStatic1 5
+GetStatic1 5
+JumpFalse @__cond_false_5
+
+:__cond_true_5
+PushB 21
+Jump @__cond_end_5
+
+:__cond_false_5
+PushB 22
+
+:__cond_end_5
+SetStatic1 31
+
+:__if_end_166
+GetFrame1 0
+PushB 21
+CmpEq
+JumpFalse @__if_end_167
+
+:__if_then_167
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 46
+
+:__if_end_167
+GetFrame1 0
+PushB 22
+CmpEq
+JumpFalse @__if_end_168
+
+:__if_then_168
+GetStatic1 6
+GetFrame1 1
+Call @toggleVal
+SetStatic1 6
+
+:__if_end_168
+GetFrame1 0
+PushB 23
+CmpEq
+JumpFalse @__if_end_169
+
+:__if_then_169
+GetStatic1 7
+GetFrame1 1
+Call @toggleVal
+SetStatic1 7
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetStatic1 7
+JumpFalse @__cond_false_6
+
+:__cond_true_6
+PushF 1.490000
+Jump @__cond_end_6
+
+:__cond_false_6
+PushF_1
+
+:__cond_end_6
+CallNative NX_SET_RUN_SPRINT_MULTIPLIER 2 0 //0x6DB47AA77FD94E09
+
+:__if_end_169
+GetFrame1 0
+PushB 24
+CmpEq
+JumpFalse @__if_end_170
+
+:__if_then_170
+GetFrame1 4
+CallNative NX_CLEAR_PED_BLOOD_DAMAGE 1 0 //0x8FE22675A5A45817
+GetFrame1 4
+CallNative NX_RESET_PED_VISIBLE_DAMAGE 1 0 //0x3AC1F7B898F30C05
+PushB 24
+SetStatic1 31
+
+:__if_end_170
+GetFrame1 0
+PushB 25
+CmpEq
+JumpFalse @__if_end_171
+
+:__if_then_171
+GetStatic1 13
+GetFrame1 1
+Call @toggleVal
+SetStatic1 13
+GetFrame1 4
+GetStatic1 13
+Not
+Push_0
+CmpNe
+Push_0
+CallNative NX_SET_ENTITY_VISIBLE 3 0 //0xEA1C610A04DB6BBB
+PushB 25
+SetStatic1 31
+
+:__if_end_171
+GetFrame1 0
+PushB 26
+CmpEq
+JumpFalse @__if_end_172
+
+:__if_then_172
+GetStatic1 14
+GetFrame1 1
+Call @toggleVal
+SetStatic1 14
+GetFrame1 4
+GetStatic1 14
+Not
+Push_0
+CmpNe
+CallNative NX_SET_PED_CAN_RAGDOLL 2 0 //0xB128377056A54E2A
+PushB 26
+SetStatic1 31
+
+:__if_end_172
+GetFrame1 0
+PushB 27
+CmpEq
+JumpFalse @__if_end_173
+
+:__if_then_173
+GetFrame1 4
+PushB3 0 0 0
+CallNative NX_HEAL 4 0 //0x6B76DC1F3AE6E6A3
+PushB 27
+SetStatic1 31
+
+:__if_end_173
+GetFrame1 0
+PushB 28
+CmpEq
+JumpFalse @__if_end_174
+
+:__if_then_174
+GetStatic1 15
+GetFrame1 1
+Call @toggleVal
+SetStatic1 15
+GetFrame1 5
+JumpFalse @__if_end_175
+
+:__if_then_175
+GetFrame1 5
+GetStatic1 15
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+GetFrame1 5
+GetStatic1 15
+Not
+Push_0
+CmpNe
+CallNative NX_SET_VEHICLE_CAN_BE_VISIBLY_DAMAGED 2 0 //0x4C7028F78FFD3681
+GetFrame1 5
+GetStatic1 15
+Not
+Push_0
+CmpNe
+CallNative NX_SET_VEHICLE_TYRES_CAN_BURST 2 0 //0xEB9DC3C7D8596C46
+
+:__if_end_175
+PushB 28
+SetStatic1 31
+
+:__if_end_174
+GetFrame1 0
+PushB 29
+CmpEq
+JumpFalse @__if_end_176
+
+:__if_then_176
+GetFrame1 5
+PushF 35.000000
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+PushB 29
+SetStatic1 31
+
+:__if_end_176
+GetFrame1 0
+PushB 30
+CmpEq
+JumpFalse @__if_end_177
+
+:__if_then_177
+GetStatic1 47
+Not
+Push_0
+CmpNe
+SetStatic1 47
+GetStatic1 47
+JumpFalse @__if_else_178
+
+:__if_then_178
+GetFrame1 5
+PushB3 0 0 0
+CallNative NX_SET_VEHICLE_DOOR_OPEN 4 0 //0x7C65DAC73C35C862
+GetFrame1 5
+PushB3 1 0 0
+CallNative NX_SET_VEHICLE_DOOR_OPEN 4 0 //0x7C65DAC73C35C862
+Jump @__if_end_178
+
+:__if_else_178
+GetFrame1 5
+Push_0
+CallNative NX_SET_VEHICLE_DOORS_SHUT 2 0 //0x781B3D62BB013EF5
+
+:__if_end_178
+PushB 30
+SetStatic1 31
+
+:__if_end_177
+GetFrame1 0
+PushB 31
+CmpEq
+JumpFalse @__if_end_179
+
+:__if_then_179
+GetFrame1 1
+Call @getColorCode
+SetFrame1 6
+GetFrame1 5
+GetFrame1 6
+GetFrame1 6
+CallNative NX_SET_VEHICLE_COLOURS 3 0 //0x4F1D4BE3A7F24601
+PushB 31
+SetStatic1 31
+
+:__if_end_179
+GetFrame1 0
+PushB 32
+CmpEq
+JumpFalse @__if_end_180
+
+:__if_then_180
+GetFrame1 5
+GetFrame1 1
+CallNative NX_SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX 2 0 //0x9088EB5A43FFB0A1
+PushB 32
+SetStatic1 31
+
+:__if_end_180
+GetFrame1 0
+PushB 33
+CmpEq
+Not
+JumpFalse @__if_then_181
+
+:__pcf_229
+GetFrame1 0
+PushB 34
+CmpEq
+JumpFalse @__if_end_181
+
+:__if_then_181
+GetFrame1 0
+PushB 33
+CmpEq
+JumpFalse @__cond_false_7
+
+:__cond_true_7
+PushB 21
+Jump @__cond_end_7
+
+:__cond_false_7
+PushB 20
+
+:__cond_end_7
+SetFrame1 6
+Push_0
+SetFrame1 7
+GetFrame1 7
+GetFrame1 6
+CmpLt
+JumpFalse @__for_end_2
+
+:__for_body_2
+GetFrame1 4
+GetFrame1 7
+Call @getArsenalWeapon
+PushS 9999
+PushB2 0 0
+CallNative NX_GIVE_WEAPON_TO_PED 5 0 //0xBF0FD6E56C964FCB
+
+:__for_continue_2
+GetFrame1 7
+Add1 1
+SetFrame1 7
+GetFrame1 7
+GetFrame1 6
+CmpLt
+Not
+JumpFalse @__for_body_2
+
+:__for_end_2
+GetFrame1 0
+SetStatic1 31
+
+:__if_end_181
+GetFrame1 0
+PushB 35
+CmpEq
+JumpFalse @__if_end_182
+
+:__if_then_182
+GetStatic1 17
+GetFrame1 1
+Call @toggleVal
+SetStatic1 17
+GetFrame1 4
+GetStatic1 17
+Push_0
+CallNative NX_SET_PED_INFINITE_AMMO 3 0 //0x3EDCB0505123623B
+GetFrame1 4
+GetStatic1 17
+CallNative NX_SET_PED_INFINITE_AMMO_CLIP 2 0 //0x183DADC6AA953186
+PushB 35
+SetStatic1 31
+
+:__if_end_182
+GetFrame1 0
+PushB 36
+CmpEq
+JumpFalse @__if_end_183
+
+:__if_then_183
+GetStatic1 18
+GetFrame1 1
+Call @toggleVal
+SetStatic1 18
+GetFrame1 4
+GetStatic1 18
+CallNative NX_SET_PED_INFINITE_AMMO_CLIP 2 0 //0x183DADC6AA953186
+PushB 36
+SetStatic1 31
+
+:__if_end_183
+GetFrame1 0
+PushB 37
+CmpEq
+JumpFalse @__if_end_184
+
+:__if_then_184
+GetFrame1 4
+Push -72657034
+PushB3 1 0 1
+CallNative NX_GIVE_WEAPON_TO_PED 5 0 //0xBF0FD6E56C964FCB
+PushB 37
+SetStatic1 31
+
+:__if_end_184
+GetFrame1 0
+PushB 38
+CmpEq
+JumpFalse @__if_end_185
+
+:__if_then_185
+GetFrame1 4
+Push_1
+CallNative NX_REMOVE_ALL_PED_WEAPONS 2 0 //0xF25DF915FA38C5F3
+PushB 38
+SetStatic1 31
+
+:__if_end_185
+GetFrame1 0
+PushB 39
+CmpEq
+JumpFalse @__if_end_186
+
+:__if_then_186
+GetStatic1 24
+GetFrame1 1
+Call @toggleVal
+SetStatic1 24
+GetStatic1 24
+CallNative NX_SET_ARTIFICIAL_LIGHTS_STATE 1 0 //0x1268615ACE24D504
+PushB 39
+SetStatic1 31
+
+:__if_end_186
+GetFrame1 0
+PushB 40
+CmpEq
+JumpFalse @__if_end_187
+
+:__if_then_187
+PushF_1
+SetFrame1 6
+GetFrame1 1
+Push_1
+CmpEq
+JumpFalse @__if_else_188
+
+:__if_then_188
+PushF 0.500000
+SetFrame1 6
+Jump @__if_end_188
+
+:__if_else_188
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_end_189
+
+:__if_then_189
+PushF 0.200000
+SetFrame1 6
+
+:__if_end_189
+
+:__if_end_188
+GetFrame1 6
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+PushB 40
+SetStatic1 31
+
+:__if_end_187
+GetFrame1 0
+PushB 41
+CmpEq
+JumpFalse @__if_end_190
+
+:__if_then_190
+GetStatic1 8
+GetFrame1 1
+Call @toggleVal
+SetStatic1 8
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetStatic1 8
+JumpFalse @__cond_false_8
+
+:__cond_true_8
+PushF 1.490000
+Jump @__cond_end_8
+
+:__cond_false_8
+PushF_1
+
+:__cond_end_8
+CallNative NX_SET_SWIM_MULTIPLIER_FOR_PLAYER 2 0 //0xA91C6F0FF7D16A13
+PushB 41
+SetStatic1 31
+
+:__if_end_190
+GetFrame1 0
+PushB 42
+CmpEq
+JumpFalse @__if_end_191
+
+:__if_then_191
+GetStatic1 9
+GetFrame1 1
+Call @toggleVal
+SetStatic1 9
+PushB 42
+SetStatic1 31
+
+:__if_end_191
+GetFrame1 0
+PushB 43
+CmpEq
+JumpFalse @__if_end_192
+
+:__if_then_192
+GetStatic1 10
+GetFrame1 1
+Call @toggleVal
+SetStatic1 10
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetStatic1 10
+CallNative NX_SET_POLICE_IGNORE_PLAYER 2 0 //0x32C62AA929C2DA6A
+PushB 43
+SetStatic1 31
+
+:__if_end_192
+GetFrame1 0
+PushB 44
+CmpEq
+JumpFalse @__if_end_193
+
+:__if_then_193
+GetStatic1 11
+GetFrame1 1
+Call @toggleVal
+SetStatic1 11
+GetStatic1 11
+CallNative NX_SET_SEETHROUGH 1 0 //0x7E08924259E08CE0
+PushB 44
+SetStatic1 31
+
+:__if_end_193
+GetFrame1 0
+PushB 45
+CmpEq
+JumpFalse @__if_end_194
+
+:__if_then_194
+GetStatic1 12
+GetFrame1 1
+Call @toggleVal
+SetStatic1 12
+GetStatic1 12
+CallNative NX_SET_NIGHTVISION 1 0 //0x18F621F7A5B1F85D
+PushB 45
+SetStatic1 31
+
+:__if_end_194
+GetFrame1 0
+PushB 46
+CmpEq
+JumpFalse @__if_end_195
+
+:__if_then_195
+Push_0
+SetFrame1 6
+GetFrame1 6
+PushB 8
+CmpLt
+JumpFalse @__for_end_3
+
+:__for_body_3
+GetFrame1 5
+GetFrame1 6
+CallNative NX_SET_VEHICLE_TYRE_FIXED 2 0 //0x6E13FC662B882D1D
+
+:__for_continue_3
+GetFrame1 6
+Add1 1
+SetFrame1 6
+GetFrame1 6
+PushB 8
+CmpLt
+Not
+JumpFalse @__for_body_3
+
+:__for_end_3
+PushB 46
+SetStatic1 31
+
+:__if_end_195
+GetFrame1 0
+PushB 47
+CmpEq
+JumpFalse @__if_end_196
+
+:__if_then_196
+GetStatic1 16
+GetFrame1 1
+Call @toggleVal
+SetStatic1 16
+PushB 47
+SetStatic1 31
+
+:__if_end_196
+GetFrame1 0
+PushB 48
+CmpEq
+JumpFalse @__if_end_197
+
+:__if_then_197
+GetFrame1 5
+Push_0
+CallNative NX_SET_VEHICLE_TYRES_CAN_BURST 2 0 //0xEB9DC3C7D8596C46
+PushB 48
+SetStatic1 31
+
+:__if_end_197
+GetFrame1 0
+PushB 49
+CmpEq
+JumpFalse @__if_end_198
+
+:__if_then_198
+GetFrame1 5
+PushF_0
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+PushB 49
+SetStatic1 31
+
+:__if_end_198
+GetFrame1 0
+PushB 50
+CmpEq
+JumpFalse @__if_end_199
+
+:__if_then_199
+GetFrame1 5
+JumpFalse @__cond_false_9
+
+:__cond_true_9
+GetFrame1 5
+Jump @__cond_end_9
+
+:__cond_false_9
+GetFrame1 4
+
+:__cond_end_9
+SetFrame1 6
+GetFrame1 6
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+GetFrame1 6
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB3 0 0 0
+Push_1
+CallNative NX_SET_ENTITY_COORDS 8 0 //0x6843DA7060A026B
+PushB 50
+SetStatic1 31
+
+:__if_end_199
+GetFrame1 0
+PushB 51
+CmpEq
+JumpFalse @__if_end_200
+
+:__if_then_200
+GetStatic1 19
+GetFrame1 1
+Call @toggleVal
+SetStatic1 19
+PushB 51
+SetStatic1 31
+
+:__if_end_200
+GetFrame1 0
+PushB 52
+CmpEq
+JumpFalse @__if_end_201
+
+:__if_then_201
+GetStatic1 20
+GetFrame1 1
+Call @toggleVal
+SetStatic1 20
+PushB 52
+SetStatic1 31
+
+:__if_end_201
+GetFrame1 0
+PushB 53
+CmpEq
+JumpFalse @__if_end_202
+
+:__if_then_202
+GetStatic1 21
+GetFrame1 1
+Call @toggleVal
+SetStatic1 21
+PushB 53
+SetStatic1 31
+
+:__if_end_202
+GetFrame1 0
+PushB 54
+CmpEq
+JumpFalse @__if_end_203
+
+:__if_then_203
+GetStatic1 22
+GetFrame1 1
+Call @toggleVal
+SetStatic1 22
+GetStatic1 22
+JumpFalse @__cond_false_10
+
+:__cond_true_10
+PushF 999.000000
+Jump @__cond_end_10
+
+:__cond_false_10
+PushF_1
+
+:__cond_end_10
+SetFrame1 6
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetFrame1 6
+CallNative NX_SET_PLAYER_WEAPON_DAMAGE_MODIFIER 2 0 //0xCE07B9F7817AADA3
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetFrame1 6
+Push_0
+CallNative NX_SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER 3 0 //0x4A3DC7ECCC321032
+PushB 54
+SetStatic1 31
+
+:__if_end_203
+GetFrame1 0
+PushB 55
+CmpEq
+JumpFalse @__if_end_204
+
+:__if_then_204
+PushB 11
+SetFrame1 6
+GetFrame1 6
+PushB 15
+CmpLe
+JumpFalse @__for_end_4
+
+:__for_body_4
+GetFrame1 4
+GetFrame1 6
+Call @getArsenalWeapon
+PushS 9999
+PushB2 0 0
+CallNative NX_GIVE_WEAPON_TO_PED 5 0 //0xBF0FD6E56C964FCB
+
+:__for_continue_4
+GetFrame1 6
+Add1 1
+SetFrame1 6
+GetFrame1 6
+PushB 15
+CmpLe
+Not
+JumpFalse @__for_body_4
+
+:__for_end_4
+GetFrame1 4
+Push 1672152130
+PushS 9999
+PushB2 0 0
+CallNative NX_GIVE_WEAPON_TO_PED 5 0 //0xBF0FD6E56C964FCB
+PushB 55
+SetStatic1 31
+
+:__if_end_204
+GetFrame1 0
+PushB 56
+CmpEq
+JumpFalse @__if_end_205
+
+:__if_then_205
+GetStatic1 25
+GetFrame1 1
+Call @toggleVal
+SetStatic1 25
+GetStatic1 25
+JumpFalse @__cond_false_11
+
+:__cond_true_11
+Push_1
+Jump @__cond_end_11
+
+:__cond_false_11
+Push_0
+
+:__cond_end_11
+CallNative NX_SET_GRAVITY_LEVEL 1 0 //0x740E14FAD5842351
+PushB 56
+SetStatic1 31
+
+:__if_end_205
+GetFrame1 0
+PushB 57
+CmpGe
+JumpFalse @__if_end_206
+
+:__pcf_263
+GetFrame1 0
+PushB 59
+CmpLe
+JumpFalse @__if_end_206
+
+:__if_then_206
+GetFrame1 4
+Push_1
+CallNative GET_ENTITY_COORDS 2 3 //0x3FEF770D40960D5A
+Push_3
+GetStaticP1 51
+FromStack
+GetFrame1 0
+PushB 57
+CmpEq
+JumpFalse @__if_else_207
+
+:__if_then_207
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushF 200.000000
+Push_1
+CallNative NX_CLEAR_AREA_OF_PEDS 5 0 //0xBE31FD6CE464AC59
+Jump @__if_end_207
+
+:__if_else_207
+GetFrame1 0
+PushB 58
+CmpEq
+JumpFalse @__if_else_208
+
+:__if_then_208
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushF 200.000000
+PushB3 0 0 0
+PushB3 0 0 0
+Push_0
+CallNative NX_CLEAR_AREA_OF_VEHICLES 11 0 //0x1C7B9B38428AEB6
+Jump @__if_end_208
+
+:__if_else_208
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushF 200.000000
+Push_0
+CallNative NX_CLEAR_AREA_OF_COPS 5 0 //0x4F8FC8FCF58F88D
+
+:__if_end_208
+
+:__if_end_207
+GetFrame1 0
+SetStatic1 31
+
+:__if_end_206
+GetFrame1 0
+PushB 60
+CmpEq
+JumpFalse @__if_end_209
+
+:__if_then_209
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_210
+
+:__if_then_210
+GetStatic1 54
+Not
+Push_0
+CmpNe
+SetStatic1 54
+Jump @__if_end_210
+
+:__if_else_210
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 54
+
+:__if_end_210
+Push_0
+SetFrame1 6
+GetFrame1 6
+Push_4
+CmpLt
+JumpFalse @__for_end_5
+
+:__for_body_5
+GetFrame1 5
+GetFrame1 6
+GetStatic1 54
+CallNative NX_SET_VEHICLE_NEON_ENABLED 3 0 //0x2AA720E4287BF269
+
+:__for_continue_5
+GetFrame1 6
+Add1 1
+SetFrame1 6
+GetFrame1 6
+Push_4
+CmpLt
+Not
+JumpFalse @__for_body_5
+
+:__for_end_5
+PushB 60
+SetStatic1 31
+
+:__if_end_209
+GetFrame1 0
+PushB 61
+CmpEq
+JumpFalse @__if_end_211
+
+:__if_then_211
+GetFrame1 1
+PushB 8
+Mod
+SetStatic1 55
+PushB 255
+SetFrame1 6
+PushB 255
+SetFrame1 7
+PushB 255
+SetFrame1 8
+GetStatic1 55
+Push_1
+CmpEq
+JumpFalse @__if_else_212
+
+:__if_then_212
+Push_0
+SetFrame1 6
+Push_0
+SetFrame1 7
+PushB 255
+SetFrame1 8
+Jump @__if_end_212
+
+:__if_else_212
+GetStatic1 55
+Push_2
+CmpEq
+JumpFalse @__if_else_213
+
+:__if_then_213
+Push_0
+SetFrame1 6
+PushB 255
+SetFrame1 7
+PushB 180
+SetFrame1 8
+Jump @__if_end_213
+
+:__if_else_213
+GetStatic1 55
+Push_3
+CmpEq
+JumpFalse @__if_else_214
+
+:__if_then_214
+PushB 50
+SetFrame1 6
+PushB 255
+SetFrame1 7
+Push_0
+SetFrame1 8
+Jump @__if_end_214
+
+:__if_else_214
+GetStatic1 55
+Push_4
+CmpEq
+JumpFalse @__if_else_215
+
+:__if_then_215
+PushB 255
+SetFrame1 6
+PushB 255
+SetFrame1 7
+Push_0
+SetFrame1 8
+Jump @__if_end_215
+
+:__if_else_215
+GetStatic1 55
+Push_5
+CmpEq
+JumpFalse @__if_else_216
+
+:__if_then_216
+PushB 255
+SetFrame1 6
+PushB 50
+SetFrame1 7
+PushB 200
+SetFrame1 8
+Jump @__if_end_216
+
+:__if_else_216
+GetStatic1 55
+Push_6
+CmpEq
+JumpFalse @__if_else_217
+
+:__if_then_217
+PushB 255
+SetFrame1 6
+Push_0
+SetFrame1 7
+Push_0
+SetFrame1 8
+Jump @__if_end_217
+
+:__if_else_217
+GetStatic1 55
+Push_7
+CmpEq
+JumpFalse @__if_end_218
+
+:__if_then_218
+PushB 150
+SetFrame1 6
+Push_0
+SetFrame1 7
+PushB 255
+SetFrame1 8
+
+:__if_end_218
+
+:__if_end_217
+
+:__if_end_216
+
+:__if_end_215
+
+:__if_end_214
+
+:__if_end_213
+
+:__if_end_212
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+GetFrame1 8
+CallNative NX_SET_VEHICLE_NEON_COLOUR 4 0 //0x8E0A582209A62695
+PushB 61
+SetStatic1 31
+
+:__if_end_211
+GetFrame1 0
+PushB 62
+CmpEq
+JumpFalse @__if_end_219
+
+:__if_then_219
+GetStatic1 56
+Push_6
+Mod
+Push_1
+Add
+SetStatic1 56
+GetFrame1 5
+GetStatic1 56
+CallNative NX_DOES_EXTRA_EXIST 2 1 //0x1262D55792428154
+JumpFalse @__if_end_220
+
+:__if_then_220
+GetFrame1 5
+GetStatic1 56
+Push_0
+CallNative NX_SET_VEHICLE_EXTRA 3 0 //0x7EE3A3C5E4A40CC9
+
+:__if_end_220
+PushB 62
+SetStatic1 31
+
+:__if_end_219
+GetFrame1 0
+PushB 63
+CmpEq
+JumpFalse @__if_end_221
+
+:__if_then_221
+GetFrame1 1
+Push_6
+Mod
+SetStatic1 57
+GetFrame1 5
+GetStatic1 57
+CallNative NX_SET_VEHICLE_WINDOW_TINT 2 0 //0x57C51E6BAD752696
+PushB 63
+SetStatic1 31
+
+:__if_end_221
+GetFrame1 0
+PushB 64
+CmpEq
+JumpFalse @__if_end_222
+
+:__if_then_222
+GetFrame1 1
+Push_7
+Mod
+SetStatic1 58
+GetFrame1 5
+GetStatic1 58
+CallNative NX_SET_VEHICLE_WHEEL_TYPE 2 0 //0x487EB21CC7295BA1
+PushB 64
+SetStatic1 31
+
+:__if_end_222
+GetFrame1 0
+PushB 65
+CmpEq
+JumpFalse @__if_end_223
+
+:__if_then_223
+GetFrame1 1
+Push_5
+Mod
+SetStatic1 59
+Push_0
+SetFrame1 6
+Push_0
+SetFrame1 7
+Push_0
+SetFrame1 8
+GetStatic1 59
+Push_1
+CmpEq
+JumpFalse @__if_else_224
+
+:__if_then_224
+PushB 218
+SetFrame1 6
+PushB 165
+SetFrame1 7
+PushB 32
+SetFrame1 8
+Jump @__if_end_224
+
+:__if_else_224
+GetStatic1 59
+Push_2
+CmpEq
+JumpFalse @__if_else_225
+
+:__if_then_225
+PushB 255
+SetFrame1 6
+PushB 10
+SetFrame1 7
+PushB 10
+SetFrame1 8
+Jump @__if_end_225
+
+:__if_else_225
+GetStatic1 59
+Push_3
+CmpEq
+JumpFalse @__if_else_226
+
+:__if_then_226
+Push_0
+SetFrame1 6
+PushB 120
+SetFrame1 7
+PushB 255
+SetFrame1 8
+Jump @__if_end_226
+
+:__if_else_226
+GetStatic1 59
+Push_4
+CmpEq
+JumpFalse @__if_end_227
+
+:__if_then_227
+PushB 100
+SetFrame1 6
+PushB 255
+SetFrame1 7
+Push_0
+SetFrame1 8
+
+:__if_end_227
+
+:__if_end_226
+
+:__if_end_225
+
+:__if_end_224
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+GetFrame1 8
+CallNative NX_SET_VEHICLE_CUSTOM_PRIMARY_COLOUR 4 0 //0x7141766F91D15BEA
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+GetFrame1 8
+CallNative NX_SET_VEHICLE_CUSTOM_SECONDARY_COLOUR 4 0 //0x36CED73BFED89754
+PushB 65
+SetStatic1 31
+
+:__if_end_223
+GetFrame1 0
+PushB 66
+CmpEq
+JumpFalse @__if_end_228
+
+:__if_then_228
+Push -1692214353
+SetFrame1 6
+GetFrame1 1
+Push_0
+CmpEq
+JumpFalse @__if_else_229
+
+:__if_then_229
+Push 225514697
+SetFrame1 6
+Jump @__if_end_229
+
+:__if_else_229
+GetFrame1 1
+Push_1
+CmpEq
+JumpFalse @__if_else_230
+
+:__if_then_230
+Push -1692214353
+SetFrame1 6
+Jump @__if_end_230
+
+:__if_else_230
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_231
+
+:__if_then_231
+Push -1686040670
+SetFrame1 6
+Jump @__if_end_231
+
+:__if_else_231
+GetFrame1 1
+Push_3
+CmpEq
+JumpFalse @__if_else_232
+
+:__if_then_232
+Push 1885233650
+SetFrame1 6
+Jump @__if_end_232
+
+:__if_else_232
+GetFrame1 1
+Push_4
+CmpEq
+JumpFalse @__if_end_233
+
+:__if_then_233
+Push -1667301416
+SetFrame1 6
+
+:__if_end_233
+
+:__if_end_232
+
+:__if_end_231
+
+:__if_end_230
+
+:__if_end_229
+GetFrame1 6
+Call @loadModelSync
+JumpFalse @__if_else_234
+
+:__if_then_234
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+GetFrame1 6
+CallNative NX_SET_PLAYER_MODEL 2 0 //0xA1CADD00108836
+GetFrame1 6
+CallNative SET_MODEL_AS_NO_LONGER_NEEDED 1 0 //0xE532F5D78798DAAB
+PushB 66
+SetStatic1 31
+Jump @__if_end_234
+
+:__if_else_234
+PushS -3
+SetStatic1 31
+
+:__if_end_234
+
+:__if_end_228
+GetFrame1 0
+PushB 67
+CmpEq
+JumpFalse @__if_end_235
+
+:__if_then_235
+GetFrame1 4
+CallNative NX_SET_PED_DEFAULT_COMPONENT_VARIATION 1 0 //0x45EEE61580806D63
+PushB 67
+SetStatic1 31
+
+:__if_end_235
+GetFrame1 0
+PushB 68
+CmpEq
+JumpFalse @__if_end_236
+
+:__if_then_236
+GetStatic1 60
+Add1 1
+SetStatic1 60
+GetFrame1 4
+GetFrame1 1
+CallNative NX_GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS 2 1 //0x27561561732A7842
+SetFrame1 6
+GetFrame1 6
+Push_0
+CmpGt
+JumpFalse @__if_end_237
+
+:__if_then_237
+GetStatic1 60
+GetFrame1 6
+Mod
+SetStatic1 60
+GetFrame1 4
+GetFrame1 1
+GetStatic1 60
+PushB2 0 0
+CallNative NX_SET_PED_COMPONENT_VARIATION 5 0 //0x262B14F48D29DE80
+
+:__if_end_237
+PushB 68
+SetStatic1 31
+
+:__if_end_236
+GetFrame1 0
+PushB 69
+CmpEq
+JumpFalse @__if_end_238
+
+:__if_then_238
+PushString "WORLD_HUMAN_SMOKING"
+SetFrame1 6
+GetFrame1 1
+Push_1
+CmpEq
+JumpFalse @__if_else_239
+
+:__if_then_239
+PushString "WORLD_HUMAN_DRINKING"
+SetFrame1 6
+Jump @__if_end_239
+
+:__if_else_239
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_240
+
+:__if_then_240
+PushString "WORLD_HUMAN_CHEERING"
+SetFrame1 6
+Jump @__if_end_240
+
+:__if_else_240
+GetFrame1 1
+Push_3
+CmpEq
+JumpFalse @__if_else_241
+
+:__if_then_241
+PushString "WORLD_HUMAN_MUSCLE_FLEX"
+SetFrame1 6
+Jump @__if_end_241
+
+:__if_else_241
+GetFrame1 1
+Push_4
+CmpEq
+JumpFalse @__if_else_242
+
+:__if_then_242
+PushString "WORLD_HUMAN_BINOCULARS"
+SetFrame1 6
+Jump @__if_end_242
+
+:__if_else_242
+GetFrame1 1
+Push_5
+CmpEq
+JumpFalse @__if_else_243
+
+:__if_then_243
+PushString "WORLD_HUMAN_PUSH_UPS"
+SetFrame1 6
+Jump @__if_end_243
+
+:__if_else_243
+GetFrame1 1
+Push_6
+CmpEq
+JumpFalse @__if_else_244
+
+:__if_then_244
+PushString "WORLD_HUMAN_SIT_UPS"
+SetFrame1 6
+Jump @__if_end_244
+
+:__if_else_244
+GetFrame1 1
+Push_7
+CmpEq
+JumpFalse @__if_end_245
+
+:__if_then_245
+PushString "WORLD_HUMAN_GUARD_STAND"
+SetFrame1 6
+
+:__if_end_245
+
+:__if_end_244
+
+:__if_end_243
+
+:__if_end_242
+
+:__if_end_241
+
+:__if_end_240
+
+:__if_end_239
+GetFrame1 4
+CallNative NX_CLEAR_PED_TASKS 1 0 //0xE1EF3C1216AFF2CD
+GetFrame1 4
+GetFrame1 6
+PushB2 0 1
+CallNative NX_TASK_START_SCENARIO_IN_PLACE 4 0 //0x142A02425FF02BD9
+PushB 69
+SetStatic1 31
+
+:__if_end_238
+GetFrame1 0
+PushB 70
+CmpEq
+JumpFalse @__if_end_246
+
+:__if_then_246
+GetFrame1 4
+CallNative NX_CLEAR_PED_TASKS 1 0 //0xE1EF3C1216AFF2CD
+PushB 70
+SetStatic1 31
+
+:__if_end_246
+GetFrame1 0
+PushB 71
+CmpEq
+JumpFalse @__if_end_247
+
+:__if_then_247
+Push -1036807324
+SetFrame1 6
+GetFrame1 1
+Push_1
+CmpEq
+JumpFalse @__if_else_248
+
+:__if_then_248
+Push -143315610
+SetFrame1 6
+Jump @__if_end_248
+
+:__if_else_248
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_249
+
+:__if_then_249
+Push -1319646748
+SetFrame1 6
+Jump @__if_end_249
+
+:__if_else_249
+GetFrame1 1
+Push_3
+CmpEq
+JumpFalse @__if_end_250
+
+:__if_then_250
+Push -1861623876
+SetFrame1 6
+
+:__if_end_250
+
+:__if_end_249
+
+:__if_end_248
+GetFrame1 6
+Call @loadModelSync
+JumpFalse @__if_else_251
+
+:__if_then_251
+GetFrame1 4
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+Call @deleteLastObject
+GetFrame1 6
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB3 0 0 0
+CallNative NX_CREATE_OBJECT 7 1 //0x509D5878EB39E842
+SetStatic1 1
+GetFrame1 6
+CallNative SET_MODEL_AS_NO_LONGER_NEEDED 1 0 //0xE532F5D78798DAAB
+Push_0
+SetStatic1 61
+PushB 71
+SetStatic1 31
+Jump @__if_end_251
+
+:__if_else_251
+PushS -3
+SetStatic1 31
+
+:__if_end_251
+
+:__if_end_247
+GetFrame1 0
+PushB 72
+CmpEq
+JumpFalse @__if_end_252
+
+:__if_then_252
+GetStatic1 1
+JumpFalse @__if_else_253
+
+:__pcf_313
+GetStatic1 1
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_253
+
+:__if_then_253
+GetStatic1 1
+GetFrame1 4
+Push_0
+PushF_0
+PushF 1.500000
+PushF 0.200000
+PushF_0
+PushF_0
+PushF_0
+PushB3 0 0 0
+PushB3 0 2 1
+CallNative NX_ATTACH_ENTITY_TO_ENTITY 15 0 //0x6B9BBD38AB0796DF
+PushB 72
+SetStatic1 31
+Jump @__if_end_253
+
+:__if_else_253
+PushS -4
+SetStatic1 31
+
+:__if_end_253
+
+:__if_end_252
+GetFrame1 0
+PushB 73
+CmpEq
+JumpFalse @__if_end_254
+
+:__if_then_254
+GetStatic1 1
+JumpFalse @__if_else_255
+
+:__pcf_317
+GetStatic1 1
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_255
+
+:__if_then_255
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_256
+
+:__if_then_256
+GetStatic1 61
+Not
+Push_0
+CmpNe
+SetStatic1 61
+Jump @__if_end_256
+
+:__if_else_256
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 61
+
+:__if_end_256
+GetStatic1 1
+GetStatic1 61
+CallNative NX_FREEZE_ENTITY_POSITION 2 0 //0x428CA6DBD1094446
+PushB 73
+SetStatic1 31
+Jump @__if_end_255
+
+:__if_else_255
+PushS -4
+SetStatic1 31
+
+:__if_end_255
+
+:__if_end_254
+GetFrame1 0
+PushB 74
+CmpEq
+JumpFalse @__if_end_257
+
+:__if_then_257
+GetStatic1 1
+JumpFalse @__if_else_258
+
+:__if_then_258
+Call @deleteLastObject
+PushB 74
+SetStatic1 31
+Jump @__if_end_258
+
+:__if_else_258
+PushS -4
+SetStatic1 31
+
+:__if_end_258
+
+:__if_end_257
+GetFrame1 0
+PushB 75
+CmpEq
+JumpFalse @__if_end_259
+
+:__if_then_259
+GetFrame1 5
+Push_1
+PushF_0
+PushF_0
+PushF 11.000000
+PushF_0
+PushF_0
+PushF_0
+PushB3 0 1 1
+PushB3 1 0 1
+CallNative NX_APPLY_FORCE_TO_ENTITY 14 0 //0xC5F68BE9613E2D18
+PushB 75
+SetStatic1 31
+
+:__if_end_259
+GetFrame1 0
+PushB 76
+CmpEq
+JumpFalse @__if_end_260
+
+:__if_then_260
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_261
+
+:__if_then_261
+GetStatic1 27
+Not
+Push_0
+CmpNe
+SetStatic1 27
+Jump @__if_end_261
+
+:__if_else_261
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 27
+
+:__if_end_261
+GetFrame1 5
+GetStatic1 27
+CallNative NX_SET_VEHICLE_REDUCE_GRIP 2 0 //0x222FF6A823D122E2
+PushB 76
+SetStatic1 31
+
+:__if_end_260
+GetFrame1 0
+PushB 77
+CmpEq
+JumpFalse @__if_end_262
+
+:__if_then_262
+GetFrame1 5
+PushF 70.000000
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+PushB 77
+SetStatic1 31
+
+:__if_end_262
+GetFrame1 0
+PushB 78
+CmpEq
+JumpFalse @__if_end_263
+
+:__if_then_263
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF 18.000000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 4
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_7
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB 29
+PushF 10.000000
+PushB2 1 0
+PushF_2
+CallNative NX_ADD_EXPLOSION 8 0 //0xE3AD2BDBAEE269AC
+PushB 78
+SetStatic1 31
+
+:__if_end_263
+GetFrame1 0
+PushB 79
+CmpEq
+JumpFalse @__if_end_264
+
+:__if_then_264
+GetFrame1 1
+Push_2
+CmpEq
+JumpFalse @__if_else_265
+
+:__if_then_265
+GetStatic1 26
+Not
+Push_0
+CmpNe
+SetStatic1 26
+Jump @__if_end_265
+
+:__if_else_265
+GetFrame1 1
+Push_0
+CmpNe
+Push_0
+CmpNe
+SetStatic1 26
+
+:__if_end_265
+GetFrame1 4
+PushB 32
+GetStatic1 26
+Not
+Push_0
+CmpNe
+CallNative NX_SET_PED_CONFIG_FLAG 3 0 //0x1913FE4CBF41C463
+PushB 79
+SetStatic1 31
+
+:__if_end_264
+GetFrame1 0
+PushB 80
+CmpEq
+JumpFalse @__if_end_266
+
+:__if_then_266
+GetFrame1 4
+PushS 4000
+PushS 4000
+PushB3 0 0 0
+Push_0
+CallNative NX_SET_PED_TO_RAGDOLL 7 1 //0xAE99FB955581844A
+Drop
+PushB 80
+SetStatic1 31
+
+:__if_end_266
+GetFrame1 0
+PushB 81
+CmpEq
+JumpFalse @__if_end_267
+
+:__if_then_267
+PushF_2
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 4
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_7
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 4
+CallNative GET_ENTITY_HEADING 1 1 //0xE83D4F9BA2A38914
+SetFrame1 6
+Call @deleteLastBodyguard
+GetFrame1 4
+GetFrame1 6
+PushB2 0 0
+CallNative NX_CLONE_PED 4 1 //0xEF29A16337FACADB
+SetStatic1 2
+GetStatic1 2
+JumpFalse @__if_else_268
+
+:__pcf_332
+GetStatic1 2
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_268
+
+:__if_then_268
+GetStatic1 2
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB3 0 0 0
+Push_1
+CallNative NX_SET_ENTITY_COORDS 8 0 //0x6843DA7060A026B
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+CallNative NX_GET_PLAYER_GROUP 1 1 //0xD127585F77030AF
+SetFrame1 7
+GetStatic1 2
+GetFrame1 7
+CallNative NX_SET_PED_AS_GROUP_MEMBER 2 0 //0x9F3480FE65DB31B5
+GetStatic1 2
+Push_1
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+GetStatic1 2
+Push -2084633992
+PushS 9999
+PushB2 0 1
+CallNative NX_GIVE_WEAPON_TO_PED 5 0 //0xBF0FD6E56C964FCB
+PushB 81
+SetStatic1 31
+Jump @__if_end_268
+
+:__if_else_268
+PushS -4
+SetStatic1 31
+
+:__if_end_268
+
+:__if_end_267
+GetFrame1 0
+PushB 82
+CmpEq
+JumpFalse @__if_end_269
+
+:__if_then_269
+GetStatic1 2
+JumpFalse @__if_else_270
+
+:__if_then_270
+Call @deleteLastBodyguard
+PushB 82
+SetStatic1 31
+Jump @__if_end_270
+
+:__if_else_270
+PushS -4
+SetStatic1 31
+
+:__if_end_270
+
+:__if_end_269
+GetFrame1 0
+PushB 83
+CmpEq
+JumpFalse @__if_end_271
+
+:__if_then_271
+Push 52740893
+Push 2000000000
+Push_1
+CallNative NX_STAT_SET_INT 3 1 //0xB3271D7AB655B441
+Drop
+Push 1153264002
+Push 2000000000
+Push_1
+CallNative NX_STAT_SET_INT 3 1 //0xB3271D7AB655B441
+Drop
+Push -1921710979
+Push 2000000000
+Push_1
+CallNative NX_STAT_SET_INT 3 1 //0xB3271D7AB655B441
+Drop
+PushB 83
+SetStatic1 31
+
+:__if_end_271
+GetFrame1 0
+PushB 84
+CmpEq
+JumpFalse @__if_end_272
+
+:__if_then_272
+GetFrame1 5
+JumpFalse @__cond_false_12
+
+:__cond_true_12
+GetFrame1 5
+Jump @__cond_end_12
+
+:__cond_false_12
+GetFrame1 4
+
+:__cond_end_12
+SetFrame1 6
+Push -1319646748
+SetFrame1 7
+GetFrame1 7
+Call @loadModelSync
+JumpFalse @__if_else_273
+
+:__if_then_273
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF 14.000000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF -0.200000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 6
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_7
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 6
+CallNative GET_ENTITY_HEADING 1 1 //0xE83D4F9BA2A38914
+SetFrame1 8
+Call @deleteLastObject
+GetFrame1 7
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB3 0 0 0
+CallNative NX_CREATE_OBJECT 7 1 //0x509D5878EB39E842
+SetStatic1 1
+GetStatic1 1
+JumpFalse @__if_end_274
+
+:__pcf_341
+GetStatic1 1
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_274
+
+:__if_then_274
+GetStatic1 1
+GetFrame1 8
+CallNative NX_SET_ENTITY_HEADING 2 0 //0x8E2530AA8ADA980E
+GetStatic1 1
+Push_1
+CallNative NX_FREEZE_ENTITY_POSITION 2 0 //0x428CA6DBD1094446
+
+:__if_end_274
+GetFrame1 7
+CallNative SET_MODEL_AS_NO_LONGER_NEEDED 1 0 //0xE532F5D78798DAAB
+PushB 84
+SetStatic1 31
+Jump @__if_end_273
+
+:__if_else_273
+PushS -3
+SetStatic1 31
+
+:__if_end_273
+
+:__if_end_272
+GetFrame1 0
+PushB 90
+CmpEq
+JumpFalse @__if_end_275
+
+:__if_then_275
+PushB 32
+GetFrame1 1
+Call @toggleFlag
+GetStatic1 28
+PushB 32
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+CallNative NX_SET_RIOT_MODE_ENABLED 1 0 //0x2587A48BC88DFADF
+PushB 90
+SetStatic1 31
+
+:__if_end_275
+GetFrame1 0
+PushB 93
+CmpEq
+JumpFalse @__if_end_276
+
+:__if_then_276
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushB2 5 0
+CallNative SET_PLAYER_WANTED_LEVEL 3 0 //0x39FF19C64EF7DA5B
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+Push_0
+CallNative SET_PLAYER_WANTED_LEVEL_NOW 2 0 //0xE0A7D1E497FFCD6F
+PushB 93
+SetStatic1 31
+
+:__if_end_276
+GetFrame1 0
+PushB 95
+CmpEq
+JumpFalse @__if_end_277
+
+:__if_then_277
+GetFrame1 5
+CallNative GET_ENTITY_HEADING 1 1 //0xE83D4F9BA2A38914
+PushF 180.000000
+FAdd
+SetFrame1 6
+GetFrame1 6
+PushF 360.000000
+FCmpGe
+JumpFalse @__if_end_278
+
+:__if_then_278
+GetFrame1 6
+PushF 360.000000
+FSub
+SetFrame1 6
+
+:__if_end_278
+GetFrame1 5
+PushF_0
+PushF_0
+GetFrame1 6
+PushB2 2 1
+CallNative NX_SET_ENTITY_ROTATION 6 0 //0x8524A8B0171D5E07
+PushB 95
+SetStatic1 31
+
+:__if_end_277
+Push_0
+SetFrame1 6
+GetFrame1 0
+PushB 85
+CmpEq
+JumpFalse @__if_else_279
+
+:__if_then_279
+Push_1
+SetFrame1 6
+Jump @__if_end_279
+
+:__if_else_279
+GetFrame1 0
+PushB 86
+CmpEq
+JumpFalse @__if_else_280
+
+:__if_then_280
+Push_2
+SetFrame1 6
+Jump @__if_end_280
+
+:__if_else_280
+GetFrame1 0
+PushB 87
+CmpEq
+JumpFalse @__if_else_281
+
+:__if_then_281
+Push_4
+SetFrame1 6
+Jump @__if_end_281
+
+:__if_else_281
+GetFrame1 0
+PushB 88
+CmpEq
+JumpFalse @__if_else_282
+
+:__if_then_282
+PushB 8
+SetFrame1 6
+Jump @__if_end_282
+
+:__if_else_282
+GetFrame1 0
+PushB 89
+CmpEq
+JumpFalse @__if_else_283
+
+:__if_then_283
+PushB 16
+SetFrame1 6
+Jump @__if_end_283
+
+:__if_else_283
+GetFrame1 0
+PushB 91
+CmpEq
+JumpFalse @__if_else_284
+
+:__if_then_284
+PushB 64
+SetFrame1 6
+Jump @__if_end_284
+
+:__if_else_284
+GetFrame1 0
+PushB 92
+CmpEq
+JumpFalse @__if_else_285
+
+:__if_then_285
+PushB 128
+SetFrame1 6
+Jump @__if_end_285
+
+:__if_else_285
+GetFrame1 0
+PushB 94
+CmpEq
+JumpFalse @__if_else_286
+
+:__if_then_286
+PushS 256
+SetFrame1 6
+Jump @__if_end_286
+
+:__if_else_286
+GetFrame1 0
+PushB 96
+CmpEq
+JumpFalse @__if_else_287
+
+:__if_then_287
+PushS 512
+SetFrame1 6
+Jump @__if_end_287
+
+:__if_else_287
+GetFrame1 0
+PushB 97
+CmpEq
+JumpFalse @__if_else_288
+
+:__if_then_288
+PushS 1024
+SetFrame1 6
+Jump @__if_end_288
+
+:__if_else_288
+GetFrame1 0
+PushB 100
+CmpEq
+JumpFalse @__if_else_289
+
+:__if_then_289
+PushS 2048
+SetFrame1 6
+Jump @__if_end_289
+
+:__if_else_289
+GetFrame1 0
+PushB 101
+CmpEq
+JumpFalse @__if_else_290
+
+:__if_then_290
+PushS 4096
+SetFrame1 6
+Jump @__if_end_290
+
+:__if_else_290
+GetFrame1 0
+PushB 102
+CmpEq
+JumpFalse @__if_end_291
+
+:__if_then_291
+PushS 8192
+SetFrame1 6
+
+:__if_end_291
+
+:__if_end_290
+
+:__if_end_289
+
+:__if_end_288
+
+:__if_end_287
+
+:__if_end_286
+
+:__if_end_285
+
+:__if_end_284
+
+:__if_end_283
+
+:__if_end_282
+
+:__if_end_281
+
+:__if_end_280
+
+:__if_end_279
+GetFrame1 6
+JumpFalse @__if_end_292
+
+:__if_then_292
+GetFrame1 6
+GetFrame1 1
+Call @toggleFlag
+GetFrame1 0
+PushB 94
+CmpEq
+JumpFalse @__if_end_293
+
+:__pcf_362
+GetFrame1 5
+JumpFalse @__if_end_293
+
+:__if_then_293
+GetFrame1 5
+GetStatic1 28
+PushS 256
+And
+Not
+Push_0
+CmpNe
+Push_0
+CallNative NX_SET_ENTITY_VISIBLE 3 0 //0xEA1C610A04DB6BBB
+
+:__if_end_293
+GetFrame1 0
+PushB 97
+CmpEq
+JumpFalse @__if_end_294
+
+:__pcf_365
+GetStatic1 28
+PushS 1024
+And
+Not
+JumpFalse @__if_end_294
+
+:__if_then_294
+PushF_1
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+
+:__if_end_294
+GetFrame1 0
+PushB 100
+CmpEq
+JumpFalse @__if_end_295
+
+:__if_then_295
+GetFrame1 4
+GetStatic1 28
+PushS 2048
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+CallNative NX_SET_PED_IS_DRUNK 2 0 //0x95D2D383D5396B8A
+
+:__if_end_295
+GetFrame1 0
+PushB 101
+CmpEq
+JumpFalse @__if_end_296
+
+:__if_then_296
+GetStatic1 28
+PushS 4096
+And
+JumpFalse @__if_else_297
+
+:__if_then_297
+GetFrame1 4
+GetFrame1 5
+PushF 30.000000
+PushI24 786603
+CallNative NX_TASK_VEHICLE_DRIVE_WANDER 4 0 //0x480142959D337D00
+Jump @__if_end_297
+
+:__if_else_297
+GetFrame1 4
+CallNative NX_CLEAR_PED_TASKS 1 0 //0xE1EF3C1216AFF2CD
+
+:__if_end_297
+
+:__if_end_296
+GetFrame1 0
+PushB 102
+CmpEq
+JumpFalse @__if_end_298
+
+:__if_then_298
+GetFrame1 5
+GetStatic1 28
+PushS 8192
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+CallNative NX_SET_VEHICLE_SIREN 2 0 //0xF4924635A19EB37D
+
+:__if_end_298
+GetFrame1 0
+SetStatic1 31
+
+:__if_end_292
+GetFrame1 0
+PushB 98
+CmpEq
+JumpFalse @__if_end_299
+
+:__if_then_299
+GetFrame1 5
+JumpFalse @__cond_false_13
+
+:__cond_true_13
+GetFrame1 5
+Jump @__cond_end_13
+
+:__cond_false_13
+GetFrame1 4
+
+:__cond_end_13
+SetFrame1 7
+GetFrame1 7
+Push_1
+PushF_0
+PushF_0
+PushF 60.000000
+PushF_0
+PushF_0
+PushF_0
+PushB3 0 1 1
+PushB3 1 0 1
+CallNative NX_APPLY_FORCE_TO_ENTITY 14 0 //0xC5F68BE9613E2D18
+PushB 98
+SetStatic1 31
+
+:__if_end_299
+GetFrame1 0
+PushB 99
+CmpEq
+JumpFalse @__if_end_300
+
+:__if_then_300
+GetFrame1 4
+Push_1
+CallNative GET_ENTITY_COORDS 2 3 //0x3FEF770D40960D5A
+Push_3
+GetStaticP1 51
+FromStack
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushF 100.000000
+PushB2 0 70
+CallNative NX_GET_CLOSEST_VEHICLE 6 1 //0xF73EB622C4F1689B
+SetFrame1 7
+GetFrame1 7
+JumpFalse @__if_else_301
+
+:__pcf_375
+GetFrame1 7
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_301
+
+:__if_then_301
+GetFrame1 4
+GetFrame1 7
+Push_-1
+CallNative NX_SET_PED_INTO_VEHICLE 3 0 //0xF75B0D629E1C063D
+PushB 99
+SetStatic1 31
+Jump @__if_end_301
+
+:__if_else_301
+PushS -5
+SetStatic1 31
+
+:__if_end_301
+
+:__if_end_300
+GetFrame1 0
+PushB 103
+CmpEq
+JumpFalse @__if_end_302
+
+:__if_then_302
+GetFrame1 5
+JumpFalse @__cond_false_14
+
+:__cond_true_14
+GetFrame1 5
+Jump @__cond_end_14
+
+:__cond_false_14
+GetStatic1 44
+
+:__cond_end_14
+SetFrame1 7
+GetFrame1 7
+JumpFalse @__if_else_303
+
+:__pcf_380
+GetFrame1 7
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_else_303
+
+:__if_then_303
+GetFrame1 7
+Push_1
+CallNative GET_ENTITY_COORDS 2 3 //0x3FEF770D40960D5A
+Push_3
+GetStaticP1 51
+FromStack
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+Push_0
+PushF 10.000000
+PushB2 1 0
+PushF_2
+CallNative NX_ADD_EXPLOSION 8 0 //0xE3AD2BDBAEE269AC
+PushB 103
+SetStatic1 31
+Jump @__if_end_303
+
+:__if_else_303
+PushS -5
+SetStatic1 31
+
+:__if_end_303
+
+:__if_end_302
+Return 2 0
+//<
+
+:beginLine//>
+Function 1 3
+Push_0
+CallNative SET_TEXT_FONT 1 0 //0x66E0276CC5F6B9DA
+PushF_0
+PushF 0.380000
+CallNative SET_TEXT_SCALE 2 0 //0x7C837F9A01C34C9
+GetFrame1 0
+JumpFalse @__if_else_304
+
+:__if_then_304
+Push_4
+GetStaticP1 66
+ToStack
+CallNative SET_TEXT_COLOUR 4 0 //0xBE6B23FFA53FB442
+Jump @__if_end_304
+
+:__if_else_304
+Push_4
+GetStaticP1 70
+ToStack
+CallNative SET_TEXT_COLOUR 4 0 //0xBE6B23FFA53FB442
+
+:__if_end_304
+CallNative SET_TEXT_OUTLINE 0 0 //0x2513DFB0FB8400FE
+PushString "STRING"
+CallNative BEGIN_TEXT_COMMAND_DISPLAY_TEXT 1 0 //0x25FBB336DF1804CB
+Return 1 0
+//<
+
+:endRow//>
+Function 1 3
+PushF 0.035000
+PushF 0.120000
+GetFrame1 0
+ItoF
+PushF 0.032000
+FMult
+FAdd
+Push_0
+CallNative NX_END_TEXT 3 0 //0xCD015E5BB0D96A57
+Return 1 0
+//<
+
+:menuTitle//>
+Function 1 3
+Push_1
+Call @beginLine
+PushString "Menyoo | "
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetFrame1 0
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+PushF 0.035000
+PushF 0.120000
+Push_0
+CallNative NX_END_TEXT 3 0 //0xCD015E5BB0D96A57
+Return 1 0
+//<
+
+:mLine//>
+Function 1 3
+GetStatic1 74
+GetStatic1 75
+CmpEq
+Push_0
+CmpNe
+Call @beginLine
+GetFrame1 0
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetStatic1 75
+Push_2
+Add
+Call @endRow
+GetStatic1 75
+Add1 1
+SetStatic1 75
+Return 1 0
+//<
+
+:mSub//>
+Function 1 3
+GetStatic1 74
+GetStatic1 75
+CmpEq
+Push_0
+CmpNe
+Call @beginLine
+GetFrame1 0
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+PushString " >"
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetStatic1 75
+Push_2
+Add
+Call @endRow
+GetStatic1 75
+Add1 1
+SetStatic1 75
+Return 1 0
+//<
+
+:mToggle//>
+Function 2 4
+GetStatic1 74
+GetStatic1 75
+CmpEq
+Push_0
+CmpNe
+Call @beginLine
+GetFrame1 0
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetFrame1 1
+JumpFalse @__cond_false_15
+
+:__cond_true_15
+PushString "ON"
+Jump @__cond_end_15
+
+:__cond_false_15
+PushString "OFF"
+
+:__cond_end_15
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetStatic1 75
+Push_2
+Add
+Call @endRow
+GetStatic1 75
+Add1 1
+SetStatic1 75
+Return 2 0
+//<
+
+:mChoice//>
+Function 2 4
+GetStatic1 74
+GetStatic1 75
+CmpEq
+Push_0
+CmpNe
+Call @beginLine
+GetFrame1 0
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+PushString "< "
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetFrame1 1
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+PushString " >"
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+GetStatic1 75
+Push_2
+Add
+Call @endRow
+GetStatic1 75
+Add1 1
+SetStatic1 75
+Return 2 0
+//<
+
+:drawMenu//>
+Function 0 3
+Push_0
+SetStatic1 75
+GetStatic1 76
+Push_0
+CmpEq
+JumpFalse @__if_else_305
+
+:__if_then_305
+PushString "Main"
+Call @menuTitle
+PushString "Player"
+Call @mSub
+PushString "Vehicle"
+Call @mSub
+PushString "Spawner"
+Call @mSub
+PushString "Teleport"
+Call @mSub
+PushString "Weapons"
+Call @mSub
+PushString "World"
+Call @mSub
+PushString "Customs"
+Call @mSub
+PushString "Appearance"
+Call @mSub
+PushString "Animations"
+Call @mSub
+PushString "Spooner"
+Call @mSub
+PushString "Settings"
+Call @mSub
+PushString "Close Menu"
+Call @mLine
+Jump @__if_end_305
+
+:__if_else_305
+GetStatic1 76
+Push_1
+CmpEq
+JumpFalse @__if_else_306
+
+:__if_then_306
+PushString "Player"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Heal + Armour"
+Call @mLine
+PushString "Clear Wanted"
+Call @mLine
+PushString "Invincible: "
+GetStatic1 3
+Call @mToggle
+PushString "Never Wanted: "
+GetStatic1 5
+Call @mToggle
+PushString "Super Jump: "
+GetStatic1 6
+Call @mToggle
+PushString "Fast Sprint: "
+GetStatic1 7
+Call @mToggle
+PushString "Fast Swim: "
+GetStatic1 8
+Call @mToggle
+PushString "Never Tired: "
+GetStatic1 9
+Call @mToggle
+PushString "Police Ignore: "
+GetStatic1 10
+Call @mToggle
+PushString "Thermal Vision: "
+GetStatic1 11
+Call @mToggle
+PushString "Night Vision: "
+GetStatic1 12
+Call @mToggle
+PushString "Clean Clothes"
+Call @mLine
+PushString "Invisible: "
+GetStatic1 13
+Call @mToggle
+PushString "No Ragdoll: "
+GetStatic1 14
+Call @mToggle
+PushString "Suicide"
+Call @mLine
+PushString "Seatbelt: "
+GetStatic1 26
+Call @mToggle
+PushString "Ragdoll Now"
+Call @mLine
+PushString "Max Cash ($2B)"
+Call @mLine
+PushString "Spawn Bodyguard"
+Call @mLine
+PushString "Dismiss Guard"
+Call @mLine
+PushString "5-Star Wanted"
+Call @mLine
+PushString "Forcefield: "
+GetStatic1 28
+PushS 512
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Sky Launch"
+Call @mLine
+PushString "Drunk Mode: "
+GetStatic1 28
+PushS 2048
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+Jump @__if_end_306
+
+:__if_else_306
+GetStatic1 76
+Push_2
+CmpEq
+JumpFalse @__if_else_307
+
+:__if_then_307
+PushString "Vehicle"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Repair Vehicle"
+Call @mLine
+PushString "Clean Vehicle"
+Call @mLine
+PushString "Fix Tyres"
+Call @mLine
+PushString "Flip Upright"
+Call @mLine
+PushString "Max Tuning"
+Call @mLine
+PushString "Engine On: "
+GetStatic1 16
+Call @mToggle
+PushString "Veh Godmode: "
+GetStatic1 15
+Call @mToggle
+PushString "Bulletproof Tyres"
+Call @mLine
+PushString "Stop Vehicle"
+Call @mLine
+PushString "Speed Boost"
+Call @mLine
+PushString "Toggle Doors"
+Call @mLine
+PushString "Respray: "
+GetStatic1 77
+Call @getColorName
+Call @mChoice
+PushString "Plate: "
+GetStatic1 78
+Call @getPlateName
+Call @mChoice
+PushString "Delete Spawned"
+Call @mLine
+PushString "Vehicle Jump"
+Call @mLine
+PushString "Drift Mode: "
+GetStatic1 27
+Call @mToggle
+PushString "Rocket Boost"
+Call @mLine
+PushString "Stunt Ramp Ahead"
+Call @mLine
+PushString "Auto Repair: "
+GetStatic1 28
+Push_2
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Horn Boost: "
+GetStatic1 28
+Push_4
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Veh Weapons: "
+GetStatic1 28
+PushB 8
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Flying Car: "
+GetStatic1 28
+PushB 64
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Instant 180"
+Call @mLine
+PushString "Invisible Veh: "
+GetStatic1 28
+PushS 256
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Autopilot: "
+GetStatic1 28
+PushS 4096
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Siren: "
+GetStatic1 28
+PushS 8192
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Self-Destruct"
+Call @mLine
+Jump @__if_end_307
+
+:__if_else_307
+GetStatic1 76
+Push_3
+CmpEq
+JumpFalse @__if_else_308
+
+:__if_then_308
+PushString "Spawner"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Category: "
+GetStatic1 79
+Call @getCategoryName
+Call @mChoice
+PushString "Model: "
+GetStatic1 79
+GetStatic1 80
+Call @getModelName
+Call @mChoice
+PushString "Spawn Vehicle"
+Call @mLine
+PushString "Spawn Inside: "
+GetStatic1 46
+Call @mToggle
+PushString "Spawn Tuned: "
+GetStatic1 62
+Call @mToggle
+PushString "Spawn Godmode: "
+GetStatic1 63
+Call @mToggle
+PushString "Delete Spawned"
+Call @mLine
+Jump @__if_end_308
+
+:__if_else_308
+GetStatic1 76
+Push_4
+CmpEq
+JumpFalse @__if_else_309
+
+:__if_then_309
+PushString "Teleport"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Waypoint"
+Call @mLine
+PushString "Forward 5m"
+Call @mLine
+PushString "Michael"
+Call @mLine
+PushString "Franklin"
+Call @mLine
+PushString "Trevor"
+Call @mLine
+PushString "LS Customs"
+Call @mLine
+PushString "LSIA Airport"
+Call @mLine
+PushString "Maze Bank"
+Call @mLine
+PushString "Mount Chiliad"
+Call @mLine
+PushString "Fort Zancudo"
+Call @mLine
+PushString "Prison"
+Call @mLine
+PushString "Observatory"
+Call @mLine
+PushString "Sandy Shores"
+Call @mLine
+PushString "Paleto Bay"
+Call @mLine
+PushString "Del Perro Pier"
+Call @mLine
+PushString "Nearest Vehicle"
+Call @mLine
+Jump @__if_end_309
+
+:__if_else_309
+GetStatic1 76
+Push_5
+CmpEq
+JumpFalse @__if_else_310
+
+:__if_then_310
+PushString "Weapons"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Give All"
+Call @mLine
+PushString "Max Ammo"
+Call @mLine
+PushString "Infinite Ammo: "
+GetStatic1 17
+Call @mToggle
+PushString "Never Reload: "
+GetStatic1 18
+Call @mToggle
+PushString "Explosive Ammo: "
+GetStatic1 19
+Call @mToggle
+PushString "Fire Ammo: "
+GetStatic1 20
+Call @mToggle
+PushString "Explosive Melee: "
+GetStatic1 21
+Call @mToggle
+PushString "Super Damage: "
+GetStatic1 22
+Call @mToggle
+PushString "Give Heavy"
+Call @mLine
+PushString "Parachute"
+Call @mLine
+PushString "Remove All"
+Call @mLine
+PushString "Air Strike Ahead"
+Call @mLine
+PushString "Teleport Gun: "
+GetStatic1 28
+PushB 16
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Explosion Gun: "
+GetStatic1 28
+PushB 128
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+Jump @__if_end_310
+
+:__if_else_310
+GetStatic1 76
+Push_6
+CmpEq
+JumpFalse @__if_else_311
+
+:__if_then_311
+PushString "World"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Pause Clock: "
+GetStatic1 23
+Call @mToggle
+PushString "Time: "
+GetStatic1 81
+Call @getTimePresetName
+Call @mChoice
+PushString "Apply Time"
+Call @mLine
+PushString "Weather: "
+GetStatic1 82
+Call @getWeatherPresetDisplayName
+Call @mChoice
+PushString "Apply Weather"
+Call @mLine
+PushString "Reset Weather"
+Call @mLine
+PushString "Low Gravity: "
+GetStatic1 25
+Call @mToggle
+PushString "Clear Peds"
+Call @mLine
+PushString "Clear Vehicles"
+Call @mLine
+PushString "Clear Cops"
+Call @mLine
+PushString "Blackout: "
+GetStatic1 24
+Call @mToggle
+PushString "Speed: "
+GetStatic1 83
+Call @getSpeedName
+Call @mChoice
+PushString "Riot Mode: "
+GetStatic1 28
+PushB 32
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+PushString "Aim Slowmo: "
+GetStatic1 28
+PushS 1024
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+Jump @__if_end_311
+
+:__if_else_311
+GetStatic1 76
+Push_7
+CmpEq
+JumpFalse @__if_else_312
+
+:__if_then_312
+PushString "Customs"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Neons: "
+GetStatic1 54
+Call @mToggle
+PushString "Neon Colour: "
+GetStatic1 55
+Call @getNeonColorName
+Call @mChoice
+PushString "Cycle Extra"
+Call @mLine
+PushString "Window Tint: "
+GetStatic1 57
+Call @getWindowTintName
+Call @mChoice
+PushString "Wheel Type: "
+GetStatic1 58
+Call @getWheelTypeName
+Call @mChoice
+PushString "Custom Paint: "
+GetStatic1 59
+Call @getCustomPaintName
+Call @mChoice
+PushString "Clean Vehicle"
+Call @mLine
+PushString "Rainbow Paint: "
+GetStatic1 28
+Push_1
+And
+Push_0
+CmpNe
+Push_0
+CmpNe
+Call @mToggle
+Jump @__if_end_312
+
+:__if_else_312
+GetStatic1 76
+PushB 8
+CmpEq
+JumpFalse @__if_else_313
+
+:__if_then_313
+PushString "Appearance"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Model: Michael"
+Call @mLine
+PushString "Model: Franklin"
+Call @mLine
+PushString "Model: Trevor"
+Call @mLine
+PushString "Model: MP Male"
+Call @mLine
+PushString "Model: MP Female"
+Call @mLine
+PushString "Reset Outfit"
+Call @mLine
+PushString "Cycle Torso"
+Call @mLine
+PushString "Cycle Legs"
+Call @mLine
+Jump @__if_end_313
+
+:__if_else_313
+GetStatic1 76
+PushB 9
+CmpEq
+JumpFalse @__if_else_314
+
+:__if_then_314
+PushString "Animations"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Smoke"
+Call @mLine
+PushString "Drink Coffee"
+Call @mLine
+PushString "Cheer"
+Call @mLine
+PushString "Flex Muscles"
+Call @mLine
+PushString "Binoculars"
+Call @mLine
+PushString "Push-ups"
+Call @mLine
+PushString "Sit-ups"
+Call @mLine
+PushString "Guard Stand"
+Call @mLine
+PushString "Stop Animation"
+Call @mLine
+Jump @__if_end_314
+
+:__if_else_314
+GetStatic1 76
+PushB 10
+CmpEq
+JumpFalse @__if_else_315
+
+:__if_then_315
+PushString "Spooner"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Spawn Cone"
+Call @mLine
+PushString "Spawn Barrier"
+Call @mLine
+PushString "Spawn Ramp"
+Call @mLine
+PushString "Spawn Box"
+Call @mLine
+PushString "Attach to Player"
+Call @mLine
+PushString "Freeze: "
+GetStatic1 61
+Call @mToggle
+PushString "Delete Spawned"
+Call @mLine
+Jump @__if_end_315
+
+:__if_else_315
+GetStatic1 76
+PushB 11
+CmpEq
+JumpFalse @__if_end_316
+
+:__if_then_316
+PushString "Settings"
+Call @menuTitle
+PushString "< Back"
+Call @mLine
+PushString "Spawn Inside: "
+GetStatic1 46
+Call @mToggle
+PushString "Freemode (LSO)"
+Call @mLine
+PushString "Host Solo (LSO)"
+Call @mLine
+PushString "Stop Trainer"
+Call @mLine
+
+:__if_end_316
+
+:__if_end_315
+
+:__if_end_314
+
+:__if_end_313
+
+:__if_end_312
+
+:__if_end_311
+
+:__if_end_310
+
+:__if_end_309
+
+:__if_end_308
+
+:__if_end_307
+
+:__if_end_306
+
+:__if_end_305
+Push_0
+SetFrame1 2
+GetStatic1 31
+Push_1
+CmpEq
+JumpFalse @__if_else_317
+
+:__if_then_317
+PushString "Loading..."
+SetFrame1 2
+Jump @__if_end_317
+
+:__if_else_317
+GetStatic1 31
+PushB 12
+CmpEq
+JumpFalse @__if_else_318
+
+:__if_then_318
+PushString "Locating ground..."
+SetFrame1 2
+Jump @__if_end_318
+
+:__if_else_318
+GetStatic1 31
+Push_0
+CmpGt
+JumpFalse @__if_else_319
+
+:__if_then_319
+PushString "Done"
+SetFrame1 2
+Jump @__if_end_319
+
+:__if_else_319
+GetStatic1 31
+PushS -5
+CmpEq
+JumpFalse @__if_else_320
+
+:__if_then_320
+PushString "Need Vehicle"
+SetFrame1 2
+Jump @__if_end_320
+
+:__if_else_320
+GetStatic1 31
+PushS -12
+CmpEq
+JumpFalse @__if_else_321
+
+:__if_then_321
+PushString "No Waypoint"
+SetFrame1 2
+Jump @__if_end_321
+
+:__if_else_321
+GetStatic1 31
+PushS -13
+CmpEq
+JumpFalse @__if_else_322
+
+:__if_then_322
+PushString "Ground timeout"
+SetFrame1 2
+Jump @__if_end_322
+
+:__if_else_322
+GetStatic1 31
+Push_0
+CmpLt
+JumpFalse @__if_end_323
+
+:__if_then_323
+PushString "Error"
+SetFrame1 2
+
+:__if_end_323
+
+:__if_end_322
+
+:__if_end_321
+
+:__if_end_320
+
+:__if_end_319
+
+:__if_end_318
+
+:__if_end_317
+GetFrame1 2
+JumpFalse @__if_end_324
+
+:__if_then_324
+GetStatic1 31
+Push_0
+CmpGt
+Push_0
+CmpNe
+Call @beginLine
+GetFrame1 2
+CallNative ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME 1 0 //0x6C188BE134E074AA
+PushB 18
+Call @endRow
+
+:__if_end_324
+Return 0 0
+//<
+
+:main//>
+Function 0 10
+GetStatic1 84
+Push 1314411569
+CmpNe
+Not
+JumpFalse @__if_then_325
+
+:__pcf_405
+GetStatic1 85
+Push_1
+CmpNe
+JumpFalse @__if_end_325
+
+:__if_then_325
+Return 0 0
+
+:__if_end_325
+Push_1
+SetStatic1 32
+Push_1
+JumpFalse @__while_end_1
+
+:__while_body_1
+Push_0
+CallNative WAIT 1 0 //0x4EDE34FBADD967A6
+GetStatic1 86
+Add1 1
+SetStatic1 86
+GetStatic1 32
+Push_2
+CmpEq
+JumpFalse @__if_end_326
+
+:__if_then_326
+PushS 1000
+CallNative WAIT 1 0 //0x4EDE34FBADD967A6
+Jump @__while_cond_1
+
+:__if_end_326
+CallNative PLAYER_PED_ID 0 1 //0xD80958FC74E988A6
+SetFrame1 2
+GetFrame1 2
+GetStatic1 4
+CmpNe
+JumpFalse @__if_end_327
+
+:__if_then_327
+GetStatic1 3
+JumpFalse @__if_end_328
+
+:__pcf_411
+GetStatic1 4
+JumpFalse @__if_end_328
+
+:__pcf_410
+GetStatic1 4
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_328
+
+:__if_then_328
+GetStatic1 4
+Push_0
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+
+:__if_end_328
+GetFrame1 2
+SetStatic1 4
+GetStatic1 3
+JumpFalse @__if_end_329
+
+:__pcf_416
+GetFrame1 2
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+JumpFalse @__if_end_329
+
+:__pcf_415
+GetFrame1 2
+CallNative IS_ENTITY_DEAD 1 1 //0x5F9532F3B5CC2551
+Not
+JumpFalse @__if_end_329
+
+:__if_then_329
+GetFrame1 2
+Push_1
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+
+:__if_end_329
+Call @releasePending
+GetStatic1 29
+Push_0
+CmpNe
+JumpFalse @__if_end_330
+
+:__if_then_330
+Push_0
+SetStatic1 29
+
+:__if_end_330
+
+:__if_end_327
+GetStatic1 87
+JumpFalse @__if_end_331
+
+:__if_then_331
+GetStatic1 87
+SetFrame1 3
+GetStatic1 88
+SetFrame1 4
+Push_0
+SetStatic1 87
+GetFrame1 3
+GetFrame1 4
+Call @action
+GetStatic1 89
+SetStatic1 90
+
+:__if_end_331
+GetStatic1 32
+Push_2
+CmpEq
+JumpFalse @__if_end_332
+
+:__if_then_332
+Jump @__while_cond_1
+
+:__if_end_332
+GetFrame1 2
+CallNative DOES_ENTITY_EXIST 1 1 //0x7239B21A38F536BA
+Not
+Not
+JumpFalse @__if_then_333
+
+:__pcf_423
+GetFrame1 2
+CallNative IS_ENTITY_DEAD 1 1 //0x5F9532F3B5CC2551
+JumpFalse @__if_end_333
+
+:__if_then_333
+GetStatic1 29
+Push_0
+CmpNe
+JumpFalse @__if_end_334
+
+:__if_then_334
+Push_0
+SetStatic1 29
+
+:__if_end_334
+Call @releasePending
+Jump @__while_cond_1
+
+:__if_end_333
+GetStatic1 5
+JumpFalse @__if_end_335
+
+:__if_then_335
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushB2 0 0
+CallNative SET_PLAYER_WANTED_LEVEL 3 0 //0x39FF19C64EF7DA5B
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+Push_0
+CallNative SET_PLAYER_WANTED_LEVEL_NOW 2 0 //0xE0A7D1E497FFCD6F
+
+:__if_end_335
+GetStatic1 6
+JumpFalse @__if_end_336
+
+:__if_then_336
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+CallNative NX_SET_SUPER_JUMP_THIS_FRAME 1 0 //0x57FFF03E423A4C0B
+
+:__if_end_336
+GetStatic1 9
+JumpFalse @__if_end_337
+
+:__if_then_337
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+PushF_1
+CallNative NX_RESTORE_PLAYER_STAMINA 2 0 //0xA352C1B864CAFD33
+
+:__if_end_337
+GetStatic1 19
+JumpFalse @__if_end_338
+
+:__if_then_338
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+CallNative NX_SET_EXPLOSIVE_AMMO_THIS_FRAME 1 0 //0xA66C71C98D5F2CFB
+
+:__if_end_338
+GetStatic1 20
+JumpFalse @__if_end_339
+
+:__if_then_339
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+CallNative NX_SET_FIRE_AMMO_THIS_FRAME 1 0 //0x11879CDD803D30F4
+
+:__if_end_339
+GetStatic1 21
+JumpFalse @__if_end_340
+
+:__if_then_340
+CallNative PLAYER_ID 0 1 //0x4F8644AF03D0E0D6
+CallNative NX_SET_EXPLOSIVE_MELEE_THIS_FRAME 1 0 //0xFF1BED81BFDC0FE0
+
+:__if_end_340
+GetStatic1 17
+JumpFalse @__if_end_341
+
+:__if_then_341
+GetFrame1 2
+PushB2 1 0
+CallNative NX_SET_PED_INFINITE_AMMO 3 0 //0x3EDCB0505123623B
+GetFrame1 2
+GetStatic1 18
+CallNative NX_SET_PED_INFINITE_AMMO_CLIP 2 0 //0x183DADC6AA953186
+
+:__if_end_341
+GetFrame1 2
+Push_0
+CallNative IS_PED_IN_ANY_VEHICLE 2 1 //0x997ABD671D25CA0B
+JumpFalse @__if_end_342
+
+:__if_then_342
+GetFrame1 2
+Push_0
+CallNative GET_VEHICLE_PED_IS_IN 2 1 //0x9A9112A0FE9A4713
+SetFrame1 3
+GetStatic1 15
+JumpFalse @__if_end_343
+
+:__if_then_343
+GetFrame1 3
+Push_1
+CallNative SET_ENTITY_INVINCIBLE 2 0 //0x3882114BDE571AD4
+GetFrame1 3
+Push_0
+CallNative NX_SET_VEHICLE_CAN_BE_VISIBLY_DAMAGED 2 0 //0x4C7028F78FFD3681
+GetFrame1 3
+Push_0
+CallNative NX_SET_VEHICLE_TYRES_CAN_BURST 2 0 //0xEB9DC3C7D8596C46
+
+:__if_end_343
+GetStatic1 16
+JumpFalse @__if_end_344
+
+:__if_then_344
+GetFrame1 3
+PushB3 1 1 0
+CallNative NX_SET_VEHICLE_ENGINE_ON 4 0 //0x2497C4717C8B881E
+
+:__if_end_344
+GetStatic1 27
+JumpFalse @__if_end_345
+
+:__if_then_345
+GetFrame1 3
+Push_1
+CallNative NX_SET_VEHICLE_REDUCE_GRIP 2 0 //0x222FF6A823D122E2
+
+:__if_end_345
+
+:__if_end_342
+GetStatic1 26
+JumpFalse @__if_end_346
+
+:__if_then_346
+GetFrame1 2
+PushB2 32 0
+CallNative NX_SET_PED_CONFIG_FLAG 3 0 //0x1913FE4CBF41C463
+
+:__if_end_346
+GetStatic1 28
+PushB 16
+And
+JumpFalse @__if_end_347
+
+:__pcf_438
+GetFrame1 2
+CallNative IS_PED_SHOOTING 1 1 //0x34616828CD07F1A1
+JumpFalse @__if_end_347
+
+:__if_then_347
+GetFrame1 2
+GetStaticP1 51
+CallNative NX_GET_PED_LAST_WEAPON_IMPACT_COORD 2 1 //0x6C4D0409BA1A2BC2
+JumpFalse @__if_end_348
+
+:__if_then_348
+GetFrame1 2
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushF_1
+FAdd
+PushB3 0 0 0
+Push_1
+CallNative NX_SET_ENTITY_COORDS 8 0 //0x6843DA7060A026B
+
+:__if_end_348
+
+:__if_end_347
+GetStatic1 28
+PushB 128
+And
+JumpFalse @__if_end_349
+
+:__pcf_442
+GetFrame1 2
+CallNative IS_PED_SHOOTING 1 1 //0x34616828CD07F1A1
+JumpFalse @__if_end_349
+
+:__if_then_349
+GetFrame1 2
+GetStaticP1 51
+CallNative NX_GET_PED_LAST_WEAPON_IMPACT_COORD 2 1 //0x6C4D0409BA1A2BC2
+JumpFalse @__if_end_350
+
+:__if_then_350
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB 29
+PushF_5
+PushB2 1 0
+PushF_1
+CallNative NX_ADD_EXPLOSION 8 0 //0xE3AD2BDBAEE269AC
+
+:__if_end_350
+
+:__if_end_349
+GetStatic1 28
+PushS 512
+And
+JumpFalse @__if_end_351
+
+:__if_then_351
+GetFrame1 2
+Push_1
+CallNative GET_ENTITY_COORDS 2 3 //0x3FEF770D40960D5A
+Push_3
+GetStaticP1 51
+FromStack
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB 70
+PushF_0
+PushB2 0 1
+PushF_0
+CallNative NX_ADD_EXPLOSION 8 0 //0xE3AD2BDBAEE269AC
+
+:__if_end_351
+GetStatic1 28
+PushS 1024
+And
+JumpFalse @__if_end_352
+
+:__if_then_352
+PushB2 0 25
+CallNative IS_CONTROL_PRESSED 2 1 //0xF3A21BCD95725A4A
+JumpFalse @__if_else_353
+
+:__if_then_353
+PushF 0.200000
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+Jump @__if_end_353
+
+:__if_else_353
+PushF_1
+CallNative NX_SET_TIME_SCALE 1 0 //0x1D408577D440E81E
+
+:__if_end_353
+
+:__if_end_352
+GetFrame1 2
+Push_0
+CallNative IS_PED_IN_ANY_VEHICLE 2 1 //0x997ABD671D25CA0B
+JumpFalse @__if_end_354
+
+:__if_then_354
+GetFrame1 2
+Push_0
+CallNative GET_VEHICLE_PED_IS_IN 2 1 //0x9A9112A0FE9A4713
+SetFrame1 3
+GetStatic1 28
+Push_2
+And
+JumpFalse @__if_end_355
+
+:__if_then_355
+GetFrame1 3
+CallNative SET_VEHICLE_FIXED 1 0 //0x115722B1B9C14C1C
+GetFrame1 3
+CallNative NX_SET_VEHICLE_DEFORMATION_FIXED 1 0 //0x953DA1E1B12C0491
+GetFrame1 3
+PushF_0
+CallNative NX_SET_VEHICLE_DIRT_LEVEL 2 0 //0x79D3B596FE44EE8B
+
+:__if_end_355
+GetStatic1 28
+Push_1
+And
+JumpFalse @__if_end_356
+
+:__if_then_356
+GetStatic1 91
+Add1 1
+SetStatic1 91
+GetFrame1 3
+GetStatic1 91
+Call @applyRainbowColor
+
+:__if_end_356
+GetStatic1 28
+Push_4
+And
+JumpFalse @__if_end_357
+
+:__pcf_452
+PushB2 0 86
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+JumpFalse @__if_end_357
+
+:__if_then_357
+GetFrame1 3
+PushF 50.000000
+CallNative NX_SET_VEHICLE_FORWARD_SPEED 2 0 //0xAB54A438726D25D5
+
+:__if_end_357
+GetStatic1 28
+PushB 64
+And
+JumpFalse @__if_end_358
+
+:__pcf_455
+PushB2 0 76
+CallNative IS_CONTROL_PRESSED 2 1 //0xF3A21BCD95725A4A
+JumpFalse @__if_end_358
+
+:__if_then_358
+GetFrame1 3
+Push_1
+PushF_0
+PushF 15.000000
+PushF 8.000000
+PushF_0
+PushF_0
+PushF_0
+PushB3 0 1 1
+PushB3 1 0 1
+CallNative NX_APPLY_FORCE_TO_ENTITY 14 0 //0xC5F68BE9613E2D18
+
+:__if_end_358
+GetStatic1 28
+PushB 8
+And
+JumpFalse @__if_end_359
+
+:__pcf_458
+PushB2 0 69
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+Not
+JumpFalse @__if_then_359
+
+:__pcf_460
+PushB2 0 86
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+JumpFalse @__if_end_359
+
+:__if_then_359
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_3
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 3
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetStaticP1 51
+FromStack
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF 80.000000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetFrame1 3
+Push_3
+GetStaticP1 48
+ToStack
+CallNative GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS 4 3 //0x1899F328B0E12848
+Push_3
+GetFrameP1 4
+FromStack
+PushF_0
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 0
+pSet
+PushF_7
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 1
+pSet
+PushF 0.500000
+GetStaticP1 48
+GetImmP1 0
+GetImmP1 2
+pSet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 0
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 1
+pGet
+GetStaticP1 51
+GetImmP1 0
+GetImmP1 2
+pGet
+GetFrameP1 4
+GetImmP1 0
+GetImmP1 0
+pGet
+GetFrameP1 4
+GetImmP1 0
+GetImmP1 1
+pGet
+GetFrameP1 4
+GetImmP1 0
+GetImmP1 2
+pGet
+PushB2 250 1
+Push 2138347493
+GetFrame1 2
+PushB2 1 0
+PushF 300.000000
+CallNative NX_SHOOT_SINGLE_BULLET 13 0 //0x867654CBC7606F2C
+
+:__if_end_359
+
+:__if_end_354
+GetFrame1 2
+Call @updateVehicle
+GetFrame1 2
+Call @updateTeleport
+PushB2 0 44
+CallNative IS_CONTROL_PRESSED 2 1 //0xF3A21BCD95725A4A
+JumpFalse @__pct_41
+
+:__pct_42
+PushB2 0 38
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+Not
+JumpFalse @__if_then_360
+
+:__pct_41
+PushB2 0 38
+CallNative IS_CONTROL_PRESSED 2 1 //0xF3A21BCD95725A4A
+JumpFalse @__pcf_462
+
+:__pct_44
+PushB2 0 44
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+Not
+JumpFalse @__if_then_360
+
+:__pcf_462
+PushB2 0 44
+CallNative IS_CONTROL_PRESSED 2 1 //0xF3A21BCD95725A4A
+JumpFalse @__if_end_360
+
+:__pcf_465
+PushB2 0 166
+CallNative IS_CONTROL_JUST_PRESSED 2 1 //0x580417101DDB492F
+JumpFalse @__if_end_360
+
+:__if_then_360
+GetStatic1 30
+Not
+Push_0
+CmpNe
+SetStatic1 30
+
+:__if_end_360
+CallNative NX_IS_PAUSE_MENU_ACTIVE 0 1 //0xB0034A223497FFCB
+Not
+JumpFalse @__if_then_361
+
+:__pct_46
+CallNative NX_IS_SCREEN_FADED_OUT 0 1 //0xB16FCE9DDC7BA182
+Not
+JumpFalse @__if_then_361
+
+:__pcf_468
+CallNative NX_IS_SCREEN_FADING_OUT 0 1 //0x797AC7CB535BA28F
+JumpFalse @__if_end_361
+
+:__if_then_361
+Jump @__while_cond_1
+
+:__if_end_361
+GetStatic1 30
+Not
+JumpFalse @__if_end_362
+
+:__if_then_362
+Jump @__while_cond_1
+
+:__if_end_362
+PushB3 0 164 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+PushB3 0 165 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+PushB3 0 166 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+PushB3 0 167 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+PushB3 0 177 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+PushB3 0 178 1
+CallNative DISABLE_CONTROL_ACTION 3 0 //0xFE99B66D079CF6BC
+Push_0
+SetFrame1 3
+Push_0
+SetFrame1 4
+Push_0
+SetFrame1 5
+Push_0
+SetFrame1 6
+PushB2 0 165
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+JumpFalse @__if_else_363
+
+:__if_then_363
+Push_1
+SetFrame1 3
+PushB 165
+SetStatic1 92
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushS 350
+Add
+SetStatic1 93
+Jump @__if_end_363
+
+:__if_else_363
+PushB2 0 165
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+JumpFalse @__if_end_364
+
+:__pcf_473
+GetStatic1 92
+PushB 165
+CmpEq
+JumpFalse @__if_end_364
+
+:__pcf_472
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 93
+CmpGt
+JumpFalse @__if_end_364
+
+:__if_then_364
+Push_1
+SetFrame1 3
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushB 140
+Add
+SetStatic1 93
+
+:__if_end_364
+
+:__if_end_363
+PushB2 0 164
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+JumpFalse @__if_else_365
+
+:__if_then_365
+Push_1
+SetFrame1 4
+PushB 164
+SetStatic1 92
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushS 350
+Add
+SetStatic1 93
+Jump @__if_end_365
+
+:__if_else_365
+PushB2 0 164
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+JumpFalse @__if_end_366
+
+:__pcf_479
+GetStatic1 92
+PushB 164
+CmpEq
+JumpFalse @__if_end_366
+
+:__pcf_478
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 93
+CmpGt
+JumpFalse @__if_end_366
+
+:__if_then_366
+Push_1
+SetFrame1 4
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushB 140
+Add
+SetStatic1 93
+
+:__if_end_366
+
+:__if_end_365
+PushB2 0 166
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+JumpFalse @__if_else_367
+
+:__if_then_367
+Push_1
+SetFrame1 5
+PushB 166
+SetStatic1 92
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushS 350
+Add
+SetStatic1 93
+Jump @__if_end_367
+
+:__if_else_367
+PushB2 0 166
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+JumpFalse @__if_end_368
+
+:__pcf_485
+GetStatic1 92
+PushB 166
+CmpEq
+JumpFalse @__if_end_368
+
+:__pcf_484
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 93
+CmpGt
+JumpFalse @__if_end_368
+
+:__if_then_368
+Push_1
+SetFrame1 5
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushB 140
+Add
+SetStatic1 93
+
+:__if_end_368
+
+:__if_end_367
+PushB2 0 167
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+JumpFalse @__if_else_369
+
+:__if_then_369
+Push_1
+SetFrame1 6
+PushB 167
+SetStatic1 92
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushS 350
+Add
+SetStatic1 93
+Jump @__if_end_369
+
+:__if_else_369
+PushB2 0 167
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+JumpFalse @__if_end_370
+
+:__pcf_491
+GetStatic1 92
+PushB 167
+CmpEq
+JumpFalse @__if_end_370
+
+:__pcf_490
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+GetStatic1 93
+CmpGt
+JumpFalse @__if_end_370
+
+:__if_then_370
+Push_1
+SetFrame1 6
+CallNative GET_GAME_TIMER 0 1 //0x9CD27B0045628463
+PushB 140
+Add
+SetStatic1 93
+
+:__if_end_370
+
+:__if_end_369
+PushB2 0 165
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+Not
+JumpFalse @__if_end_371
+
+:__pcf_497
+PushB2 0 164
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+Not
+JumpFalse @__if_end_371
+
+:__pcf_496
+PushB2 0 166
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+Not
+JumpFalse @__if_end_371
+
+:__pcf_495
+PushB2 0 167
+CallNative NX_IS_DISABLED_CONTROL_PRESSED 2 1 //0xDBA73788F6E3C5F
+Not
+JumpFalse @__if_end_371
+
+:__if_then_371
+Push_0
+SetStatic1 92
+
+:__if_end_371
+GetStatic1 76
+Call @getMaxRows
+SetFrame1 7
+GetFrame1 3
+JumpFalse @__if_end_372
+
+:__if_then_372
+GetStatic1 74
+GetFrame1 7
+Add
+Push_1
+Sub
+GetFrame1 7
+Mod
+SetStatic1 74
+
+:__if_end_372
+GetFrame1 4
+JumpFalse @__if_end_373
+
+:__if_then_373
+GetStatic1 74
+Push_1
+Add
+GetFrame1 7
+Mod
+SetStatic1 74
+
+:__if_end_373
+GetFrame1 5
+Not
+JumpFalse @__or_0_true
+
+:__pcf_504
+GetFrame1 6
+JumpFalse @__or_0_false
+
+:__or_0_true
+Push_1
+Jump @__or_0_end
+
+:__or_0_false
+Push_0
+
+:__or_0_end
+SetFrame1 8
+GetFrame1 8
+JumpFalse @__if_end_374
+
+:__if_then_374
+GetStatic1 76
+Push_1
+CmpEq
+JumpFalse @__if_else_375
+
+:__if_then_375
+GetStatic1 74
+PushB 16
+CmpEq
+Not
+JumpFalse @__if_then_376
+
+:__pct_50
+GetStatic1 74
+PushB 22
+CmpEq
+Not
+JumpFalse @__if_then_376
+
+:__pcf_508
+GetStatic1 74
+PushB 24
+CmpEq
+JumpFalse @__if_end_376
+
+:__if_then_376
+GetStatic1 74
+PushB 16
+CmpEq
+JumpFalse @__cond_false_16
+
+:__cond_true_16
+PushB 79
+Jump @__cond_end_16
+
+:__cond_false_16
+GetStatic1 74
+PushB 22
+CmpEq
+JumpFalse @__cond_false_17
+
+:__cond_true_17
+PushB 96
+Jump @__cond_end_17
+
+:__cond_false_17
+PushB 100
+
+:__cond_end_17
+
+:__cond_end_16
+Push_2
+Call @action
+
+:__if_end_376
+Jump @__if_end_375
+
+:__if_else_375
+GetStatic1 76
+Push_2
+CmpEq
+JumpFalse @__if_else_377
+
+:__if_then_377
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_378
+
+:__if_then_378
+GetFrame1 5
+JumpFalse @__if_else_379
+
+:__if_then_379
+GetStatic1 77
+Push_7
+Add
+PushB 8
+Mod
+SetStatic1 77
+Jump @__if_end_379
+
+:__if_else_379
+GetStatic1 77
+Push_1
+Add
+PushB 8
+Mod
+SetStatic1 77
+
+:__if_end_379
+PushB 31
+GetStatic1 77
+Call @action
+Jump @__if_end_378
+
+:__if_else_378
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__if_else_380
+
+:__if_then_380
+GetFrame1 5
+JumpFalse @__if_else_381
+
+:__if_then_381
+GetStatic1 78
+Push_3
+Add
+Push_4
+Mod
+SetStatic1 78
+Jump @__if_end_381
+
+:__if_else_381
+GetStatic1 78
+Push_1
+Add
+Push_4
+Mod
+SetStatic1 78
+
+:__if_end_381
+PushB 32
+GetStatic1 78
+Call @action
+Jump @__if_end_380
+
+:__if_else_380
+GetStatic1 74
+PushB 16
+CmpEq
+JumpFalse @__if_else_382
+
+:__if_then_382
+PushB2 76 2
+Call @action
+Jump @__if_end_382
+
+:__if_else_382
+GetStatic1 74
+PushB 19
+CmpGe
+JumpFalse @__if_else_383
+
+:__pcf_518
+GetStatic1 74
+PushB 22
+CmpLe
+JumpFalse @__if_else_383
+
+:__if_then_383
+GetStatic1 74
+PushB 22
+CmpEq
+JumpFalse @__cond_false_18
+
+:__cond_true_18
+PushB 91
+Jump @__cond_end_18
+
+:__cond_false_18
+PushB 67
+GetStatic1 74
+Add
+
+:__cond_end_18
+Push_2
+Call @action
+Jump @__if_end_383
+
+:__if_else_383
+GetStatic1 74
+PushB 24
+CmpEq
+JumpFalse @__if_else_384
+
+:__if_then_384
+PushB2 94 2
+Call @action
+Jump @__if_end_384
+
+:__if_else_384
+GetStatic1 74
+PushB 25
+CmpGe
+JumpFalse @__if_end_385
+
+:__pcf_523
+GetStatic1 74
+PushB 26
+CmpLe
+JumpFalse @__if_end_385
+
+:__if_then_385
+GetStatic1 74
+PushB 25
+CmpEq
+JumpFalse @__cond_false_19
+
+:__cond_true_19
+PushB 101
+Jump @__cond_end_19
+
+:__cond_false_19
+PushB 102
+
+:__cond_end_19
+Push_2
+Call @action
+
+:__if_end_385
+
+:__if_end_384
+
+:__if_end_383
+
+:__if_end_382
+
+:__if_end_380
+
+:__if_end_378
+Jump @__if_end_377
+
+:__if_else_377
+GetStatic1 76
+Push_3
+CmpEq
+JumpFalse @__if_else_386
+
+:__if_then_386
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_387
+
+:__if_then_387
+GetFrame1 5
+JumpFalse @__if_else_388
+
+:__if_then_388
+GetStatic1 79
+Push_6
+Add
+Push_7
+Mod
+SetStatic1 79
+Jump @__if_end_388
+
+:__if_else_388
+GetStatic1 79
+Push_1
+Add
+Push_7
+Mod
+SetStatic1 79
+
+:__if_end_388
+Push_0
+SetStatic1 80
+Jump @__if_end_387
+
+:__if_else_387
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_389
+
+:__if_then_389
+GetStatic1 79
+Call @getCategoryModelCount
+SetFrame1 9
+GetFrame1 5
+JumpFalse @__if_else_390
+
+:__if_then_390
+GetStatic1 80
+GetFrame1 9
+Add
+Push_1
+Sub
+GetFrame1 9
+Mod
+SetStatic1 80
+Jump @__if_end_390
+
+:__if_else_390
+GetStatic1 80
+Push_1
+Add
+GetFrame1 9
+Mod
+SetStatic1 80
+
+:__if_end_390
+Jump @__if_end_389
+
+:__if_else_389
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_else_391
+
+:__if_then_391
+GetStatic1 46
+Not
+Push_0
+CmpNe
+SetStatic1 46
+Jump @__if_end_391
+
+:__if_else_391
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_392
+
+:__if_then_392
+GetStatic1 62
+Not
+Push_0
+CmpNe
+SetStatic1 62
+Jump @__if_end_392
+
+:__if_else_392
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_end_393
+
+:__if_then_393
+GetStatic1 63
+Not
+Push_0
+CmpNe
+SetStatic1 63
+
+:__if_end_393
+
+:__if_end_392
+
+:__if_end_391
+
+:__if_end_389
+
+:__if_end_387
+Jump @__if_end_386
+
+:__if_else_386
+GetStatic1 76
+Push_5
+CmpEq
+JumpFalse @__if_else_394
+
+:__if_then_394
+GetStatic1 74
+PushB 13
+CmpEq
+Not
+JumpFalse @__if_then_395
+
+:__pcf_536
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_end_395
+
+:__if_then_395
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__cond_false_20
+
+:__cond_true_20
+PushB 89
+Jump @__cond_end_20
+
+:__cond_false_20
+PushB 92
+
+:__cond_end_20
+Push_2
+Call @action
+
+:__if_end_395
+Jump @__if_end_394
+
+:__if_else_394
+GetStatic1 76
+Push_6
+CmpEq
+JumpFalse @__if_else_396
+
+:__if_then_396
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_397
+
+:__if_then_397
+GetStatic1 23
+Not
+Push_0
+CmpNe
+SetStatic1 23
+PushB 17
+GetStatic1 23
+Call @action
+Jump @__if_end_397
+
+:__if_else_397
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_398
+
+:__if_then_398
+GetFrame1 5
+JumpFalse @__if_else_399
+
+:__if_then_399
+GetStatic1 81
+Push_3
+Add
+Push_4
+Mod
+SetStatic1 81
+Jump @__if_end_399
+
+:__if_else_399
+GetStatic1 81
+Push_1
+Add
+Push_4
+Mod
+SetStatic1 81
+
+:__if_end_399
+Jump @__if_end_398
+
+:__if_else_398
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_else_400
+
+:__if_then_400
+GetFrame1 5
+JumpFalse @__if_else_401
+
+:__if_then_401
+GetStatic1 82
+Push_6
+Add
+Push_7
+Mod
+SetStatic1 82
+Jump @__if_end_401
+
+:__if_else_401
+GetStatic1 82
+Push_1
+Add
+Push_7
+Mod
+SetStatic1 82
+
+:__if_end_401
+Jump @__if_end_400
+
+:__if_else_400
+GetStatic1 74
+PushB 11
+CmpEq
+JumpFalse @__if_else_402
+
+:__if_then_402
+GetStatic1 24
+Not
+Push_0
+CmpNe
+SetStatic1 24
+PushB 39
+GetStatic1 24
+Call @action
+Jump @__if_end_402
+
+:__if_else_402
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_403
+
+:__if_then_403
+GetFrame1 5
+JumpFalse @__if_else_404
+
+:__if_then_404
+GetStatic1 83
+Push_2
+Add
+Push_3
+Mod
+SetStatic1 83
+Jump @__if_end_404
+
+:__if_else_404
+GetStatic1 83
+Push_1
+Add
+Push_3
+Mod
+SetStatic1 83
+
+:__if_end_404
+PushB 40
+GetStatic1 83
+Call @action
+Jump @__if_end_403
+
+:__if_else_403
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__if_else_405
+
+:__if_then_405
+PushB2 90 2
+Call @action
+Jump @__if_end_405
+
+:__if_else_405
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_end_406
+
+:__if_then_406
+PushB2 97 2
+Call @action
+
+:__if_end_406
+
+:__if_end_405
+
+:__if_end_403
+
+:__if_end_402
+
+:__if_end_400
+
+:__if_end_398
+
+:__if_end_397
+Jump @__if_end_396
+
+:__if_else_396
+GetStatic1 76
+Push_7
+CmpEq
+JumpFalse @__if_else_407
+
+:__if_then_407
+GetStatic1 74
+Push_1
+CmpEq
+Not
+JumpFalse @__if_then_408
+
+:__pcf_551
+GetStatic1 74
+PushB 8
+CmpEq
+JumpFalse @__if_else_408
+
+:__if_then_408
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__cond_false_21
+
+:__cond_true_21
+PushB 60
+Jump @__cond_end_21
+
+:__cond_false_21
+PushB 85
+
+:__cond_end_21
+Push_2
+Call @action
+Jump @__if_end_408
+
+:__if_else_408
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_409
+
+:__if_then_409
+GetFrame1 5
+JumpFalse @__if_else_410
+
+:__if_then_410
+GetStatic1 55
+Push_7
+Add
+PushB 8
+Mod
+SetStatic1 55
+Jump @__if_end_410
+
+:__if_else_410
+GetStatic1 55
+Push_1
+Add
+PushB 8
+Mod
+SetStatic1 55
+
+:__if_end_410
+PushB 61
+GetStatic1 55
+Call @action
+Jump @__if_end_409
+
+:__if_else_409
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_else_411
+
+:__if_then_411
+GetFrame1 5
+JumpFalse @__if_else_412
+
+:__if_then_412
+GetStatic1 57
+Push_5
+Add
+Push_6
+Mod
+SetStatic1 57
+Jump @__if_end_412
+
+:__if_else_412
+GetStatic1 57
+Push_1
+Add
+Push_6
+Mod
+SetStatic1 57
+
+:__if_end_412
+PushB 63
+GetStatic1 57
+Call @action
+Jump @__if_end_411
+
+:__if_else_411
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_413
+
+:__if_then_413
+GetFrame1 5
+JumpFalse @__if_else_414
+
+:__if_then_414
+GetStatic1 58
+Push_6
+Add
+Push_7
+Mod
+SetStatic1 58
+Jump @__if_end_414
+
+:__if_else_414
+GetStatic1 58
+Push_1
+Add
+Push_7
+Mod
+SetStatic1 58
+
+:__if_end_414
+PushB 64
+GetStatic1 58
+Call @action
+Jump @__if_end_413
+
+:__if_else_413
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_end_415
+
+:__if_then_415
+GetFrame1 5
+JumpFalse @__if_else_416
+
+:__if_then_416
+GetStatic1 59
+Push_4
+Add
+Push_5
+Mod
+SetStatic1 59
+Jump @__if_end_416
+
+:__if_else_416
+GetStatic1 59
+Push_1
+Add
+Push_5
+Mod
+SetStatic1 59
+
+:__if_end_416
+PushB 65
+GetStatic1 59
+Call @action
+
+:__if_end_415
+
+:__if_end_413
+
+:__if_end_411
+
+:__if_end_409
+
+:__if_end_408
+Jump @__if_end_407
+
+:__if_else_407
+GetStatic1 76
+PushB 10
+CmpEq
+JumpFalse @__if_else_417
+
+:__if_then_417
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_end_418
+
+:__if_then_418
+PushB2 73 2
+Call @action
+
+:__if_end_418
+Jump @__if_end_417
+
+:__if_else_417
+GetStatic1 76
+PushB 11
+CmpEq
+JumpFalse @__if_end_419
+
+:__if_then_419
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_end_420
+
+:__if_then_420
+GetStatic1 46
+Not
+Push_0
+CmpNe
+SetStatic1 46
+
+:__if_end_420
+
+:__if_end_419
+
+:__if_end_417
+
+:__if_end_407
+
+:__if_end_396
+
+:__if_end_394
+
+:__if_end_386
+
+:__if_end_377
+
+:__if_end_375
+
+:__if_end_374
+PushB2 0 178
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+JumpFalse @__if_end_421
+
+:__if_then_421
+GetStatic1 29
+Push_0
+CmpNe
+JumpFalse @__if_else_422
+
+:__if_then_422
+Push_0
+SetStatic1 29
+Push_0
+SetStatic1 31
+Jump @__if_end_422
+
+:__if_else_422
+GetStatic1 76
+Push_0
+CmpNe
+JumpFalse @__if_else_423
+
+:__if_then_423
+GetStatic1 76
+Push_1
+Sub
+SetStatic1 74
+Push_0
+SetStatic1 76
+Jump @__if_end_423
+
+:__if_else_423
+Push_0
+SetStatic1 30
+
+:__if_end_423
+
+:__if_end_422
+Jump @__while_cond_1
+
+:__if_end_421
+Call @drawMenu
+PushB2 0 177
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1 //0x91AEF906BCA88877
+Not
+JumpFalse @__if_end_424
+
+:__if_then_424
+Jump @__while_cond_1
+
+:__if_end_424
+GetStatic1 76
+Push_0
+CmpNe
+JumpFalse @__if_end_425
+
+:__pcf_570
+GetStatic1 74
+Push_0
+CmpEq
+JumpFalse @__if_end_425
+
+:__if_then_425
+GetStatic1 76
+Push_1
+Sub
+SetStatic1 74
+Push_0
+SetStatic1 76
+Jump @__while_cond_1
+
+:__if_end_425
+GetStatic1 76
+Push_0
+CmpEq
+JumpFalse @__if_else_426
+
+:__if_then_426
+GetStatic1 74
+PushB 11
+CmpLt
+JumpFalse @__if_else_427
+
+:__if_then_427
+GetStatic1 74
+Push_1
+Add
+SetStatic1 76
+Push_0
+SetStatic1 74
+Jump @__if_end_427
+
+:__if_else_427
+Push_0
+SetStatic1 30
+
+:__if_end_427
+Jump @__if_end_426
+
+:__if_else_426
+GetStatic1 76
+Push_1
+CmpEq
+JumpFalse @__if_else_428
+
+:__if_then_428
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_429
+
+:__if_then_429
+PushB2 3 0
+Call @action
+Jump @__if_end_429
+
+:__if_else_429
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_430
+
+:__if_then_430
+PushB2 4 0
+Call @action
+Jump @__if_end_430
+
+:__if_else_430
+GetStatic1 74
+Push_3
+CmpGe
+JumpFalse @__if_else_431
+
+:__pcf_578
+GetStatic1 74
+Push_6
+CmpLe
+JumpFalse @__if_else_431
+
+:__if_then_431
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__cond_false_22
+
+:__cond_true_22
+Push_6
+Jump @__cond_end_22
+
+:__cond_false_22
+GetStatic1 74
+PushB 16
+Add
+
+:__cond_end_22
+Push_2
+Call @action
+Jump @__if_end_431
+
+:__if_else_431
+GetStatic1 74
+Push_7
+CmpGe
+JumpFalse @__if_else_432
+
+:__pcf_582
+GetStatic1 74
+PushB 11
+CmpLe
+JumpFalse @__if_else_432
+
+:__if_then_432
+GetStatic1 74
+PushB 34
+Add
+Push_2
+Call @action
+Jump @__if_end_432
+
+:__if_else_432
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_433
+
+:__if_then_433
+PushB2 24 0
+Call @action
+Jump @__if_end_433
+
+:__if_else_433
+GetStatic1 74
+PushB 13
+CmpEq
+Not
+JumpFalse @__if_then_434
+
+:__pcf_586
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_else_434
+
+:__if_then_434
+GetStatic1 74
+PushB 12
+Add
+Push_2
+Call @action
+Jump @__if_end_434
+
+:__if_else_434
+GetStatic1 74
+PushB 15
+CmpEq
+JumpFalse @__if_else_435
+
+:__if_then_435
+PushB2 27 0
+Call @action
+Jump @__if_end_435
+
+:__if_else_435
+GetStatic1 74
+PushB 16
+CmpEq
+JumpFalse @__if_else_436
+
+:__if_then_436
+PushB2 79 2
+Call @action
+Jump @__if_end_436
+
+:__if_else_436
+GetStatic1 74
+PushB 17
+CmpEq
+JumpFalse @__if_else_437
+
+:__if_then_437
+PushB2 80 0
+Call @action
+Jump @__if_end_437
+
+:__if_else_437
+GetStatic1 74
+PushB 18
+CmpEq
+JumpFalse @__if_else_438
+
+:__if_then_438
+PushB2 83 0
+Call @action
+Jump @__if_end_438
+
+:__if_else_438
+GetStatic1 74
+PushB 19
+CmpEq
+Not
+JumpFalse @__if_then_439
+
+:__pcf_592
+GetStatic1 74
+PushB 20
+CmpEq
+JumpFalse @__if_else_439
+
+:__if_then_439
+GetStatic1 74
+PushB 62
+Add
+Push_0
+Call @action
+Jump @__if_end_439
+
+:__if_else_439
+GetStatic1 74
+PushB 21
+CmpEq
+JumpFalse @__if_else_440
+
+:__if_then_440
+PushB2 93 0
+Call @action
+Jump @__if_end_440
+
+:__if_else_440
+GetStatic1 74
+PushB 22
+CmpEq
+JumpFalse @__if_else_441
+
+:__if_then_441
+PushB2 96 2
+Call @action
+Jump @__if_end_441
+
+:__if_else_441
+GetStatic1 74
+PushB 23
+CmpEq
+JumpFalse @__if_else_442
+
+:__if_then_442
+PushB2 98 0
+Call @action
+Jump @__if_end_442
+
+:__if_else_442
+GetStatic1 74
+PushB 24
+CmpEq
+JumpFalse @__if_end_443
+
+:__if_then_443
+PushB2 100 2
+Call @action
+
+:__if_end_443
+
+:__if_end_442
+
+:__if_end_441
+
+:__if_end_440
+
+:__if_end_439
+
+:__if_end_438
+
+:__if_end_437
+
+:__if_end_436
+
+:__if_end_435
+
+:__if_end_434
+
+:__if_end_433
+
+:__if_end_432
+
+:__if_end_431
+
+:__if_end_430
+
+:__if_end_429
+Jump @__if_end_428
+
+:__if_else_428
+GetStatic1 76
+Push_2
+CmpEq
+JumpFalse @__if_else_444
+
+:__if_then_444
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_445
+
+:__if_then_445
+PushB2 5 0
+Call @action
+Jump @__if_end_445
+
+:__if_else_445
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_446
+
+:__if_then_446
+PushB2 10 0
+Call @action
+Jump @__if_end_446
+
+:__if_else_446
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__if_else_447
+
+:__if_then_447
+PushB2 46 0
+Call @action
+Jump @__if_end_447
+
+:__if_else_447
+GetStatic1 74
+Push_4
+CmpEq
+Not
+JumpFalse @__if_then_448
+
+:__pcf_602
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_448
+
+:__if_then_448
+GetStatic1 74
+Push_7
+Add
+Push_0
+Call @action
+Jump @__if_end_448
+
+:__if_else_448
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_449
+
+:__if_then_449
+PushB2 47 2
+Call @action
+Jump @__if_end_449
+
+:__if_else_449
+GetStatic1 74
+Push_7
+CmpEq
+JumpFalse @__if_else_450
+
+:__if_then_450
+PushB2 28 2
+Call @action
+Jump @__if_end_450
+
+:__if_else_450
+GetStatic1 74
+PushB 8
+CmpEq
+Not
+JumpFalse @__if_then_451
+
+:__pcf_606
+GetStatic1 74
+PushB 9
+CmpEq
+JumpFalse @__if_else_451
+
+:__if_then_451
+GetStatic1 74
+PushB 40
+Add
+Push_0
+Call @action
+Jump @__if_end_451
+
+:__if_else_451
+GetStatic1 74
+PushB 10
+CmpEq
+Not
+JumpFalse @__if_then_452
+
+:__pcf_608
+GetStatic1 74
+PushB 11
+CmpEq
+JumpFalse @__if_else_452
+
+:__if_then_452
+GetStatic1 74
+PushB 19
+Add
+Push_0
+Call @action
+Jump @__if_end_452
+
+:__if_else_452
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_453
+
+:__if_then_453
+PushB 31
+GetStatic1 77
+Call @action
+Jump @__if_end_453
+
+:__if_else_453
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__if_else_454
+
+:__if_then_454
+PushB 32
+GetStatic1 78
+Call @action
+Jump @__if_end_454
+
+:__if_else_454
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_else_455
+
+:__if_then_455
+PushB2 13 0
+Call @action
+Jump @__if_end_455
+
+:__if_else_455
+GetStatic1 74
+PushB 15
+CmpEq
+Not
+JumpFalse @__if_then_456
+
+:__pcf_613
+GetStatic1 74
+PushB 17
+CmpEq
+JumpFalse @__if_else_456
+
+:__if_then_456
+GetStatic1 74
+PushB 60
+Add
+Push_0
+Call @action
+Jump @__if_end_456
+
+:__if_else_456
+GetStatic1 74
+PushB 16
+CmpEq
+JumpFalse @__if_else_457
+
+:__if_then_457
+PushB2 76 2
+Call @action
+Jump @__if_end_457
+
+:__if_else_457
+GetStatic1 74
+PushB 18
+CmpEq
+JumpFalse @__if_else_458
+
+:__if_then_458
+PushB2 84 0
+Call @action
+Jump @__if_end_458
+
+:__if_else_458
+GetStatic1 74
+PushB 19
+CmpGe
+JumpFalse @__if_else_459
+
+:__pcf_617
+GetStatic1 74
+PushB 22
+CmpLe
+JumpFalse @__if_else_459
+
+:__if_then_459
+GetStatic1 74
+PushB 22
+CmpEq
+JumpFalse @__cond_false_23
+
+:__cond_true_23
+PushB 91
+Jump @__cond_end_23
+
+:__cond_false_23
+PushB 67
+GetStatic1 74
+Add
+
+:__cond_end_23
+Push_2
+Call @action
+Jump @__if_end_459
+
+:__if_else_459
+GetStatic1 74
+PushB 23
+CmpEq
+JumpFalse @__if_else_460
+
+:__if_then_460
+PushB2 95 0
+Call @action
+Jump @__if_end_460
+
+:__if_else_460
+GetStatic1 74
+PushB 24
+CmpEq
+JumpFalse @__if_else_461
+
+:__if_then_461
+PushB2 94 2
+Call @action
+Jump @__if_end_461
+
+:__if_else_461
+GetStatic1 74
+PushB 25
+CmpEq
+Not
+JumpFalse @__if_then_462
+
+:__pcf_623
+GetStatic1 74
+PushB 26
+CmpEq
+JumpFalse @__if_else_462
+
+:__if_then_462
+GetStatic1 74
+PushB 76
+Add
+Push_2
+Call @action
+Jump @__if_end_462
+
+:__if_else_462
+GetStatic1 74
+PushB 27
+CmpEq
+JumpFalse @__if_end_463
+
+:__if_then_463
+PushB2 103 0
+Call @action
+
+:__if_end_463
+
+:__if_end_462
+
+:__if_end_461
+
+:__if_end_460
+
+:__if_end_459
+
+:__if_end_458
+
+:__if_end_457
+
+:__if_end_456
+
+:__if_end_455
+
+:__if_end_454
+
+:__if_end_453
+
+:__if_end_452
+
+:__if_end_451
+
+:__if_end_450
+
+:__if_end_449
+
+:__if_end_448
+
+:__if_end_447
+
+:__if_end_446
+
+:__if_end_445
+Jump @__if_end_444
+
+:__if_else_444
+GetStatic1 76
+Push_3
+CmpEq
+JumpFalse @__if_else_464
+
+:__if_then_464
+GetStatic1 74
+Push_1
+CmpEq
+Not
+JumpFalse @__if_then_465
+
+:__pct_62
+GetStatic1 74
+Push_2
+CmpEq
+Not
+JumpFalse @__if_then_465
+
+:__pcf_627
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__if_else_465
+
+:__if_then_465
+Push_2
+GetStatic1 79
+GetStatic1 80
+Call @getModelName
+CallNative GET_HASH_KEY 1 1 //0xD24D37CC275948CC
+Call @action
+Jump @__if_end_465
+
+:__if_else_465
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_else_466
+
+:__if_then_466
+GetStatic1 46
+Not
+Push_0
+CmpNe
+SetStatic1 46
+Jump @__if_end_466
+
+:__if_else_466
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_467
+
+:__if_then_467
+GetStatic1 62
+Not
+Push_0
+CmpNe
+SetStatic1 62
+Jump @__if_end_467
+
+:__if_else_467
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_468
+
+:__if_then_468
+GetStatic1 63
+Not
+Push_0
+CmpNe
+SetStatic1 63
+Jump @__if_end_468
+
+:__if_else_468
+GetStatic1 74
+Push_7
+CmpEq
+JumpFalse @__if_end_469
+
+:__if_then_469
+PushB2 13 0
+Call @action
+
+:__if_end_469
+
+:__if_end_468
+
+:__if_end_467
+
+:__if_end_466
+
+:__if_end_465
+Jump @__if_end_464
+
+:__if_else_464
+GetStatic1 76
+Push_4
+CmpEq
+JumpFalse @__if_else_470
+
+:__if_then_470
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_471
+
+:__if_then_471
+PushB2 15 0
+Call @action
+Jump @__if_end_471
+
+:__if_else_471
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_472
+
+:__if_then_472
+PushB2 50 5
+Call @action
+Jump @__if_end_472
+
+:__if_else_472
+GetStatic1 74
+Push_3
+CmpGe
+JumpFalse @__if_else_473
+
+:__pcf_636
+GetStatic1 74
+PushB 15
+CmpLe
+JumpFalse @__if_else_473
+
+:__if_then_473
+PushB 14
+GetStatic1 74
+Push_3
+Sub
+Call @action
+Jump @__if_end_473
+
+:__if_else_473
+GetStatic1 74
+PushB 16
+CmpEq
+JumpFalse @__if_end_474
+
+:__if_then_474
+PushB2 99 0
+Call @action
+
+:__if_end_474
+
+:__if_end_473
+
+:__if_end_472
+
+:__if_end_471
+Jump @__if_end_470
+
+:__if_else_470
+GetStatic1 76
+Push_5
+CmpEq
+JumpFalse @__if_else_475
+
+:__if_then_475
+GetStatic1 74
+Push_1
+CmpGe
+JumpFalse @__if_else_476
+
+:__pcf_641
+GetStatic1 74
+Push_4
+CmpLe
+JumpFalse @__if_else_476
+
+:__if_then_476
+GetStatic1 74
+PushB 32
+Add
+GetStatic1 74
+Push_2
+CmpLe
+JumpFalse @__cond_false_24
+
+:__cond_true_24
+Push_0
+Jump @__cond_end_24
+
+:__cond_false_24
+Push_2
+
+:__cond_end_24
+Call @action
+Jump @__if_end_476
+
+:__if_else_476
+GetStatic1 74
+Push_5
+CmpGe
+JumpFalse @__if_else_477
+
+:__pcf_645
+GetStatic1 74
+PushB 8
+CmpLe
+JumpFalse @__if_else_477
+
+:__if_then_477
+GetStatic1 74
+PushB 46
+Add
+Push_2
+Call @action
+Jump @__if_end_477
+
+:__if_else_477
+GetStatic1 74
+PushB 9
+CmpEq
+JumpFalse @__if_else_478
+
+:__if_then_478
+PushB2 55 0
+Call @action
+Jump @__if_end_478
+
+:__if_else_478
+GetStatic1 74
+PushB 10
+CmpEq
+Not
+JumpFalse @__if_then_479
+
+:__pcf_649
+GetStatic1 74
+PushB 11
+CmpEq
+JumpFalse @__if_else_479
+
+:__if_then_479
+GetStatic1 74
+PushB 27
+Add
+Push_0
+Call @action
+Jump @__if_end_479
+
+:__if_else_479
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_480
+
+:__if_then_480
+PushB2 78 0
+Call @action
+Jump @__if_end_480
+
+:__if_else_480
+GetStatic1 74
+PushB 13
+CmpEq
+Not
+JumpFalse @__if_then_481
+
+:__pcf_652
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_end_481
+
+:__if_then_481
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__cond_false_25
+
+:__cond_true_25
+PushB 89
+Jump @__cond_end_25
+
+:__cond_false_25
+PushB 92
+
+:__cond_end_25
+Push_2
+Call @action
+
+:__if_end_481
+
+:__if_end_480
+
+:__if_end_479
+
+:__if_end_478
+
+:__if_end_477
+
+:__if_end_476
+Jump @__if_end_475
+
+:__if_else_475
+GetStatic1 76
+Push_6
+CmpEq
+JumpFalse @__if_else_482
+
+:__if_then_482
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_483
+
+:__if_then_483
+GetStatic1 23
+Not
+Push_0
+CmpNe
+SetStatic1 23
+PushB 17
+GetStatic1 23
+Call @action
+Jump @__if_end_483
+
+:__if_else_483
+GetStatic1 74
+Push_2
+CmpEq
+Not
+JumpFalse @__if_then_484
+
+:__pcf_657
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__if_else_484
+
+:__if_then_484
+PushB 16
+GetStatic1 81
+Call @getTimePresetHour
+Call @action
+Jump @__if_end_484
+
+:__if_else_484
+GetStatic1 74
+Push_4
+CmpEq
+Not
+JumpFalse @__if_then_485
+
+:__pcf_659
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_485
+
+:__if_then_485
+PushB 18
+GetStatic1 82
+Call @action
+Jump @__if_end_485
+
+:__if_else_485
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_486
+
+:__if_then_486
+PushB2 19 0
+Call @action
+Jump @__if_end_486
+
+:__if_else_486
+GetStatic1 74
+Push_7
+CmpEq
+JumpFalse @__if_else_487
+
+:__if_then_487
+PushB2 56 2
+Call @action
+Jump @__if_end_487
+
+:__if_else_487
+GetStatic1 74
+PushB 8
+CmpGe
+JumpFalse @__if_else_488
+
+:__pcf_663
+GetStatic1 74
+PushB 10
+CmpLe
+JumpFalse @__if_else_488
+
+:__if_then_488
+GetStatic1 74
+PushB 49
+Add
+Push_0
+Call @action
+Jump @__if_end_488
+
+:__if_else_488
+GetStatic1 74
+PushB 11
+CmpEq
+JumpFalse @__if_else_489
+
+:__if_then_489
+PushB2 39 2
+Call @action
+Jump @__if_end_489
+
+:__if_else_489
+GetStatic1 74
+PushB 12
+CmpEq
+JumpFalse @__if_else_490
+
+:__if_then_490
+PushB 40
+GetStatic1 83
+Call @action
+Jump @__if_end_490
+
+:__if_else_490
+GetStatic1 74
+PushB 13
+CmpEq
+Not
+JumpFalse @__if_then_491
+
+:__pcf_668
+GetStatic1 74
+PushB 14
+CmpEq
+JumpFalse @__if_end_491
+
+:__if_then_491
+GetStatic1 74
+PushB 13
+CmpEq
+JumpFalse @__cond_false_26
+
+:__cond_true_26
+PushB 90
+Jump @__cond_end_26
+
+:__cond_false_26
+PushB 97
+
+:__cond_end_26
+Push_2
+Call @action
+
+:__if_end_491
+
+:__if_end_490
+
+:__if_end_489
+
+:__if_end_488
+
+:__if_end_487
+
+:__if_end_486
+
+:__if_end_485
+
+:__if_end_484
+
+:__if_end_483
+Jump @__if_end_482
+
+:__if_else_482
+GetStatic1 76
+Push_7
+CmpEq
+JumpFalse @__if_else_492
+
+:__if_then_492
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_493
+
+:__if_then_493
+PushB2 60 2
+Call @action
+Jump @__if_end_493
+
+:__if_else_493
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_494
+
+:__if_then_494
+PushB 61
+GetStatic1 55
+Call @action
+Jump @__if_end_494
+
+:__if_else_494
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__if_else_495
+
+:__if_then_495
+PushB2 62 0
+Call @action
+Jump @__if_end_495
+
+:__if_else_495
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_else_496
+
+:__if_then_496
+PushB 63
+GetStatic1 57
+Call @action
+Jump @__if_end_496
+
+:__if_else_496
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_497
+
+:__if_then_497
+PushB 64
+GetStatic1 58
+Call @action
+Jump @__if_end_497
+
+:__if_else_497
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_498
+
+:__if_then_498
+PushB 65
+GetStatic1 59
+Call @action
+Jump @__if_end_498
+
+:__if_else_498
+GetStatic1 74
+Push_7
+CmpEq
+JumpFalse @__if_else_499
+
+:__if_then_499
+PushB2 10 0
+Call @action
+Jump @__if_end_499
+
+:__if_else_499
+GetStatic1 74
+PushB 8
+CmpEq
+JumpFalse @__if_end_500
+
+:__if_then_500
+PushB2 85 2
+Call @action
+
+:__if_end_500
+
+:__if_end_499
+
+:__if_end_498
+
+:__if_end_497
+
+:__if_end_496
+
+:__if_end_495
+
+:__if_end_494
+
+:__if_end_493
+Jump @__if_end_492
+
+:__if_else_492
+GetStatic1 76
+PushB 8
+CmpEq
+JumpFalse @__if_else_501
+
+:__if_then_501
+GetStatic1 74
+Push_1
+CmpGe
+JumpFalse @__if_else_502
+
+:__pcf_681
+GetStatic1 74
+Push_5
+CmpLe
+JumpFalse @__if_else_502
+
+:__if_then_502
+PushB 66
+GetStatic1 74
+Push_1
+Sub
+Call @action
+Jump @__if_end_502
+
+:__if_else_502
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_503
+
+:__if_then_503
+PushB2 67 0
+Call @action
+Jump @__if_end_503
+
+:__if_else_503
+GetStatic1 74
+Push_7
+CmpGe
+JumpFalse @__if_end_504
+
+:__pcf_685
+GetStatic1 74
+PushB 8
+CmpLe
+JumpFalse @__if_end_504
+
+:__if_then_504
+PushB 68
+GetStatic1 74
+Push_4
+Sub
+Call @action
+
+:__if_end_504
+
+:__if_end_503
+
+:__if_end_502
+Jump @__if_end_501
+
+:__if_else_501
+GetStatic1 76
+PushB 9
+CmpEq
+JumpFalse @__if_else_505
+
+:__if_then_505
+GetStatic1 74
+Push_1
+CmpGe
+JumpFalse @__if_else_506
+
+:__pcf_689
+GetStatic1 74
+PushB 8
+CmpLe
+JumpFalse @__if_else_506
+
+:__if_then_506
+PushB 69
+GetStatic1 74
+Push_1
+Sub
+Call @action
+Jump @__if_end_506
+
+:__if_else_506
+GetStatic1 74
+PushB 9
+CmpEq
+JumpFalse @__if_end_507
+
+:__if_then_507
+PushB2 70 0
+Call @action
+
+:__if_end_507
+
+:__if_end_506
+Jump @__if_end_505
+
+:__if_else_505
+GetStatic1 76
+PushB 10
+CmpEq
+JumpFalse @__if_else_508
+
+:__if_then_508
+GetStatic1 74
+Push_1
+CmpGe
+JumpFalse @__if_else_509
+
+:__pcf_694
+GetStatic1 74
+Push_4
+CmpLe
+JumpFalse @__if_else_509
+
+:__if_then_509
+PushB 71
+GetStatic1 74
+Push_1
+Sub
+Call @action
+Jump @__if_end_509
+
+:__if_else_509
+GetStatic1 74
+Push_5
+CmpEq
+JumpFalse @__if_else_510
+
+:__if_then_510
+PushB2 72 0
+Call @action
+Jump @__if_end_510
+
+:__if_else_510
+GetStatic1 74
+Push_6
+CmpEq
+JumpFalse @__if_else_511
+
+:__if_then_511
+PushB2 73 2
+Call @action
+Jump @__if_end_511
+
+:__if_else_511
+GetStatic1 74
+Push_7
+CmpEq
+JumpFalse @__if_end_512
+
+:__if_then_512
+PushB2 74 0
+Call @action
+
+:__if_end_512
+
+:__if_end_511
+
+:__if_end_510
+
+:__if_end_509
+Jump @__if_end_508
+
+:__if_else_508
+GetStatic1 76
+PushB 11
+CmpEq
+JumpFalse @__if_end_513
+
+:__if_then_513
+GetStatic1 74
+Push_1
+CmpEq
+JumpFalse @__if_else_514
+
+:__if_then_514
+GetStatic1 46
+Not
+Push_0
+CmpNe
+SetStatic1 46
+Jump @__if_end_514
+
+:__if_else_514
+GetStatic1 74
+Push_2
+CmpEq
+JumpFalse @__if_else_515
+
+:__if_then_515
+PushB2 9 0
+Call @action
+Jump @__if_end_515
+
+:__if_else_515
+GetStatic1 74
+Push_3
+CmpEq
+JumpFalse @__if_else_516
+
+:__if_then_516
+PushB2 9 5
+Call @action
+Jump @__if_end_516
+
+:__if_else_516
+GetStatic1 74
+Push_4
+CmpEq
+JumpFalse @__if_end_517
+
+:__if_then_517
+Call @cleanup
+
+:__if_end_517
+
+:__if_end_516
+
+:__if_end_515
+
+:__if_end_514
+
+:__if_end_513
+
+:__if_end_508
+
+:__if_end_505
+
+:__if_end_501
+
+:__if_end_492
+
+:__if_end_482
+
+:__if_end_475
+
+:__if_end_470
+
+:__if_end_464
+
+:__if_end_444
+
+:__if_end_428
+
+:__if_end_426
+
+:__while_cond_1
+Push_1
+Not
+JumpFalse @__while_body_1
+
+:__while_end_1
+Return 0 0
+//<

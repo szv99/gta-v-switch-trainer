@@ -1,0 +1,917 @@
+[
+  {
+    "name": "START_NEW_SCRIPT",
+    "hash": "E81651AD79516E48",
+    "handler": "0x26382ec"
+  },
+  {
+    "name": "START_NEW_SCRIPT_WITH_ARGS",
+    "hash": "B8BA7F44DF1575E1",
+    "handler": "0x2638580"
+  },
+  {
+    "name": "START_NEW_SCRIPT_WITH_NAME_HASH",
+    "hash": "EB1C67C3A5333A92",
+    "handler": "0x26385c4"
+  },
+  {
+    "name": "START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS",
+    "hash": "C4BB298BD441BE78",
+    "handler": "0x263861c"
+  },
+  {
+    "name": "CREATE_NEW_SCRIPTED_CONVERSATION",
+    "hash": "59B217A592638F61",
+    "handler": "0xf7998c"
+  },
+  {
+    "name": "START_SCRIPT_PHONE_CONVERSATION",
+    "hash": "0C42FE4000B56A73",
+    "handler": "0xf79e14"
+  },
+  {
+    "name": "PRELOAD_SCRIPT_PHONE_CONVERSATION",
+    "hash": "B4CAA90C9DD83932",
+    "handler": "0xf79e44"
+  },
+  {
+    "name": "START_SCRIPT_CONVERSATION",
+    "hash": "71C95EBA363BDEAE",
+    "handler": "0xf79e74"
+  },
+  {
+    "name": "PRELOAD_SCRIPT_CONVERSATION",
+    "hash": "3A8253262437BA02",
+    "handler": "0xf79eb4"
+  },
+  {
+    "name": "IS_SCRIPTED_CONVERSATION_ONGOING",
+    "hash": "2E5F8A288A954523",
+    "handler": "0xf7a004"
+  },
+  {
+    "name": "IS_SCRIPTED_CONVERSATION_LOADED",
+    "hash": "6502D3750E36039C",
+    "handler": "0xf7a02c"
+  },
+  {
+    "name": "GET_CURRENT_SCRIPTED_CONVERSATION_LINE",
+    "hash": "BEE29398902B0435",
+    "handler": "0xf7a048"
+  },
+  {
+    "name": "PAUSE_SCRIPTED_CONVERSATION",
+    "hash": "1195A02D3676E6AF",
+    "handler": "0xf7a070"
+  },
+  {
+    "name": "RESTART_SCRIPTED_CONVERSATION",
+    "hash": "82B0661A78CC39CF",
+    "handler": "0xf7a090"
+  },
+  {
+    "name": "STOP_SCRIPTED_CONVERSATION",
+    "hash": "D681CC2BC1084DB6",
+    "handler": "0xf7a174"
+  },
+  {
+    "name": "SKIP_TO_NEXT_SCRIPTED_CONVERSATION_LINE",
+    "hash": "26A09F012CC86E43",
+    "handler": "0xf7a214"
+  },
+  {
+    "name": "GET_VARIATION_CHOSEN_FOR_SCRIPTED_LINE",
+    "hash": "F278A9E1BF1BF431",
+    "handler": "0xf7a420"
+  },
+  {
+    "name": "REGISTER_SCRIPT_WITH_AUDIO",
+    "hash": "F30CF8286FBA13D7",
+    "handler": "0xf7a584"
+  },
+  {
+    "name": "UNREGISTER_SCRIPT_WITH_AUDIO",
+    "hash": "AB06B90F4B4B3043",
+    "handler": "0xf7a588"
+  },
+  {
+    "name": "REQUEST_SCRIPT_AUDIO_BANK",
+    "hash": "70F555A7CCF10659",
+    "handler": "0xf7a604"
+  },
+  {
+    "name": "HINT_SCRIPT_AUDIO_BANK",
+    "hash": "925A4A10597C775B",
+    "handler": "0xf7a680"
+  },
+  {
+    "name": "RELEASE_NAMED_SCRIPT_AUDIO_BANK",
+    "hash": "E24865B69D79521B",
+    "handler": "0xf7a6a8"
+  },
+  {
+    "name": "RELEASE_SCRIPT_AUDIO_BANK",
+    "hash": "ECCDAE4E977BDA96",
+    "handler": "0xf7a6b4"
+  },
+  {
+    "name": "UNHINT_SCRIPT_AUDIO_BANK",
+    "hash": "2E8BCE38B05B7486",
+    "handler": "0xf7a6bc"
+  },
+  {
+    "name": "UNHINT_NAMED_SCRIPT_AUDIO_BANK",
+    "hash": "010E091F36DFD98F",
+    "handler": "0xf7a6c0"
+  },
+  {
+    "name": "IS_SCRIPTED_SPEECH_PLAYING",
+    "hash": "110B92AAD0FBEE95",
+    "handler": "0xf7b8d8"
+  },
+  {
+    "name": "SET_SCRIPT_UPDATE_DOOR_AUDIO",
+    "hash": "99C46337F53EECAD",
+    "handler": "0xf7fca0"
+  },
+  {
+    "name": "SET_AUDIO_SCRIPT_CLEANUP_TIME",
+    "hash": "BC770CB8938A190B",
+    "handler": "0xf803a0"
+  },
+  {
+    "name": "AUDIO_IS_SCRIPTED_MUSIC_PLAYING",
+    "hash": "F1557162766FCDEB",
+    "handler": "0xf805d0"
+  },
+  {
+    "name": "SCRIPT_OVERRIDES_WIND_ELEVATION",
+    "hash": "31950EBE600E22B4",
+    "handler": "0xf80820"
+  },
+  {
+    "name": "USE_FOOTSTEP_SCRIPT_SWEETENERS",
+    "hash": "610C6EDE2D4627D9",
+    "handler": "0xf81098"
+  },
+  {
+    "name": "ADD_SCRIPT_TO_RANDOM_PED",
+    "hash": "DF6F66B0424A2FB3",
+    "handler": "0xf82aa0"
+  },
+  {
+    "name": "REGISTER_OBJECT_SCRIPT_BRAIN",
+    "hash": "59C0D9624EE20434",
+    "handler": "0xf82ab8"
+  },
+  {
+    "name": "REGISTER_WORLD_POINT_SCRIPT_BRAIN",
+    "hash": "9863A0FFED964A8B",
+    "handler": "0xf82c08"
+  },
+  {
+    "name": "ENABLE_SCRIPT_BRAIN_SET",
+    "hash": "1B776653E338E92F",
+    "handler": "0xf82c3c"
+  },
+  {
+    "name": "DISABLE_SCRIPT_BRAIN_SET",
+    "hash": "BCE91688F4863B3C",
+    "handler": "0xf82c58"
+  },
+  {
+    "name": "RENDER_SCRIPT_CAMS",
+    "hash": "850D4EF3D40FB068",
+    "handler": "0xf90eb0"
+  },
+  {
+    "name": "STOP_RENDERING_SCRIPT_CAMS_USING_CATCH_UP",
+    "hash": "BAEA2321313356D0",
+    "handler": "0xf90f30"
+  },
+  {
+    "name": "SHAKE_SCRIPT_GLOBAL",
+    "hash": "7B6613DCAA2C2C29",
+    "handler": "0xf95148"
+  },
+  {
+    "name": "ANIMATED_SHAKE_SCRIPT_GLOBAL",
+    "hash": "0D38C39FB4ABD855",
+    "handler": "0xf951f0"
+  },
+  {
+    "name": "IS_SCRIPT_GLOBAL_SHAKING",
+    "hash": "E9331AEA6C1820C9",
+    "handler": "0xf9520c"
+  },
+  {
+    "name": "STOP_SCRIPT_GLOBAL_SHAKING",
+    "hash": "8564F0807A5C1CD6",
+    "handler": "0xf9522c"
+  },
+  {
+    "name": "SET_SCRIPTED_CAMERA_IS_FIRST_PERSON_THIS_FRAME",
+    "hash": "4B6A8FC4666F4A3B",
+    "handler": "0xf96618"
+  },
+  {
+    "name": "IS_INTERPOLATING_FROM_SCRIPT_CAMS",
+    "hash": "4709488C1D867377",
+    "handler": "0xf96824"
+  },
+  {
+    "name": "IS_INTERPOLATING_TO_SCRIPT_CAMS",
+    "hash": "E19E89B5FB4D4646",
+    "handler": "0xf9684c"
+  },
+  {
+    "name": "USE_SCRIPT_CAM_FOR_AMBIENT_POPULATION_ORIGIN_THIS_FRAME",
+    "hash": "A26C67A816927CC7",
+    "handler": "0xf96ed4"
+  },
+  {
+    "name": "SET_SCRIPT_CAN_START_CUTSCENE",
+    "hash": "24AAA4AC4A70A5FE",
+    "handler": "0xf9c1a4"
+  },
+  {
+    "name": "DOES_ENTITY_BELONG_TO_THIS_SCRIPT",
+    "hash": "930E64CB0285CAEC",
+    "handler": "0xfc0440"
+  },
+  {
+    "name": "GET_ENTITY_SCRIPT",
+    "hash": "24466A99E2719412",
+    "handler": "0xfc2490"
+  },
+  {
+    "name": "IS_ENTITY_VISIBLE_TO_SCRIPT",
+    "hash": "4A1EA713628C49D4",
+    "handler": "0xfc3f20"
+  },
+  {
+    "name": "SET_ENTITY_CAN_ONLY_BE_DAMAGED_BY_SCRIPT_PARTICIPANTS",
+    "hash": "D1C117AEB22F08E1",
+    "handler": "0xfc4f38"
+  },
+  {
+    "name": "SET_ENTITY_INVINCIBLE",
+    "hash": "9210F85E9CD785F1",
+    "handler": "0xfc52d4"
+  },
+  {
+    "name": "CREATE_MODEL_HIDE_EXCLUDING_SCRIPT_OBJECTS",
+    "hash": "CA2A868FD7906603",
+    "handler": "0xfc6ab4"
+  },
+  {
+    "name": "START_SCRIPT_FIRE",
+    "hash": "8669FFC323BE936C",
+    "handler": "0xfce598"
+  },
+  {
+    "name": "REMOVE_SCRIPT_FIRE",
+    "hash": "D97DCB0ED4FF04F8",
+    "handler": "0xfce694"
+  },
+  {
+    "name": "SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU",
+    "hash": "E53134ABB42F336F",
+    "handler": "0xfe6e78"
+  },
+  {
+    "name": "SET_SCRIPT_GFX_DRAW_ORDER",
+    "hash": "2E04B7B46A3670E5",
+    "handler": "0xfe6e9c"
+  },
+  {
+    "name": "SET_SCRIPT_GFX_ALIGN",
+    "hash": "A5AAB00FA8C570A4",
+    "handler": "0xfe6ef4"
+  },
+  {
+    "name": "RESET_SCRIPT_GFX_ALIGN",
+    "hash": "B5A50A903B9AB61B",
+    "handler": "0xfe6f14"
+  },
+  {
+    "name": "SET_SCRIPT_GFX_ALIGN_PARAMS",
+    "hash": "98F560BC13E5293F",
+    "handler": "0xfe6f30"
+  },
+  {
+    "name": "GET_SCRIPT_GFX_ALIGN_POSITION",
+    "hash": "9CCCA5F1EBB26C03",
+    "handler": "0xfe6f60"
+  },
+  {
+    "name": "WATER_REFLECTION_SET_SCRIPT_OBJECT_VISIBILITY",
+    "hash": "63758D6234411CF4",
+    "handler": "0xfe87d0"
+  },
+  {
+    "name": "BEGIN_SCALEFORM_SCRIPT_HUD_MOVIE_METHOD",
+    "hash": "1D728ABCF062CE8B",
+    "handler": "0xfec460"
+  },
+  {
+    "name": "REQUEST_SCALEFORM_SCRIPT_HUD_MOVIE",
+    "hash": "7D223DD16B5E51F3",
+    "handler": "0xfecc58"
+  },
+  {
+    "name": "HAS_SCALEFORM_SCRIPT_HUD_MOVIE_LOADED",
+    "hash": "19B4FACADAC4D97C",
+    "handler": "0xfecc74"
+  },
+  {
+    "name": "REMOVE_SCALEFORM_SCRIPT_HUD_MOVIE",
+    "hash": "13858AF709184724",
+    "handler": "0xfecca0"
+  },
+  {
+    "name": "SCRIPT_IS_MOVING_MOBILE_PHONE_OFFSCREEN",
+    "hash": "692D1ABAE39F0B00",
+    "handler": "0x1143920"
+  },
+  {
+    "name": "THEFEED_SET_SCRIPTED_MENU_HEIGHT",
+    "hash": "7ED668FC4CB0F4C4",
+    "handler": "0x10000b0"
+  },
+  {
+    "name": "SET_SCRIPT_VARIABLE_HUD_COLOUR",
+    "hash": "B84F6E7B50D72DDA",
+    "handler": "0x10024fc"
+  },
+  {
+    "name": "SET_SECOND_SCRIPT_VARIABLE_HUD_COLOUR",
+    "hash": "E1B27B622CD5EF09",
+    "handler": "0x100256c"
+  },
+  {
+    "name": "GET_DEFAULT_SCRIPT_RENDERTARGET_RENDER_ID",
+    "hash": "56555A9ED8B80DFD",
+    "handler": "0x1002a0c"
+  },
+  {
+    "name": "HAS_SCRIPT_HIDDEN_HELP_THIS_FRAME",
+    "hash": "697282ECBFD7B449",
+    "handler": "0x100308c"
+  },
+  {
+    "name": "SET_DESCRIPTION_FOR_UGC_MISSION_EIGHT_STRINGS",
+    "hash": "5865E793FD7D704F",
+    "handler": "0x10069c0"
+  },
+  {
+    "name": "IS_SCRIPTED_HUD_COMPONENT_ACTIVE",
+    "hash": "D8E7FBBA43B54355",
+    "handler": "0x1006f84"
+  },
+  {
+    "name": "HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME",
+    "hash": "6EC26FC7C9EC0D16",
+    "handler": "0x1006fb0"
+  },
+  {
+    "name": "SHOW_SCRIPTED_HUD_COMPONENT_THIS_FRAME",
+    "hash": "5DE9A897C16D7B8B",
+    "handler": "0x1006fec"
+  },
+  {
+    "name": "IS_SCRIPTED_HUD_COMPONENT_HIDDEN_THIS_FRAME",
+    "hash": "83BB81F26B7FB1AD",
+    "handler": "0x1007030"
+  },
+  {
+    "name": "GET_GLOBAL_ACTIONSCRIPT_FLAG",
+    "hash": "974B1C69FC991E56",
+    "handler": "0x10082c8"
+  },
+  {
+    "name": "RESET_GLOBAL_ACTIONSCRIPT_FLAG",
+    "hash": "28EE7E032936A666",
+    "handler": "0x10082f8"
+  },
+  {
+    "name": "FORCE_SCRIPTED_GFX_WHEN_FRONTEND_ACTIVE",
+    "hash": "9EDDAD8C2D04A4A2",
+    "handler": "0x1008e84"
+  },
+  {
+    "name": "CODE_WANTS_SCRIPT_TO_TAKE_CONTROL",
+    "hash": "AE1C7C8CFCC275F9",
+    "handler": "0x1009340"
+  },
+  {
+    "name": "GET_SCREEN_CODE_WANTS_SCRIPT_TO_CONTROL",
+    "hash": "113CC89632E2C20D",
+    "handler": "0x100935c"
+  },
+  {
+    "name": "SET_DIRECTOR_MODE_LAUNCHED_BY_SCRIPT",
+    "hash": "E823A8CA7ABBB847",
+    "handler": "0x1009d64"
+  },
+  {
+    "name": "SET_SCRIPT_HIGH_PRIO",
+    "hash": "EEEFCC23227A8148",
+    "handler": "0x101f6e0"
+  },
+  {
+    "name": "SET_THIS_IS_A_TRIGGER_SCRIPT",
+    "hash": "3E397AA8C35A7536",
+    "handler": "0x101f718"
+  },
+  {
+    "name": "GET_GAME_TIMER",
+    "hash": "320D1840B6DAA1CC",
+    "handler": "0x1020444"
+  },
+  {
+    "name": "TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME",
+    "hash": "CB67CDEE283E73DC",
+    "handler": "0x10221c0"
+  },
+  {
+    "name": "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME",
+    "hash": "3F57BEDBC381CBC7",
+    "handler": "0x1022298"
+  },
+  {
+    "name": "IS_THIS_A_MINIGAME_SCRIPT",
+    "hash": "4308664BE93CB669",
+    "handler": "0x1023658"
+  },
+  {
+    "name": "SET_THIS_SCRIPT_CAN_BE_PAUSED",
+    "hash": "2C07CBAFAC54A645",
+    "handler": "0x1024dc4"
+  },
+  {
+    "name": "SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT",
+    "hash": "E2B3315F89FB203D",
+    "handler": "0x1024dfc"
+  },
+  {
+    "name": "COPY_SCRIPT_STRUCT",
+    "hash": "049557638ADE4DF8",
+    "handler": "0x10257fc"
+  },
+  {
+    "name": "SCRIPT_RACE_INIT",
+    "hash": "B209DDE44EC31285",
+    "handler": "0x10271fc"
+  },
+  {
+    "name": "SCRIPT_RACE_SHUTDOWN",
+    "hash": "21177C558350F942",
+    "handler": "0x1027214"
+  },
+  {
+    "name": "SCRIPT_RACE_PLAYER_HIT_CHECKPOINT",
+    "hash": "8B131AD9CA84BCE8",
+    "handler": "0x1027218"
+  },
+  {
+    "name": "SCRIPT_RACE_GET_PLAYER_SPLIT_TIME",
+    "hash": "EB390AFEB597210E",
+    "handler": "0x1027230"
+  },
+  {
+    "name": "NETWORK_HAVE_PLATFORM_SUBSCRIPTION",
+    "hash": "181069B04C4883BD",
+    "handler": "0x10a277c"
+  },
+  {
+    "name": "NETWORK_IS_PLATFORM_SUBSCRIPTION_CHECK_PENDING",
+    "hash": "6C8E92D4F56B150E",
+    "handler": "0x10a27b4"
+  },
+  {
+    "name": "NETWORK_SESSION_SET_SCRIPT_VALIDATE_JOIN",
+    "hash": "72A439F08C4282AE",
+    "handler": "0x10a34dc"
+  },
+  {
+    "name": "NETWORK_SET_SCRIPT_READY_FOR_EVENTS",
+    "hash": "172705BF7BD84016",
+    "handler": "0x10a3c68"
+  },
+  {
+    "name": "NETWORK_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT",
+    "hash": "D9B114A8D3A8319F",
+    "handler": "0x10a7578"
+  },
+  {
+    "name": "NETWORK_TRY_TO_SET_THIS_SCRIPT_IS_NETWORK_SCRIPT",
+    "hash": "FD86BDAC70588822",
+    "handler": "0x10a7674"
+  },
+  {
+    "name": "NETWORK_GET_THIS_SCRIPT_IS_NETWORK_SCRIPT",
+    "hash": "DD50B5A22807BAD4",
+    "handler": "0x10a7790"
+  },
+  {
+    "name": "NETWORK_GET_SCRIPT_STATUS",
+    "hash": "0EEB2C2CA48FB650",
+    "handler": "0x10a7860"
+  },
+  {
+    "name": "NETWORK_IS_HOST_OF_THIS_SCRIPT",
+    "hash": "54E30A65F4FA4962",
+    "handler": "0x10a8414"
+  },
+  {
+    "name": "NETWORK_GET_HOST_OF_THIS_SCRIPT",
+    "hash": "10490C0971778A41",
+    "handler": "0x10a846c"
+  },
+  {
+    "name": "NETWORK_GET_HOST_OF_SCRIPT",
+    "hash": "CBE03D1B06A08744",
+    "handler": "0x10a84b8"
+  },
+  {
+    "name": "NETWORK_IS_SCRIPT_ACTIVE",
+    "hash": "7B0A672B0283F03E",
+    "handler": "0x10a85a0"
+  },
+  {
+    "name": "NETWORK_IS_SCRIPT_ACTIVE_BY_HASH",
+    "hash": "AB2EFF25CDE56451",
+    "handler": "0x10a8740"
+  },
+  {
+    "name": "NETWORK_IS_THREAD_A_NETWORK_SCRIPT",
+    "hash": "A19C6234B5450D1C",
+    "handler": "0x10a88b0"
+  },
+  {
+    "name": "NETWORK_GET_NUM_SCRIPT_PARTICIPANTS",
+    "hash": "49A870E8DCC9A2C4",
+    "handler": "0x10a8930"
+  },
+  {
+    "name": "NETWORK_GET_INSTANCE_ID_OF_THIS_SCRIPT",
+    "hash": "5C5CE5291FB79534",
+    "handler": "0x10a8c28"
+  },
+  {
+    "name": "NETWORK_GET_POSITION_HASH_OF_THIS_SCRIPT",
+    "hash": "64E70C7C5D6DE65C",
+    "handler": "0x10a8cc4"
+  },
+  {
+    "name": "NETWORK_IS_PLAYER_A_PARTICIPANT_ON_SCRIPT",
+    "hash": "715C12FF862F6649",
+    "handler": "0x10a8d60"
+  },
+  {
+    "name": "NETWORK_PREVENT_SCRIPT_HOST_MIGRATION",
+    "hash": "DC0B8C11C11AE5C2",
+    "handler": "0x10a8f50"
+  },
+  {
+    "name": "NETWORK_REQUEST_TO_BE_HOST_OF_THIS_SCRIPT",
+    "hash": "2FB25AE288339020",
+    "handler": "0x10a9004"
+  },
+  {
+    "name": "NETWORK_SET_SCRIPT_AUTOMUTED",
+    "hash": "F3B37FC3D63A0B2E",
+    "handler": "0x10ab7c0"
+  },
+  {
+    "name": "NETWORK_SET_SCRIPT_CONTROLLING_TEAMS",
+    "hash": "F0F6808C20C6FC95",
+    "handler": "0x10ac500"
+  },
+  {
+    "name": "SET_NON_PARTICIPANTS_OF_THIS_SCRIPT_AS_GHOSTS",
+    "hash": "42C38AC3D109CFE1",
+    "handler": "0x10b0b98"
+  },
+  {
+    "name": "NETWORK_REQUEST_CLOUD_BACKGROUND_SCRIPTS",
+    "hash": "2D1A01516592199A",
+    "handler": "0x10b28f0"
+  },
+  {
+    "name": "NETWORK_IS_CLOUD_BACKGROUND_SCRIPT_REQUEST_PENDING",
+    "hash": "049D6C87562C80CD",
+    "handler": "0x10b29a0"
+  },
+  {
+    "name": "UGC_GET_CONTENT_DESCRIPTION_HASH",
+    "hash": "1223CFAAA0AC38FE",
+    "handler": "0x10b514c"
+  },
+  {
+    "name": "UGC_REQUEST_CACHED_DESCRIPTION",
+    "hash": "C554B8B09B05CF3F",
+    "handler": "0x10b59f8"
+  },
+  {
+    "name": "UGC_IS_DESCRIPTION_REQUEST_IN_PROGRESS",
+    "hash": "1BFDC48299591EE7",
+    "handler": "0x10b5a30"
+  },
+  {
+    "name": "UGC_HAS_DESCRIPTION_REQUEST_FINISHED",
+    "hash": "C4E6BB4D008B1A0D",
+    "handler": "0x10b5ac0"
+  },
+  {
+    "name": "UGC_DID_DESCRIPTION_REQUEST_SUCCEED",
+    "hash": "3CDA5F7958322C2B",
+    "handler": "0x10b5b50"
+  },
+  {
+    "name": "UGC_GET_CACHED_DESCRIPTION",
+    "hash": "BE68E8EF2908AB25",
+    "handler": "0x10b5be0"
+  },
+  {
+    "name": "UGC_RELEASE_CACHED_DESCRIPTION",
+    "hash": "B1BB0770DDABA505",
+    "handler": "0x10b5c98"
+  },
+  {
+    "name": "UGC_RELEASE_ALL_CACHED_DESCRIPTIONS",
+    "hash": "965EE1EA5DCEBC17",
+    "handler": "0x10b5cc8"
+  },
+  {
+    "name": "INIT_PC_SCRIPTED_CONTROLS",
+    "hash": "9E4A185A00C358E1",
+    "handler": "0x10d7574"
+  },
+  {
+    "name": "SWITCH_PC_SCRIPTED_CONTROLS",
+    "hash": "870FDFBB89C863CA",
+    "handler": "0x10d7584"
+  },
+  {
+    "name": "SHUTDOWN_PC_SCRIPTED_CONTROLS",
+    "hash": "027F803A942FB98F",
+    "handler": "0x10d7594"
+  },
+  {
+    "name": "SET_SCRIPTED_CONVERSION_COORD_THIS_FRAME",
+    "hash": "06C47617FE42768F",
+    "handler": "0x110cf38"
+  },
+  {
+    "name": "IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM",
+    "hash": "1F4534A6B5A5AC67",
+    "handler": "0x11142e4"
+  },
+  {
+    "name": "GET_CAN_PED_BE_GRABBED_BY_SCRIPT",
+    "hash": "0C285F0981CE9E32",
+    "handler": "0x1117b3c"
+  },
+  {
+    "name": "SET_SCRIPTED_ANIM_SEAT_OFFSET",
+    "hash": "2254BFF47F4A5852",
+    "handler": "0x111d70c"
+  },
+  {
+    "name": "DOES_SCRIPT_OWN_ROPE",
+    "hash": "1CC33B026A2C4382",
+    "handler": "0x112be30"
+  },
+  {
+    "name": "ROPE_CHANGE_SCRIPT_OWNER",
+    "hash": "5BE8B68DC44472EF",
+    "handler": "0x112bfac"
+  },
+  {
+    "name": "GET_PLAYER_PED_SCRIPT_INDEX",
+    "hash": "E0FCABB9FCDF25ED",
+    "handler": "0x1139404"
+  },
+  {
+    "name": "IS_PLAYER_SCRIPT_CONTROL_ON",
+    "hash": "9895F96718388657",
+    "handler": "0x113c0b0"
+  },
+  {
+    "name": "PLAYER_PED_ID",
+    "hash": "E2D3D51028F0428A",
+    "handler": "0x113c6a8"
+  },
+  {
+    "name": "REMOVE_SCRIPT_FIRE_POSITION",
+    "hash": "483DE9CEC1CBFD93",
+    "handler": "0x11424a4"
+  },
+  {
+    "name": "REPLAY_SYSTEM_HAS_REQUESTED_A_SCRIPT_CLEANUP",
+    "hash": "D6F85402E4158EAD",
+    "handler": "0x1142cec"
+  },
+  {
+    "name": "SET_SCRIPTS_HAVE_CLEANED_UP_FOR_REPLAY_SYSTEM",
+    "hash": "3031CDEFBE2B11FB",
+    "handler": "0x1142d00"
+  },
+  {
+    "name": "REQUEST_SCRIPT",
+    "hash": "AF76A37C80EFD1D8",
+    "handler": "0x1147494"
+  },
+  {
+    "name": "SET_SCRIPT_AS_NO_LONGER_NEEDED",
+    "hash": "D195D79715508EFA",
+    "handler": "0x11475b0"
+  },
+  {
+    "name": "HAS_SCRIPT_LOADED",
+    "hash": "F79F112CE5999680",
+    "handler": "0x11476e8"
+  },
+  {
+    "name": "DOES_SCRIPT_EXIST",
+    "hash": "11ADEF87BAD88F70",
+    "handler": "0x11477f0"
+  },
+  {
+    "name": "REQUEST_SCRIPT_WITH_NAME_HASH",
+    "hash": "251C5C1DDC74D01D",
+    "handler": "0x1147a00"
+  },
+  {
+    "name": "SET_SCRIPT_WITH_NAME_HASH_AS_NO_LONGER_NEEDED",
+    "hash": "D48AC12D763BBE7F",
+    "handler": "0x1147af0"
+  },
+  {
+    "name": "HAS_SCRIPT_WITH_NAME_HASH_LOADED",
+    "hash": "095032C22DEE1587",
+    "handler": "0x1147cd0"
+  },
+  {
+    "name": "DOES_SCRIPT_WITH_NAME_HASH_EXIST",
+    "hash": "FF09675EC057A8D2",
+    "handler": "0x1147de0"
+  },
+  {
+    "name": "GET_NAME_OF_SCRIPT_WITH_THIS_ID",
+    "hash": "FCC2C8D6F42DBD7E",
+    "handler": "0x1148060"
+  },
+  {
+    "name": "SCRIPT_THREAD_ITERATOR_RESET",
+    "hash": "27053BE21EC6A549",
+    "handler": "0x11480fc"
+  },
+  {
+    "name": "SCRIPT_THREAD_ITERATOR_GET_NEXT_THREAD_ID",
+    "hash": "2B33DAA8227A8DAE",
+    "handler": "0x1148110"
+  },
+  {
+    "name": "GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH",
+    "hash": "B4C854DD86E40FDA",
+    "handler": "0x1148208"
+  },
+  {
+    "name": "GET_THIS_SCRIPT_NAME",
+    "hash": "05CBA41180F5D521",
+    "handler": "0x1148258"
+  },
+  {
+    "name": "GET_HASH_OF_THIS_SCRIPT_NAME",
+    "hash": "1307D54181723A6E",
+    "handler": "0x114828c"
+  },
+  {
+    "name": "TRIGGER_SCRIPT_EVENT",
+    "hash": "A29C2ECC2C86354D",
+    "handler": "0x114872c"
+  },
+  {
+    "name": "BG_GET_SCRIPT_ID_FROM_NAME_HASH",
+    "hash": "9DA3BF7ED82B02C6",
+    "handler": "0x1148bf0"
+  },
+  {
+    "name": "REGISTER_SCRIPT_VARIABLE",
+    "hash": "40EB1EFD921822BC",
+    "handler": "0x1144670"
+  },
+  {
+    "name": "UNREGISTER_SCRIPT_VARIABLE",
+    "hash": "340A36A700E99699",
+    "handler": "0x11446c4"
+  },
+  {
+    "name": "PLAYSTATS_BACKGROUND_SCRIPT_ACTION",
+    "hash": "8F21AC03C0A56F7B",
+    "handler": "0x11930d0"
+  },
+  {
+    "name": "TASK_SCRIPTED_ANIMATION",
+    "hash": "86577F7F045F84C7",
+    "handler": "0x11d5dc0"
+  },
+  {
+    "name": "PLAY_ENTITY_SCRIPTED_ANIM",
+    "hash": "C51D165944C64CA6",
+    "handler": "0x11d5ddc"
+  },
+  {
+    "name": "GET_SCRIPT_TASK_STATUS",
+    "hash": "174CED88B97C78D9",
+    "handler": "0x11d6b38"
+  },
+  {
+    "name": "TASK_AIM_GUN_SCRIPTED",
+    "hash": "CCF862B807FE3901",
+    "handler": "0x11d6c90"
+  },
+  {
+    "name": "TASK_AIM_GUN_SCRIPTED_WITH_TARGET",
+    "hash": "30CD3D58DF974A16",
+    "handler": "0x11d6cb8"
+  },
+  {
+    "name": "UPDATE_TASK_AIM_GUN_SCRIPTED_TARGET",
+    "hash": "20A2AEAF04674323",
+    "handler": "0x11d6ce8"
+  },
+  {
+    "name": "GET_CLIP_SET_FOR_SCRIPTED_GUN_TASK",
+    "hash": "3943988DE42EF74A",
+    "handler": "0x11d6d10"
+  },
+  {
+    "name": "DOES_SCRIPTED_COVER_POINT_EXIST_AT_COORDS",
+    "hash": "7FD113B09D96C678",
+    "handler": "0x11d85c8"
+  },
+  {
+    "name": "GET_SCRIPTED_COVER_POINT_COORDS",
+    "hash": "137FB6FC6E40A0A8",
+    "handler": "0x11d861c"
+  },
+  {
+    "name": "ADD_SCRIPTED_COVER_AREA",
+    "hash": "28B7B9BFDAF274AA",
+    "handler": "0x11d8788"
+  },
+  {
+    "name": "CREATE_VEHICLE",
+    "hash": "BA715A7BEBA5A1F9",
+    "handler": "0x1214c40"
+  },
+  {
+    "name": "DOES_SCRIPT_VEHICLE_GENERATOR_EXIST",
+    "hash": "D23A6EB80C5CA596",
+    "handler": "0x121527c"
+  },
+  {
+    "name": "CREATE_SCRIPT_VEHICLE_GENERATOR",
+    "hash": "375BB75B2409BEFC",
+    "handler": "0x12152ec"
+  },
+  {
+    "name": "DELETE_SCRIPT_VEHICLE_GENERATOR",
+    "hash": "FE29EC7E7BCC0E15",
+    "handler": "0x1215448"
+  },
+  {
+    "name": "SET_SCRIPT_VEHICLE_GENERATOR",
+    "hash": "E8EEB9E60D338C50",
+    "handler": "0x12154e8"
+  },
+  {
+    "name": "SET_VEHICLE_DOORS_LOCKED_FOR_NON_SCRIPT_PLAYERS",
+    "hash": "484CCFB803FCFD80",
+    "handler": "0x12167f8"
+  },
+  {
+    "name": "SET_SCRIPT_RAMP_IMPULSE_SCALE",
+    "hash": "33D2AD0783FD0D43",
+    "handler": "0x122f038"
+  },
+  {
+    "name": "SET_SCRIPT_ROCKET_BOOST_RECHARGE_TIME",
+    "hash": "DDECEDBE203E1057",
+    "handler": "0x122f1d4"
+  },
+  {
+    "name": "SET_SHOULD_RESET_TURRET_IN_SCRIPTED_CAMERAS",
+    "hash": "78CEEE41F49F421F",
+    "handler": "0x1230b28"
+  },
+  {
+    "name": "HIDE_PED_WEAPON_FOR_SCRIPTED_CUTSCENE",
+    "hash": "4F1E6A84BC157FA0",
+    "handler": "0x123f5f0"
+  }
+]

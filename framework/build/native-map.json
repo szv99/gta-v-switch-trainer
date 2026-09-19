@@ -1,0 +1,712 @@
+[
+  {
+    "name": "SET_VEHICLE_CUSTOM_PRIMARY_COLOUR",
+    "original": "7141766F91D15BEA",
+    "build2699": "401F3880D64CB7D9"
+  },
+  {
+    "name": "SET_VEHICLE_CUSTOM_SECONDARY_COLOUR",
+    "original": "36CED73BFED89754",
+    "build2699": "4A498F8F5DB5D526"
+  },
+  {
+    "name": "SET_MODEL_AS_NO_LONGER_NEEDED",
+    "original": "E532F5D78798DAAB",
+    "build2699": "F1A23B343DFEDFD0"
+  },
+  {
+    "name": "DOES_ENTITY_EXIST",
+    "original": "7239B21A38F536BA",
+    "build2699": "E5965CDF24F93A9F"
+  },
+  {
+    "name": "DELETE_OBJECT",
+    "original": "539E0AE3E6634B9F",
+    "build2699": "4BDA5AFD88C085EB"
+  },
+  {
+    "name": "DELETE_PED",
+    "original": "9614299DCB53E54B",
+    "build2699": "05CB75C0837196F9"
+  },
+  {
+    "name": "SET_ENTITY_INVINCIBLE",
+    "original": "3882114BDE571AD4",
+    "build2699": "9210F85E9CD785F1"
+  },
+  {
+    "name": "PLAYER_ID",
+    "original": "4F8644AF03D0E0D6",
+    "build2699": "9E2D6C50374FCFA9"
+  },
+  {
+    "name": "SET_RUN_SPRINT_MULTIPLIER_FOR_PLAYER",
+    "original": "6DB47AA77FD94E09",
+    "build2699": "0C6EBABC089A80BE"
+  },
+  {
+    "name": "SET_SWIM_MULTIPLIER_FOR_PLAYER",
+    "original": "A91C6F0FF7D16A13",
+    "build2699": "C04F56833375054E"
+  },
+  {
+    "name": "SET_POLICE_IGNORE_PLAYER",
+    "original": "32C62AA929C2DA6A",
+    "build2699": "B5B3AAE149FC278D"
+  },
+  {
+    "name": "SET_SEETHROUGH",
+    "original": "7E08924259E08CE0",
+    "build2699": "C2C3885D7793A4EF"
+  },
+  {
+    "name": "SET_NIGHTVISION",
+    "original": "18F621F7A5B1F85D",
+    "build2699": "CF840EE47FD445AA"
+  },
+  {
+    "name": "SET_PLAYER_WEAPON_DAMAGE_MODIFIER",
+    "original": "CE07B9F7817AADA3",
+    "build2699": "D27F869625866850"
+  },
+  {
+    "name": "SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER",
+    "original": "4A3DC7ECCC321032",
+    "build2699": "ABB7C36B502BF82E"
+  },
+  {
+    "name": "SET_PED_CAN_RAGDOLL",
+    "original": "B128377056A54E2A",
+    "build2699": "C252F409BDE7A700"
+  },
+  {
+    "name": "SET_ENTITY_VISIBLE",
+    "original": "EA1C610A04DB6BBB",
+    "build2699": "1C2ED929474DC6FE"
+  },
+  {
+    "name": "PAUSE_CLOCK",
+    "original": "4055E40BD2DBEC1D",
+    "build2699": "BC9595CB59DB2217"
+  },
+  {
+    "name": "SET_ARTIFICIAL_LIGHTS_STATE",
+    "original": "1268615ACE24D504",
+    "build2699": "B3E46DE3B7BE51B0"
+  },
+  {
+    "name": "SET_GRAVITY_LEVEL",
+    "original": "740E14FAD5842351",
+    "build2699": "29F437C0738A11D6"
+  },
+  {
+    "name": "SET_TIME_SCALE",
+    "original": "1D408577D440E81E",
+    "build2699": "434E3AE126DDC5B5"
+  },
+  {
+    "name": "CLEAR_WEATHER_TYPE_PERSIST",
+    "original": "CCC39339BEF76CF5",
+    "build2699": "C4075F869BC19306"
+  },
+  {
+    "name": "SET_PED_CONFIG_FLAG",
+    "original": "1913FE4CBF41C463",
+    "build2699": "D6A76BAB45A4B460"
+  },
+  {
+    "name": "SET_RIOT_MODE_ENABLED",
+    "original": "2587A48BC88DFADF",
+    "build2699": "F542970145BC96B5"
+  },
+  {
+    "name": "SET_PED_IS_DRUNK",
+    "original": "95D2D383D5396B8A",
+    "build2699": "0CF765282E225F04"
+  },
+  {
+    "name": "CLEAR_PED_TASKS",
+    "original": "E1EF3C1216AFF2CD",
+    "build2699": "03A927199A2DFE46"
+  },
+  {
+    "name": "IS_MODEL_IN_CDIMAGE",
+    "original": "35B9E0803292B641",
+    "build2699": "51046EEE00E2BBDA"
+  },
+  {
+    "name": "REQUEST_MODEL",
+    "original": "963D27A58DF860AC",
+    "build2699": "D69A0C3662175E68"
+  },
+  {
+    "name": "GET_GAME_TIMER",
+    "original": "9CD27B0045628463",
+    "build2699": "320D1840B6DAA1CC"
+  },
+  {
+    "name": "HAS_MODEL_LOADED",
+    "original": "98A4EB5D89A0C952",
+    "build2699": "0152AA00FA3130F1"
+  },
+  {
+    "name": "WAIT",
+    "original": "4EDE34FBADD967A6",
+    "build2699": "4EDE34FBADD967A6"
+  },
+  {
+    "name": "IS_MODEL_A_VEHICLE",
+    "original": "19AAC8F07BFEC53E",
+    "build2699": "2886B1BFE0896A9A"
+  },
+  {
+    "name": "SET_VEHICLE_MOD_KIT",
+    "original": "1F2AA07F00B3217A",
+    "build2699": "3C1BCE3438ECBFC0"
+  },
+  {
+    "name": "GET_NUM_VEHICLE_MODS",
+    "original": "E38E9162A2500646",
+    "build2699": "6B83F5AE0478286F"
+  },
+  {
+    "name": "SET_VEHICLE_MOD",
+    "original": "6AF0636DDEDCB6DD",
+    "build2699": "0061B7C9351B41ED"
+  },
+  {
+    "name": "TOGGLE_VEHICLE_MOD",
+    "original": "2A1F4F37F95BAD08",
+    "build2699": "6C6188D0F8AB739A"
+  },
+  {
+    "name": "GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS",
+    "original": "1899F328B0E12848",
+    "build2699": "CACAD935C0BEE14F"
+  },
+  {
+    "name": "GET_ENTITY_HEADING",
+    "original": "E83D4F9BA2A38914",
+    "build2699": "82FE2343F8BDFF0B"
+  },
+  {
+    "name": "CREATE_VEHICLE",
+    "original": "AF35D0D2583051B0",
+    "build2699": "BA715A7BEBA5A1F9"
+  },
+  {
+    "name": "SET_VEHICLE_ON_GROUND_PROPERLY",
+    "original": "49733E92263139D1",
+    "build2699": "9F65B3BAFA302A65"
+  },
+  {
+    "name": "SET_VEHICLE_CAN_BE_VISIBLY_DAMAGED",
+    "original": "4C7028F78FFD3681",
+    "build2699": "E0AF417CBBB366F3"
+  },
+  {
+    "name": "SET_VEHICLE_TYRES_CAN_BURST",
+    "original": "EB9DC3C7D8596C46",
+    "build2699": "AFE1B52F0DE91595"
+  },
+  {
+    "name": "SET_PED_INTO_VEHICLE",
+    "original": "F75B0D629E1C063D",
+    "build2699": "A9F390242F9EB2E1"
+  },
+  {
+    "name": "SET_VEHICLE_AS_NO_LONGER_NEEDED",
+    "original": "629BFA74418D6239",
+    "build2699": "3D81769BEC61BFF8"
+  },
+  {
+    "name": "IS_PED_IN_ANY_VEHICLE",
+    "original": "997ABD671D25CA0B",
+    "build2699": "D5C6B5E3B93A5EDC"
+  },
+  {
+    "name": "GET_VEHICLE_PED_IS_IN",
+    "original": "9A9112A0FE9A4713",
+    "build2699": "B3FF0049C1FD38EC"
+  },
+  {
+    "name": "GET_GROUND_Z_FOR_3D_COORD",
+    "original": "C906A7DAB05C8D2B",
+    "build2699": "9CD4CBF2BBE10F00"
+  },
+  {
+    "name": "SET_ENTITY_COORDS",
+    "original": "06843DA7060A026B",
+    "build2699": "C64B6E13A6A7F517"
+  },
+  {
+    "name": "SET_VEHICLE_FORWARD_SPEED",
+    "original": "AB54A438726D25D5",
+    "build2699": "B2D5451CC5606248"
+  },
+  {
+    "name": "LOAD_SCENE",
+    "original": "4448EB75B4904BDB",
+    "build2699": "42C4310E76AD635A"
+  },
+  {
+    "name": "REQUEST_COLLISION_AT_COORD",
+    "original": "07503F7948F491A7",
+    "build2699": "E49A23F069C82C93"
+  },
+  {
+    "name": "SET_ENTITY_HEADING",
+    "original": "8E2530AA8ADA980E",
+    "build2699": "BBF86885619695CE"
+  },
+  {
+    "name": "PLAYER_PED_ID",
+    "original": "D80958FC74E988A6",
+    "build2699": "E2D3D51028F0428A"
+  },
+  {
+    "name": "NETWORK_IS_SIGNED_IN",
+    "original": "054354A99211EB96",
+    "build2699": "AF5DBE95205A49D1"
+  },
+  {
+    "name": "NETWORK_IS_SIGNED_ONLINE",
+    "original": "1077788E268557C2",
+    "build2699": "20E4972CBF3DBE1B"
+  },
+  {
+    "name": "NETWORK_CAN_ACCESS_MULTIPLAYER",
+    "original": "AF50DA1A3F8B1BA4",
+    "build2699": "BE80A802DC72EDC6"
+  },
+  {
+    "name": "NETWORK_IS_GAME_IN_PROGRESS",
+    "original": "10FAB35428CCC9D7",
+    "build2699": "9315DBF7D972F07A"
+  },
+  {
+    "name": "NETWORK_IS_SESSION_ACTIVE",
+    "original": "D83C2B94E7508980",
+    "build2699": "71880CE67EE81F91"
+  },
+  {
+    "name": "NETWORK_DO_TRANSITION_TO_FREEMODE",
+    "original": "3AAD8B2FCA1E289F",
+    "build2699": "696AC5B55DFF5BBF"
+  },
+  {
+    "name": "NETWORK_SESSION_HOST",
+    "original": "6F3D4ED9BEE4E61D",
+    "build2699": "4D16964E44441FDE"
+  },
+  {
+    "name": "IS_ENTITY_DEAD",
+    "original": "5F9532F3B5CC2551",
+    "build2699": "55B23FE400FCEA6B"
+  },
+  {
+    "name": "GET_ENTITY_MAX_HEALTH",
+    "original": "15D757606D170C3C",
+    "build2699": "72649CAA101B626C"
+  },
+  {
+    "name": "SET_ENTITY_HEALTH",
+    "original": "6B76DC1F3AE6E6A3",
+    "build2699": "F160248D9083ED0C"
+  },
+  {
+    "name": "SET_PED_ARMOUR",
+    "original": "CEA04D83135264CC",
+    "build2699": "495F6EBD50BCB090"
+  },
+  {
+    "name": "SET_PLAYER_WANTED_LEVEL",
+    "original": "39FF19C64EF7DA5B",
+    "build2699": "BCD99B4EDAE55BE6"
+  },
+  {
+    "name": "SET_PLAYER_WANTED_LEVEL_NOW",
+    "original": "E0A7D1E497FFCD6F",
+    "build2699": "B78CBE6C9550E5EF"
+  },
+  {
+    "name": "SET_VEHICLE_FIXED",
+    "original": "115722B1B9C14C1C",
+    "build2699": "02443408423266F9"
+  },
+  {
+    "name": "SET_VEHICLE_DEFORMATION_FIXED",
+    "original": "953DA1E1B12C0491",
+    "build2699": "5DACC304F20AF7E6"
+  },
+  {
+    "name": "SET_VEHICLE_DIRT_LEVEL",
+    "original": "79D3B596FE44EE8B",
+    "build2699": "2EC6505629D78CCE"
+  },
+  {
+    "name": "SET_ENTITY_ROTATION",
+    "original": "8524A8B0171D5E07",
+    "build2699": "8CE3D365F064F69E"
+  },
+  {
+    "name": "DELETE_VEHICLE",
+    "original": "EA386986E786A54F",
+    "build2699": "D59CC8123FD1A789"
+  },
+  {
+    "name": "IS_WAYPOINT_ACTIVE",
+    "original": "1DD1F58F493F1DA5",
+    "build2699": "309A7E82D2306F1D"
+  },
+  {
+    "name": "GET_FIRST_BLIP_INFO_ID",
+    "original": "1BEDE233E6CD2A1F",
+    "build2699": "FD3A7CD556889D1D"
+  },
+  {
+    "name": "DOES_BLIP_EXIST",
+    "original": "A6DB27D19ECBB7DA",
+    "build2699": "12DD4A0B247D9B4D"
+  },
+  {
+    "name": "GET_BLIP_INFO_ID_COORD",
+    "original": "FA7C7F0AADF25D09",
+    "build2699": "9A497500DDC52C34"
+  },
+  {
+    "name": "SET_CLOCK_TIME",
+    "original": "47C3B5848C3E45D8",
+    "build2699": "AA27C85E5BE092AA"
+  },
+  {
+    "name": "SET_WEATHER_TYPE_NOW_PERSIST",
+    "original": "ED712CA327900C8A",
+    "build2699": "9CD86FAC92DBE038"
+  },
+  {
+    "name": "CLEAR_PED_BLOOD_DAMAGE",
+    "original": "8FE22675A5A45817",
+    "build2699": "6DA9E81AB6F35BA4"
+  },
+  {
+    "name": "RESET_PED_VISIBLE_DAMAGE",
+    "original": "3AC1F7B898F30C05",
+    "build2699": "8FA4320F1F0BBD88"
+  },
+  {
+    "name": "SET_VEHICLE_DOOR_OPEN",
+    "original": "7C65DAC73C35C862",
+    "build2699": "2476BE9932670CAD"
+  },
+  {
+    "name": "SET_VEHICLE_DOORS_SHUT",
+    "original": "781B3D62BB013EF5",
+    "build2699": "0E97FAE15BEE6379"
+  },
+  {
+    "name": "SET_VEHICLE_COLOURS",
+    "original": "4F1D4BE3A7F24601",
+    "build2699": "58DAFDEB2F46A5EA"
+  },
+  {
+    "name": "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX",
+    "original": "9088EB5A43FFB0A1",
+    "build2699": "E56B65C6B89CFCF2"
+  },
+  {
+    "name": "GIVE_WEAPON_TO_PED",
+    "original": "BF0FD6E56C964FCB",
+    "build2699": "9521FB98DB6DDF50"
+  },
+  {
+    "name": "SET_PED_INFINITE_AMMO",
+    "original": "3EDCB0505123623B",
+    "build2699": "73AC05050F54F1E0"
+  },
+  {
+    "name": "SET_PED_INFINITE_AMMO_CLIP",
+    "original": "183DADC6AA953186",
+    "build2699": "B5AD1B3D21EC1AA1"
+  },
+  {
+    "name": "REMOVE_ALL_PED_WEAPONS",
+    "original": "F25DF915FA38C5F3",
+    "build2699": "70D9EC5AF67D79C4"
+  },
+  {
+    "name": "SET_VEHICLE_TYRE_FIXED",
+    "original": "6E13FC662B882D1D",
+    "build2699": "F66E9C612E9BCD20"
+  },
+  {
+    "name": "GET_ENTITY_COORDS",
+    "original": "3FEF770D40960D5A",
+    "build2699": "6B62510F212526DC"
+  },
+  {
+    "name": "CLEAR_AREA_OF_PEDS",
+    "original": "BE31FD6CE464AC59",
+    "build2699": "F96094A43D443C41"
+  },
+  {
+    "name": "CLEAR_AREA_OF_VEHICLES",
+    "original": "01C7B9B38428AEB6",
+    "build2699": "02B222EADC9DC566"
+  },
+  {
+    "name": "CLEAR_AREA_OF_COPS",
+    "original": "04F8FC8FCF58F88D",
+    "build2699": "CB583354EA6E5E4A"
+  },
+  {
+    "name": "SET_VEHICLE_NEON_ENABLED",
+    "original": "2AA720E4287BF269",
+    "build2699": "BE69E921963A86B7"
+  },
+  {
+    "name": "SET_VEHICLE_NEON_COLOUR",
+    "original": "8E0A582209A62695",
+    "build2699": "74FCADE93B81FD35"
+  },
+  {
+    "name": "DOES_EXTRA_EXIST",
+    "original": "1262D55792428154",
+    "build2699": "2C52B3CC96343F32"
+  },
+  {
+    "name": "SET_VEHICLE_EXTRA",
+    "original": "7EE3A3C5E4A40CC9",
+    "build2699": "45A6EA15139A0C54"
+  },
+  {
+    "name": "SET_VEHICLE_WINDOW_TINT",
+    "original": "57C51E6BAD752696",
+    "build2699": "2EB7787881686751"
+  },
+  {
+    "name": "SET_VEHICLE_WHEEL_TYPE",
+    "original": "487EB21CC7295BA1",
+    "build2699": "E19D99912C7661C6"
+  },
+  {
+    "name": "SET_PLAYER_MODEL",
+    "original": "00A1CADD00108836",
+    "build2699": "BECE2B5C03BB4F09"
+  },
+  {
+    "name": "SET_PED_DEFAULT_COMPONENT_VARIATION",
+    "original": "45EEE61580806D63",
+    "build2699": "DCB52C614B3660EC"
+  },
+  {
+    "name": "GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS",
+    "original": "27561561732A7842",
+    "build2699": "37684F94E628D1AC"
+  },
+  {
+    "name": "SET_PED_COMPONENT_VARIATION",
+    "original": "262B14F48D29DE80",
+    "build2699": "E3752B10DC995E95"
+  },
+  {
+    "name": "TASK_START_SCENARIO_IN_PLACE",
+    "original": "142A02425FF02BD9",
+    "build2699": "C9FEFB406C44F60B"
+  },
+  {
+    "name": "CREATE_OBJECT",
+    "original": "509D5878EB39E842",
+    "build2699": "0E536D72AB30F4C8"
+  },
+  {
+    "name": "ATTACH_ENTITY_TO_ENTITY",
+    "original": "6B9BBD38AB0796DF",
+    "build2699": "9A97DC6DBC7B223D"
+  },
+  {
+    "name": "FREEZE_ENTITY_POSITION",
+    "original": "428CA6DBD1094446",
+    "build2699": "5C65DDDC219B3AA5"
+  },
+  {
+    "name": "APPLY_FORCE_TO_ENTITY",
+    "original": "C5F68BE9613E2D18",
+    "build2699": "3F6DE6DBA9A99FEA"
+  },
+  {
+    "name": "SET_VEHICLE_REDUCE_GRIP",
+    "original": "222FF6A823D122E2",
+    "build2699": "03E7CA3DC742FA72"
+  },
+  {
+    "name": "ADD_EXPLOSION",
+    "original": "E3AD2BDBAEE269AC",
+    "build2699": "45B4BDAA12353E7D"
+  },
+  {
+    "name": "SET_PED_TO_RAGDOLL",
+    "original": "AE99FB955581844A",
+    "build2699": "33021F68EDB8F06E"
+  },
+  {
+    "name": "CLONE_PED",
+    "original": "EF29A16337FACADB",
+    "build2699": "67E4CF00756BC7F7"
+  },
+  {
+    "name": "GET_PLAYER_GROUP",
+    "original": "0D127585F77030AF",
+    "build2699": "FD8E434495EC2F26"
+  },
+  {
+    "name": "SET_PED_AS_GROUP_MEMBER",
+    "original": "9F3480FE65DB31B5",
+    "build2699": "F23E6F5690771F71"
+  },
+  {
+    "name": "STAT_SET_INT",
+    "original": "B3271D7AB655B441",
+    "build2699": "076A5661EF5ABEE4"
+  },
+  {
+    "name": "TASK_VEHICLE_DRIVE_WANDER",
+    "original": "480142959D337D00",
+    "build2699": "AD6CDBCDA713560A"
+  },
+  {
+    "name": "SET_VEHICLE_SIREN",
+    "original": "F4924635A19EB37D",
+    "build2699": "BF0DDDDACD98C554"
+  },
+  {
+    "name": "GET_CLOSEST_VEHICLE",
+    "original": "F73EB622C4F1689B",
+    "build2699": "FE15FEB341652241"
+  },
+  {
+    "name": "SET_TEXT_FONT",
+    "original": "66E0276CC5F6B9DA",
+    "build2699": "F68E5437AF17EFBC"
+  },
+  {
+    "name": "SET_TEXT_SCALE",
+    "original": "07C837F9A01C34C9",
+    "build2699": "3F03C2D4EFA888BC"
+  },
+  {
+    "name": "SET_TEXT_COLOUR",
+    "original": "BE6B23FFA53FB442",
+    "build2699": "71F4002CB1A0B451"
+  },
+  {
+    "name": "SET_TEXT_OUTLINE",
+    "original": "2513DFB0FB8400FE",
+    "build2699": "435B084AE3274E4C"
+  },
+  {
+    "name": "BEGIN_TEXT_COMMAND_DISPLAY_TEXT",
+    "original": "25FBB336DF1804CB",
+    "build2699": "CDDA0C58B818F6B2"
+  },
+  {
+    "name": "END_TEXT_COMMAND_DISPLAY_TEXT",
+    "original": "CD015E5BB0D96A57",
+    "build2699": "1A53079994915FA6"
+  },
+  {
+    "name": "ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME",
+    "original": "6C188BE134E074AA",
+    "build2699": "76DB21247AE4E4E2"
+  },
+  {
+    "name": "SET_SUPER_JUMP_THIS_FRAME",
+    "original": "57FFF03E423A4C0B",
+    "build2699": "A39A115964CB8D41"
+  },
+  {
+    "name": "RESTORE_PLAYER_STAMINA",
+    "original": "A352C1B864CAFD33",
+    "build2699": "699B5067386DE80C"
+  },
+  {
+    "name": "SET_EXPLOSIVE_AMMO_THIS_FRAME",
+    "original": "A66C71C98D5F2CFB",
+    "build2699": "582EF587CC7597AE"
+  },
+  {
+    "name": "SET_FIRE_AMMO_THIS_FRAME",
+    "original": "11879CDD803D30F4",
+    "build2699": "7FE655CE221E741B"
+  },
+  {
+    "name": "SET_EXPLOSIVE_MELEE_THIS_FRAME",
+    "original": "FF1BED81BFDC0FE0",
+    "build2699": "C3562BA50C82388B"
+  },
+  {
+    "name": "SET_VEHICLE_ENGINE_ON",
+    "original": "2497C4717C8B881E",
+    "build2699": "371D594409A68A18"
+  },
+  {
+    "name": "IS_PED_SHOOTING",
+    "original": "34616828CD07F1A1",
+    "build2699": "E323E6755636A70E"
+  },
+  {
+    "name": "GET_PED_LAST_WEAPON_IMPACT_COORD",
+    "original": "6C4D0409BA1A2BC2",
+    "build2699": "2EF467A4DCA81D5A"
+  },
+  {
+    "name": "IS_CONTROL_PRESSED",
+    "original": "F3A21BCD95725A4A",
+    "build2699": "4C1B8C5717647539"
+  },
+  {
+    "name": "IS_CONTROL_JUST_PRESSED",
+    "original": "580417101DDB492F",
+    "build2699": "F09A4F413B0D30EB"
+  },
+  {
+    "name": "SHOOT_SINGLE_BULLET_BETWEEN_COORDS",
+    "original": "867654CBC7606F2C",
+    "build2699": "DB6AD61CE00E8A46"
+  },
+  {
+    "name": "IS_PAUSE_MENU_ACTIVE",
+    "original": "B0034A223497FFCB",
+    "build2699": "F1EC2C71FD1371B8"
+  },
+  {
+    "name": "IS_SCREEN_FADED_OUT",
+    "original": "B16FCE9DDC7BA182",
+    "build2699": "A829C9A2767AC8EF"
+  },
+  {
+    "name": "IS_SCREEN_FADING_OUT",
+    "original": "797AC7CB535BA28F",
+    "build2699": "CB1EF1E7B77ADF4C"
+  },
+  {
+    "name": "DISABLE_CONTROL_ACTION",
+    "original": "FE99B66D079CF6BC",
+    "build2699": "7653D561C9574763"
+  },
+  {
+    "name": "IS_DISABLED_CONTROL_JUST_PRESSED",
+    "original": "91AEF906BCA88877",
+    "build2699": "F01464D7AF0B7347"
+  },
+  {
+    "name": "unknown",
+    "original": "0DBA73788F6E3C5F",
+    "build2699": "0DBA73788F6E3C5F"
+  },
+  {
+    "name": "GET_HASH_KEY",
+    "original": "D24D37CC275948CC",
+    "build2699": "2E87280918B16506"
+  }
+]

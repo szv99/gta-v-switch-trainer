@@ -1,0 +1,65 @@
+# ==============================================================================
+# Git Ignore for GTA V Switch NX Trainer
+# ==============================================================================
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+
+# Temporary session state & journals (contains live console memory dumps)
+framework/state/*.json
+framework/state/*.bin
+state/
+debug-setup/console-*
+debug-setup/live-*-backup-*.json
+debug-setup/snapshot-*.txt
+*.romfs
+
+# Test crash reports & runtime logs
+crash-reports/
+*.log
+*.tmp
+*.bak
+
+# Build intermediate outputs & experiment artifacts
+auto-out/
+live-out/
+probe-out/
+out/
+build/*.tmp
+build/backup/
+
+# Large RPF package dumps from old FTP packaging experiments (10+ GB)
+package/
+package-*/
+probe-package/
+probe-v3-*/
+*.rpf
+*.zip
+*.7z
+*.tar.gz
+
+# External repository clones / submodules
+framework/research/MenyooSP/
+Los-Santos-Online-main/
+check-lso-compatibility.mjs
+
+# Dynamic FTP transfer manifests
+ftp-*-activated.json
+ftp-*-staged.json
+ftp-*-status.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+# IDE & OS
+.idea/
+.vscode/
+SC-CL-SampleProject-master/projects/
+*.bak
+*.old

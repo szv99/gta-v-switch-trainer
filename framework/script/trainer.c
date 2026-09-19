@@ -126,7 +126,7 @@ int networkGameInProgress=0;
 int networkSessionActive=0;
 int selected=0;
 int modelIndex=0;
-bool menuOpen=true;
+bool menuOpen=false;
 bool invincible=false;
 Ped previousPed=0;
 Hash pendingModel=0;
@@ -224,12 +224,11 @@ bool toggleVal(bool cur, int arg) {
 void applyRainbowColor(Vehicle veh, int step) {
     int phase = step % 6;
     int r=0,g=0,b=0;
-    if(phase==0)r=255;
-    else if(phase==1){r=255;g=165;}
-    else if(phase==2){r=255;g=255;}
-    else if(phase==3)g=255;
-    else if(phase==4){g=128;b=255;}
-    else {r=160;g=32;b=240;}
+    if(phase<4)r=255;
+    if(phase==1)g=165;
+    else if(phase==2||phase==3)g=255;
+    else if(phase==4){r=128;b=255;}
+    else if(phase==5){r=160;g=32;b=240;}
     NX_SET_VEHICLE_CUSTOM_PRIMARY_COLOUR(veh,r,g,b);
     NX_SET_VEHICLE_CUSTOM_SECONDARY_COLOUR(veh,r,g,b);
 }
@@ -1380,8 +1379,8 @@ void drawMenu() {
         menuTitle("Settings");
         mLine("< Back");
         mToggle("Spawn Inside: ",spawnInVehicle);
-        mLine("Freemode (LSO)");
-        mLine("Host Solo (LSO)");
+        mToggle("Spawn Tuned: ",spawnTuned);
+        mToggle("Spawn Godmode: ",spawnGodmode);
         mLine("Stop Trainer");
     }
 
@@ -1512,10 +1511,8 @@ void main() {
         updateVehicle(ped);
         updateTeleport(ped);
 
-        /* Shortcut: Cover (44) + Context (38 / D-pad Right) or Cover (44) + D-pad Left (166) */
-        if((IS_CONTROL_PRESSED(0,44)&&IS_CONTROL_JUST_PRESSED(0,38)) ||
-           (IS_CONTROL_PRESSED(0,38)&&IS_CONTROL_JUST_PRESSED(0,44)) ||
-           (IS_CONTROL_PRESSED(0,44)&&IS_CONTROL_JUST_PRESSED(0,166))) {
+        /* Shortcut: Cover (44 / RB) + D-pad Left (189) or Right (38) */
+        if(IS_CONTROL_PRESSED(0,44) && (IS_CONTROL_JUST_PRESSED(2,189) || IS_CONTROL_JUST_PRESSED(0,38))) {
             menuOpen=!menuOpen;
         }
 
@@ -1526,45 +1523,42 @@ void main() {
         if(!menuOpen)continue;
 
         /* Disable frontend controls while menu is active */
-        DISABLE_CONTROL_ACTION(0,164,true);
-        DISABLE_CONTROL_ACTION(0,165,true);
-        DISABLE_CONTROL_ACTION(0,166,true);
-        DISABLE_CONTROL_ACTION(0,167,true);
-        DISABLE_CONTROL_ACTION(0,177,true);
-        DISABLE_CONTROL_ACTION(0,178,true);
+        for(int c=187;c<=190;c++)DISABLE_CONTROL_ACTION(2,c,true);
+        DISABLE_CONTROL_ACTION(2,201,true);
+        DISABLE_CONTROL_ACTION(2,202,true);
 
         /* Delayed key repeat for D-pad navigation */
         bool upPressed=false;
         bool downPressed=false;
         bool leftPressed=false;
         bool rightPressed=false;
+        int now=GET_GAME_TIMER();
 
-        if(IS_DISABLED_CONTROL_JUST_PRESSED(0,165)) {
-            upPressed=true;repeatControl=165;repeatTimer=GET_GAME_TIMER()+350;
-        } else if(NX_IS_DISABLED_CONTROL_PRESSED(0,165)&&repeatControl==165&&GET_GAME_TIMER()>repeatTimer) {
-            upPressed=true;repeatTimer=GET_GAME_TIMER()+140;
+        if(IS_DISABLED_CONTROL_JUST_PRESSED(2,188)) {
+            upPressed=true;repeatControl=188;repeatTimer=now+350;
+        } else if(repeatControl==188&&now>repeatTimer&&NX_IS_DISABLED_CONTROL_PRESSED(2,188)) {
+            upPressed=true;repeatTimer=now+140;
         }
 
-        if(IS_DISABLED_CONTROL_JUST_PRESSED(0,164)) {
-            downPressed=true;repeatControl=164;repeatTimer=GET_GAME_TIMER()+350;
-        } else if(NX_IS_DISABLED_CONTROL_PRESSED(0,164)&&repeatControl==164&&GET_GAME_TIMER()>repeatTimer) {
-            downPressed=true;repeatTimer=GET_GAME_TIMER()+140;
+        if(IS_DISABLED_CONTROL_JUST_PRESSED(2,187)) {
+            downPressed=true;repeatControl=187;repeatTimer=now+350;
+        } else if(repeatControl==187&&now>repeatTimer&&NX_IS_DISABLED_CONTROL_PRESSED(2,187)) {
+            downPressed=true;repeatTimer=now+140;
         }
 
-        if(IS_DISABLED_CONTROL_JUST_PRESSED(0,166)) {
-            leftPressed=true;repeatControl=166;repeatTimer=GET_GAME_TIMER()+350;
-        } else if(NX_IS_DISABLED_CONTROL_PRESSED(0,166)&&repeatControl==166&&GET_GAME_TIMER()>repeatTimer) {
-            leftPressed=true;repeatTimer=GET_GAME_TIMER()+140;
+        if(IS_DISABLED_CONTROL_JUST_PRESSED(2,189)) {
+            leftPressed=true;repeatControl=189;repeatTimer=now+350;
+        } else if(repeatControl==189&&now>repeatTimer&&NX_IS_DISABLED_CONTROL_PRESSED(2,189)) {
+            leftPressed=true;repeatTimer=now+140;
         }
 
-        if(IS_DISABLED_CONTROL_JUST_PRESSED(0,167)) {
-            rightPressed=true;repeatControl=167;repeatTimer=GET_GAME_TIMER()+350;
-        } else if(NX_IS_DISABLED_CONTROL_PRESSED(0,167)&&repeatControl==167&&GET_GAME_TIMER()>repeatTimer) {
-            rightPressed=true;repeatTimer=GET_GAME_TIMER()+140;
+        if(IS_DISABLED_CONTROL_JUST_PRESSED(2,190)) {
+            rightPressed=true;repeatControl=190;repeatTimer=now+350;
+        } else if(repeatControl==190&&now>repeatTimer&&NX_IS_DISABLED_CONTROL_PRESSED(2,190)) {
+            rightPressed=true;repeatTimer=now+140;
         }
 
-        if(!NX_IS_DISABLED_CONTROL_PRESSED(0,165)&&!NX_IS_DISABLED_CONTROL_PRESSED(0,164)&&
-           !NX_IS_DISABLED_CONTROL_PRESSED(0,166)&&!NX_IS_DISABLED_CONTROL_PRESSED(0,167)) {
+        if(repeatControl&&!NX_IS_DISABLED_CONTROL_PRESSED(2,repeatControl)) {
             repeatControl=0;
         }
 
@@ -1632,11 +1626,16 @@ void main() {
                 if(selected==6)action(73,2);
             } else if(currentMenu==11) {
                 if(selected==1)spawnInVehicle=!spawnInVehicle;
+                else if(selected==2)spawnTuned=!spawnTuned;
+                else if(selected==3)spawnGodmode=!spawnGodmode;
             }
         }
 
         /* Cancel (B button): Back or Close */
-        if(IS_DISABLED_CONTROL_JUST_PRESSED(0,178)) {
+        bool cancelPressed = IS_DISABLED_CONTROL_JUST_PRESSED(2,202) || IS_CONTROL_JUST_PRESSED(2,202) ||
+                             IS_DISABLED_CONTROL_JUST_PRESSED(2,194) || IS_CONTROL_JUST_PRESSED(2,194) ||
+                             IS_DISABLED_CONTROL_JUST_PRESSED(0,202) || IS_CONTROL_JUST_PRESSED(0,202);
+        if(cancelPressed) {
             if(teleportState!=0) {
                 teleportState=0;
                 lastResult=0;
@@ -1652,7 +1651,9 @@ void main() {
         drawMenu();
 
         /* Accept (A button) */
-        if(!IS_DISABLED_CONTROL_JUST_PRESSED(0,177))continue;
+        bool acceptPressed = IS_DISABLED_CONTROL_JUST_PRESSED(2,201) || IS_CONTROL_JUST_PRESSED(2,201) ||
+                             IS_DISABLED_CONTROL_JUST_PRESSED(0,201) || IS_CONTROL_JUST_PRESSED(0,201);
+        if(!acceptPressed)continue;
 
         if(currentMenu!=0&&selected==0) {
             /* Back option */
@@ -1761,8 +1762,8 @@ void main() {
             else if(selected==7)action(74,0); // Delete
         } else if(currentMenu==11) { // Settings
             if(selected==1)spawnInVehicle=!spawnInVehicle;
-            else if(selected==2)action(9,0);
-            else if(selected==3)action(9,5);
+            else if(selected==2)spawnTuned=!spawnTuned;
+            else if(selected==3)spawnGodmode=!spawnGodmode;
             else if(selected==4)cleanup();
         }
     }

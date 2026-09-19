@@ -1,8 +1,8 @@
 {
   "version": "0.1.0",
   "protocol": 1,
-  "sha256": "d48432c3ec63cd77f92f6eba03b9a7785d795cb6366dfecd04b1aa24bff2c72d",
-  "source_sha256": "d1de1cef670117e602f3c5a216d761a2aef83772ef36ba64639341cbcaad39d4",
+  "sha256": "fe0683c4dc72034f7a13a7af76b15984969a3cecf050f72078f264284a9ac6a4",
+  "source_sha256": "406fc3a18640d8c9f98a669125777868c147932aad864265f2ee592d573554fd",
   "executable_sha256": "6d4d4f670d2e7b3ef9a8ac33787859b2d4d80667148132b5d815997c2a196fd5",
   "expected_build_id": "6e3e9b3af5746e74b615bd981080c9271bc22662000000000000000000000000",
   "symbols": {
@@ -91,8 +91,8 @@
     "repeatControl": 92,
     "repeatTimer": 93
   },
-  "code_bytes": 15761,
+  "code_bytes": 15827,
   "natives": 142,
-  "conservative_stack_slots": 285,
-  "call_graph_stack_slots": 158
+  "conservative_stack_slots": 287,
+  "call_graph_stack_slots": 160
 }

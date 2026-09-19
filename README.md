@@ -56,7 +56,7 @@ Instead of repackaging multi-gigabyte RPF archives, this framework uses Atmosphe
 | **GDB Transport & Injection** | ✅ Working | Clean memory injection, verification hashing, and atomic rollback journal. |
 | **Mailbox IPC & CLI Controls** | ✅ Working | Real-time vehicle spawning, teleportation, godmode, repair, weather, and time via CLI. |
 | **Unit Test Suite** | ✅ Working | 32/32 tests pass covering memory safety, catalog consistency, and protocol frames. |
-| **In-Game OSD Menu** | ⚠️ WIP | Visual menu renders on-screen; input restoration when toggling back to gameplay is under active investigation (CLI control remains fully functional). |
+| **In-Game OSD Menu** | ✅ Working | Visual menu with native 64-bit Switch frontend controls (187–190 D-pad, 201 A, 202 B). Defaults to closed; toggles via controller combo or CLI. |
 
 ---
 
@@ -165,15 +165,13 @@ Restores the original game thread memory from the session journal without needin
 
 ## Controller Bindings (In-Game Menu)
 
-When enabled, the trainer can also be controlled directly with the Joy-Cons / Pro Controller:
+The trainer menu can be operated with Joy-Cons or Pro Controller:
 
-- **Open / Close Menu**: `L + D-Pad Left` (or `RB + D-Pad Right`)
-- **Navigate Up / Down**: `D-Pad Up` / `D-Pad Down`
+- **Open / Close Menu**: `R + D-Pad Left` (or `R + D-Pad Right` / CLI `python trainer.py menu open`)
+- **Navigate Up / Down**: `D-Pad Up` / `D-Pad Down` (with delayed auto-repeat)
 - **Adjust Option / Value**: `D-Pad Left` / `D-Pad Right`
-- **Select / Activate**: `A` button
-- **Back / Exit Submenu**: `B` button
-
-*(Note: In-game input restoration is currently under active refinement. Use CLI commands if input feels unresponsive after closing the menu).*
+- **Select / Activate**: `A` button (Frontend Accept)
+- **Back / Exit Submenu / Close**: `B` button (Frontend Cancel) or select `< Back` / `Close Menu`
 
 ---
 
